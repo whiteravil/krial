@@ -1,0 +1,118 @@
+a
+  text-decoration: none
+
+  &[href*='tel']
+    white-space: nowrap
+
+.container
+  padding: 0 30px
+
+h1, .h1
+  font-size: 50px
+  line-height: 1.2
+  font-weight: normal
+  text-transform: uppercase
+
+h2, .h2
+  font-size: 40px
+  line-height: 1.25
+  font-weight: normal
+  text-transform: uppercase
+
+h4, .h4
+  font-size: 15px
+  font-weight: bold
+  line-height: 1.6
+
+.page-title
+  margin-bottom: 76px
+
+  .h6
+    font-size: 13px
+    color: #92A8B9
+    margin-bottom: 8px
+
+  h1
+    max-width: 735px
+
+.btn
+  cursor: pointer
+  height: 58px
+  line-height: 58px
+  text-align: center
+  padding: 0 36px
+  text-decoration: none !important
+  outline: none !important
+  border: none
+  color: #fff
+  +tr
+  font-weight: bold
+  font-size: 15px
+  color: #fff
+  text-transform: uppercase
+  +tr
+  display: inline-block
+  background-color: $accent
+  -webkit-border-radius: 29px
+  -moz-border-radius: 29px
+  border-radius: 29px
+
+  &:hover
+    background-color: #1C9AF5
+    color: #fff
+
+  &.loading
+    color: rgba(#fff, 0) !important
+    background-color: $accent
+    position: relative
+    &:after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      width: 40px
+      height: 40px
+      margin: -20px 0 0 -20px
+      background-image: url(~assets/images/dist/loaders/dots.svg)
+      background-repeat: no-repeat
+      background-position: center
+      background-size: contain
+
+
+.btn-border
+  background-color: transparent
+  color: $accent
+  border: 1px solid $accent
+  line-height: 56px
+
+  &:hover
+    background-color: $accent
+
+.btn-with-icon
+  display: inline-flex
+  align-items: center
+
+  span
+    font-size: 22px
+    margin-left: 21px
+
+.btn-xs
+  padding: 0 15px
+  font-size: 12px
+  height: 24px
+  line-height: 24px
+  font-weight: normal
+
+.small-title
+  margin-bottom: 45px
+  font-size: 15px
+  color: #8496B6
+  line-height: 1.333
+
+  a
+    text-decoration: none !important
+    +tr
+    color: inherit
+
+    &:hover
+      color: $accent
