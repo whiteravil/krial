@@ -83,7 +83,7 @@
   +tr
 
   &:hover span:before
-    color: #ff4500
+    color: $red
 
   span
     cursor: pointer
@@ -366,6 +366,8 @@
   z-index: 3
   opacity: 0
   visibility: hidden
+  min-height: 100px
+
   &.active
     opacity: 1
     visibility: visible
@@ -396,6 +398,7 @@
 
 .search-results-btn
   margin-top: 40px
+
   .btn
     height: 51px
     line-height: 51px
@@ -403,13 +406,17 @@
 
 .search-component-body
   flex-grow: 1
-  padding: 145px 46px 19px
+  padding: 145px 46px 0
+
+.search-results-full
+  display: flex
+  flex-direction: column
+  height: 100%
 
 .search-results-full-top
   display: flex
   align-items: center
   border-bottom: 1px solid #8496B6
-  margin-bottom: 49px
   padding-bottom: 24px
   justify-content: space-between
 
@@ -421,12 +428,272 @@
   display: flex
   align-items: center
   white-space: nowrap
+
   a
     margin-right: 41px
     font-size: 20px
     color: #8496B6
     +tr
+
     &:hover:not(.active)
       color: $accent
+
     &.active
       color: #1D2027
+
+.morph-results-loaded
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 2
+  background-image: url(~assets/images/dist/loaders/dots-blue.svg)
+  background-repeat: no-repeat
+  background-position: center
+  background-size: 40px
+  backdrop-filter: blur(4px)
+  background-color: rgba(#fff, .65)
+
+.search-results-full-body
+  flex-grow: 1
+  overflow-y: auto
+  padding-top: 49px
+  padding-bottom: 19px
+  +scrollbar
+
+.search-results-equipments-header
+  display: flex
+  padding: 0 28px 15px 19px
+
+.search-results-equipments-header-th
+  color: #8496B6
+  padding-right: 10px
+  line-height: 1.2
+
+  span
+    font-size: 20px
+    font-weight: bold
+    color: #1D2027
+    margin-left: -19px
+
+  &:nth-child(1)
+    width: 36%
+
+  &:nth-child(2)
+    width: 8%
+
+  &:nth-child(3)
+    width: 11%
+
+  &:nth-child(4)
+    width: calc(8% + 51px)
+
+.search-results-equipments-list
+  background-color: #fff
+
+.search-results-equipment
+  display: flex
+  align-items: center
+  border-bottom: 2px solid #E4E9F3
+  padding: 19px 28px 19px 19px
+
+  &:last-child
+    border: none
+
+  > div
+    flex-shrink: 0
+
+.equipment-img
+  margin-right: 24px
+
+  img
+    width: 68px
+
+.equipment-main
+  width: 36%
+  padding-right: 20px
+  display: flex
+  align-items: center
+
+.equipment-title
+  flex-grow: 1
+
+  .h4
+    font-weight: bold
+    margin-bottom: 9px
+    line-height: 1.3333
+
+    a
+      color: #1D2027
+      text-decoration: none !important
+      +tr
+
+      &:hover
+        color: $accent
+
+.equipment-tags
+  margin: 0 -5px -5px 0
+  display: flex
+  flex-wrap: wrap
+
+.tag
+  height: 20px
+  line-height: 20px
+  padding: 0 5px
+  background-color: #ECF1FC
+  font-size: 12px
+  color: #8496B6
+  margin: 0 5px 5px 0
+  white-space: nowrap
+
+.equipment-power
+  width: 8%
+  white-space: nowrap
+
+.equipment-manufacturer
+  display: flex
+  align-items: center
+  white-space: nowrap
+  padding-right: 10px
+  width: 11%
+
+  span
+    margin-right: 19px
+
+  img
+    width: 30px
+    flex-shrink: 0
+
+.equipment-fuel-consumption
+  white-space: nowrap
+
+.equipment-parameters
+  width: 21px
+  flex-shrink: 0
+  margin-right: 30px
+
+.tooltip-exc
+  font-size: 21px
+  color: $accent
+  cursor: pointer
+
+  &:hover ~ .info-hover-dropdown
+    opacity: 1
+    visibility: visible
+    transform: translateY(0)
+
+//.info-hover-dropdown
+//  position: absolute
+//  padding: 25px 32px 24px 27px
+//  z-index: 5
+//  background-color: #fff
+//  box-shadow: 0px 11px 95px rgba(0, 0, 0, 0.2)
+//  min-width: 379px
+//  font-size: 12px
+//  line-height: 1.667
+//  left: 10px
+//  top: calc(100% + 65px)
+//  +tr
+//  opacity: 0
+//  visibility: hidden
+//  transform: translateY(-10px)
+//
+//  &:after
+//    content: ''
+//    position: absolute
+//    bottom: 100%
+//    left: 0
+//    width: 24px
+//    height: 24px
+//    border: 12px solid transparent
+//    border-left-color: #fff
+//    border-bottom-color: #fff
+
+.tooltip
+  padding: 25px 32px 24px 27px
+  z-index: 15
+  background-color: #fff
+  box-shadow: 0px 11px 95px rgba(0, 0, 0, 0.2)
+  min-width: 379px
+  font-size: 12px
+  line-height: 1.667
+  transition: opacity .3s ease
+  opacity: 0
+  margin-top: 35px
+  margin-left: 12px
+
+  &[x-placement^='top-start']
+    margin-top: 0
+    margin-bottom: 35px
+
+    .tooltip-arrow
+      bottom: auto !important
+      top: 100% !important
+      border-left-color: #fff
+      border-bottom-color: transparent
+      border-top-color: #fff
+
+  &.open
+    opacity: 1
+
+  .tooltip-arrow
+    position: absolute
+    width: 24px
+    height: 24px
+    bottom: 100% !important
+    right: auto !important
+    left: 0 !important
+    top: auto !important
+    border: 12px solid transparent
+    border-left-color: #fff
+    border-bottom-color: #fff
+
+  ul
+    list-style-type: none
+    padding: 0
+    margin: 0
+
+    li
+      display: flex
+      justify-content: space-between
+
+      span
+        &:first-child
+          margin-right: 10px
+          color: #92A8B9
+
+        &:last-child
+          text-align: right
+          font-weight: bold
+          color: #1D2027
+
+.equipment-fuel-consumption
+  width: 8%
+
+.equipment-price
+  flex-grow: 1
+  flex-shrink: 1 !important
+  padding-right: 20px
+
+  p
+    font-size: 12px
+    margin: 0
+    color: #92A8B9
+
+.price-sum
+  display: block
+  margin-bottom: 7px
+  font-size: 20px
+  font-weight: bold
+
+.equipment-more
+  margin-right: 24px
+
+  .btn
+    display: block
+    height: 58px
+    line-height: 58px
+    border-radius: 29px
+    padding: 0px 28px
+    font-size: 12px

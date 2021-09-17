@@ -13,8 +13,12 @@
 </template>
 
 <script>
+
 export default {
-  name: 'main'
+  name: 'main',
+  mounted () {
+    this.$store.dispatch('globalVars/getGlobalVars')
+  }
 }
 </script>
 

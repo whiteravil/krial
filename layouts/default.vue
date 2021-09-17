@@ -2,20 +2,20 @@
 
   <div class="wrapper">
 
-    <LayoutsHeader />
+    <LayoutsHeader/>
 
-    <Nuxt />
+    <Nuxt/>
 
-    <LayoutsFooter />
+    <LayoutsFooter/>
 
   </div>
 
 </template>
 
 <script>
-  export default {
-    name: 'default.vue'
-  }
+export default {
+  name: 'default.vue'
+}
 </script>
 
 <style scoped>

@@ -17,9 +17,9 @@
           class="search-input"
           placeholder="Поиск по сайту"
           v-model="searchVal"
+          v-click-outside="clickOutsideSearch"
           @click="openSearchFullContainer"
           @focus="openSearchDropdown"
-          @blur="closeSearchDropdown"
           @input="searchKeypress">
 
         <div
@@ -34,8 +34,11 @@
 
         <div
           class="search-results-dropdown"
-          @click="openSearchDropdown"
           :class="{'active': searchDropdownResults}">
+
+          <div
+            v-if="morphSearchLoading"
+            class="morph-results-loaded" />
 
           <div
             v-if="resultsVisible && morphSearchResults ? morphSearchResults.length > 0 : false"
@@ -99,82 +102,10 @@
 
       </div>
 
-      <div
-        class="search-results-component"
-        :class="{'opened': searchFullContainer}">
-
-        <div class="search-component-body">
-
-          <div
-            v-if="searchFull"
-            class="search-results-full">
-
-            <div class="search-results-full-top">
-
-              <div class="search-results-full-qnt">
-                32 найдено результатов
-<!--                {{$options.filters.declensionNumbers(32, ['месяц', 'месяца', 'месяцев'])}}-->
-              </div>
-
-              <nav class="search-results-tabs">
-                <a
-                  href="#"
-                  :class="{'active': selectedTabs === 1}"
-                  @click="selectTab(1)">Оборудование</a>
-                <a
-                  href="#"
-                  :class="{'active': selectedTabs === 2}"
-                  @click="selectTab(2)">Пресс-центр</a>
-                <a
-                  href="#"
-                  :class="{'active': selectedTabs === 3}"
-                  @click="selectTab(3)">Услуги</a>
-              </nav>
-
-            </div>
-
-            <div class="search-results-full-body">
-
-              <div class="search-results-equipments-list">
-
-                <div
-                  v-for="searchItem in searchResultsEquipments"
-                  :key="searchItem.id"
-                  class="search-results-equipment">
-                  {{searchItem.title}}
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="search-component-sidebar">
-
-          <div
-            class="search-component-close"
-            @click="closeSearchFullContainer">
-            <span class="icon-close"></span>
-          </div>
-
-          <div class="product-selection-link">
-
-            <div class="product-selection-link-icon">
-              <span class="icon-filter"></span>
-            </div>
-
-            <div class="product-selection-link-text">
-              <span>Подбор оборудования</span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
+      <FullResults
+        :opened="searchFullContainer"
+        :resultsVisible="searchFull"
+        @close-search="closeSearchFullContainer" />
 
       <div class="search-main-row">
 
@@ -269,35 +200,44 @@
 <script>
 
 import { mapState, mapGetters } from 'vuex'
+import FullResults from './FullResults'
 
 export default {
   name: 'Index.vue',
+  components: { FullResults },
   computed: {
     ...mapState({
       popularCategories: state => state.search.popularCategories,
       selectionProducts: state => state.selectionProducts,
       history: state => state.search.history,
       morphSearchResults: state => state.search.morphSearchResults,
-      searchResultsEquipments: state => state.search.searchResultsEquipments
+      searchResultsPressCenters: state => state.search.searchResultsPressCenters,
+      searchResultsServices: state => state.search.searchResultsServices
     }),
     ...mapGetters({
       getCurrentCategory: 'categories/getCurrentCategory'
     }),
     currentCategory () {
-      return index => this.getCurrentCategory(index)
+      return index => this.getCurrentCategory(index) ? this.getCurrentCategory(index) : {}
     }
   },
   data: () => ({
+    searchBtnLoading: false,
+    morphSearchLoading: false,
     hoveredProduct: 0,
+    searchFull: false,
     searchFullContainer: true,
     searchDropdownResults: false,
     resultsVisible: false,
-    searchBtnLoading: false,
-    searchVal: '',
-    searchFull: false,
-    selectedTabs: 1
+    searchVal: ''
   }),
   methods: {
+    clickOutsideSearch (e) {
+      const tg = e.target
+      if (!tg.closest('.search-results-dropdown')) {
+        this.closeSearchDropdown()
+      }
+    },
     selectionProductHover (id) {
       this.hoveredProduct = id
     },
@@ -305,6 +245,7 @@ export default {
       this.searchFullContainer = true
     },
     closeSearchFullContainer () {
+      this.searchFull = false
       this.searchFullContainer = false
     },
     openSearchDropdown () {
@@ -315,7 +256,11 @@ export default {
     },
     searchKeypress (e) {
       if (this.searchVal.trim().length > 1) {
-        this.resultsVisible = true
+        this.morphSearchLoading = true
+        this.$store.dispatch('search/getMorphSearchResults').then(() => {
+          this.resultsVisible = true
+          this.morphSearchLoading = false
+        })
       } else {
         this.resultsVisible = false
       }
@@ -330,10 +275,14 @@ export default {
         this.closeSearchDropdown()
         this.searchFull = true
       })
-    },
-    selectTab (id) {
-
     }
+  },
+  mounted () {
+    this.$store.dispatch('categories/getCategories')
+    this.$store.dispatch('selectionProducts/getSelectionProducts')
+    this.$store.dispatch('search/getPopularCategories')
+    this.$store.dispatch('search/getHistory')
+    this.$store.dispatch('search/getHistory')
   }
 }
 </script>

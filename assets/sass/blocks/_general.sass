@@ -65,6 +65,7 @@ h4, .h4
     color: rgba(#fff, 0) !important
     background-color: $accent
     position: relative
+
     &:after
       content: ''
       position: absolute
@@ -103,6 +104,15 @@ h4, .h4
   line-height: 24px
   font-weight: normal
 
+.btn-secondary
+  background-color: #ECF1FC
+  color: $accent
+
+  &:hover
+    background-color: $accent
+    color: #fff
+
+
 .small-title
   margin-bottom: 45px
   font-size: 15px
@@ -116,3 +126,38 @@ h4, .h4
 
     &:hover
       color: $accent
+
+.liked-btn
+  position: relative
+  font-size: 21px
+  width: 21px
+  height: 21px
+  color: #8496B6
+  display: inline-block
+  cursor: pointer
+
+  &.active
+    &:before
+      opacity: 0
+
+    &:after
+      transform: scale(1)
+
+  &:before
+    content: '\e910'
+    font-family: icon
+    position: relative
+    z-index: 0
+    +tr
+
+  &:after
+    content: '\e915'
+    font-family: icon
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    color: $red
+    +tr
+    transform: scale(0)
