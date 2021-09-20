@@ -1,10 +1,15 @@
 <template>
 
-  <div class="search-component">
+  <div
+    class="search-component"
+    :class="[{'opened': opened}, {'loaded': loaded}]"
+    :style="{'display': visible ? 'block' : 'none'}">
 
     <div class="search-main">
 
-      <div class="search-close">
+      <div
+        class="search-close"
+        @click="closeSearch">
         <span class="icon-close"></span>
       </div>
 
@@ -222,16 +227,27 @@ export default {
     }
   },
   data: () => ({
+    opened: false,
+    visible: false,
+    loaded: false,
     searchBtnLoading: false,
     morphSearchLoading: false,
     hoveredProduct: 0,
     searchFull: false,
-    searchFullContainer: true,
+    searchFullContainer: false,
     searchDropdownResults: false,
     resultsVisible: false,
     searchVal: ''
   }),
   methods: {
+    closeSearch () {
+      this.opened = false
+      setTimeout(() => {
+        this.visible = false
+        this.loaded = false
+        this.$emit('close')
+      }, 400)
+    },
     clickOutsideSearch (e) {
       const tg = e.target
       if (!tg.closest('.search-results-dropdown')) {
@@ -270,7 +286,7 @@ export default {
     },
     checkAllResults () {
       this.searchBtnLoading = true
-      this.$store.dispatch('search/getSearchResultEquipments', this.searchVal).then(() => {
+      this.$store.dispatch('search/getSearchResults', this.searchVal).then(() => {
         this.searchBtnLoading = false
         this.closeSearchDropdown()
         this.searchFull = true
@@ -278,6 +294,13 @@ export default {
     }
   },
   mounted () {
+    this.visible = true
+    setTimeout(() => {
+      this.opened = true
+    }, 10)
+    setTimeout(() => {
+      this.loaded = true
+    }, 410)
     this.$store.dispatch('categories/getCategories')
     this.$store.dispatch('selectionProducts/getSelectionProducts')
     this.$store.dispatch('search/getPopularCategories')

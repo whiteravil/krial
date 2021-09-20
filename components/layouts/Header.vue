@@ -52,7 +52,10 @@
           </div>
 
           <div class="header-search">
-            <a href="#" class="header-search-btn">
+            <a
+              href="#"
+              class="header-search-btn"
+              @click="openSearch">
               <span class="icon-search"></span>
             </a>
           </div>
@@ -105,7 +108,12 @@
       :menu="menu"
       @close-menu="closeMenu" />
 
-    <Search />
+    <Search
+      v-if="searchOpened"
+      @close="searchOpened = false" />
+
+    <EquipmentSelection
+      v-if="equipmentSelection" />
 
   </header>
 
@@ -133,7 +141,9 @@ export default {
     })
   },
   data: () => ({
-    menu: false
+    menu: false,
+    searchOpened: false,
+    equipmentSelection: true
   }),
   methods: {
     openMenu () {
@@ -141,6 +151,9 @@ export default {
     },
     closeMenu () {
       this.menu = false
+    },
+    openSearch () {
+      this.searchOpened = true
     }
   },
   mounted () {

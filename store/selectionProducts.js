@@ -1,7 +1,8 @@
 export const state = () => ({
   title: '',
   imgSrc: '',
-  list: []
+  list: [],
+  selected: {}
 })
 
 export const mutations = {
@@ -9,6 +10,9 @@ export const mutations = {
     state.title = data.title
     state.imgSrc = data.imgSrc
     state.list = data.list
+  },
+  setSelectedProduct (state, id) {
+    state.selected = state.list.filter(item => item.id === id)[0]
   }
 }
 
