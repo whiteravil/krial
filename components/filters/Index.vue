@@ -6,12 +6,169 @@
 
       <div class="filter-checkboxes">
 
-        {{term}}
+        <div
+          v-for="checkbox in types"
+          :key="checkbox.id"
+          class="label-checkbox">
+          <label>
+            <input
+              type="checkbox"
+              :value="checkbox.id"
+              v-model="type">
+            <span>
+              {{ checkbox.title }}
+            </span>
+          </label>
+        </div>
 
-        <vue-slider
-          v-model="term"
-          :min="0"
-          :max="10000" />
+      </div>
+
+      <div class="filter-clear">
+        <a
+          href="#"
+          class="clear-btn"
+          @click="resetFilter">
+          <span class="icon-close-small"></span> Очистить фильтр
+        </a>
+      </div>
+
+    </div>
+
+    <div class="filters-body">
+
+      <div class="filters-slider-range-big">
+
+        <div class="slider-range-label">Мощность</div>
+
+        <div class="slider-range-big">
+
+          <div class="slider-range-inputs">
+            <span>{{ power[0] }} — {{ power[1] }} кВт</span>
+          </div>
+
+          <div class="slider-range">
+            <vue-slider
+              ref="slider"
+              :min="powerRange[0]"
+              :max="powerRange[1]"
+              tooltip="none"
+              :dotSize="17"
+              :interval="50"
+              :height="2"
+              v-model="power"/>
+          </div>
+
+          <div class="slider-help-radio">
+            <div
+              v-for="(radio, index) in helpPowerArray"
+              :key="index"
+              class="label-checkbox">
+              <label>
+                <input
+                  type="radio"
+                  name="help-power-radio"
+                  :value="radio"
+                  :checked="compareArrays(power, radio)"
+                  @change="selectPower(radio)">
+                <span>
+                  {{ radio[0] }}-{{ radio[1] }} кВт
+                </span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="filter-right">
+
+        <div class="filters-selects">
+
+          <div class="filter-item">
+
+            <div class="filter-item-selected">
+
+              <div class="filter-item-selected-label">Цена</div>
+
+              <div class="filter-item-selected-value">
+                <span>300 000 ₽ - 600 000 ₽</span>
+              </div>
+
+            </div>
+
+            <v-popover
+              trigger="click"
+              placement="bottom-end"
+              class="filter-item-popup"
+              popoverClass="filter-item-dropdown">
+
+              <span class="filter-item-popover-overlay"></span>
+
+              <template slot="popover">
+
+                <div class="filter-dropdown-row">
+
+                  <div class="filter-dropdown-form">
+
+                    <div class="slider-range-inputs">
+                      <span>{{ $options.filters.priceFilter(price[0]) }} Р - {{ $options.filters.priceFilter(price[1]) }} Р</span>
+                    </div>
+
+                    <div class="slider-range">
+                      <vue-slider
+                        ref="slider"
+                        :min="priceRange[0]"
+                        :max="priceRange[1]"
+                        tooltip="none"
+                        :dotSize="13"
+                        :interval="5000"
+                        :height="2"
+                        v-model="price"/>
+                    </div>
+
+                    <div class="filter-dropdown-checkboxes">
+
+                      <div
+                        v-for="(checkbox, index) in helpPriceArray"
+                        :key="index"
+                        class="filter-dropdown-checkbox">
+                        <div class="form-checkbox">
+                          <label>
+                            <input
+                              type="radio"
+                              name="price-range"
+                              :value="checkbox"
+                              :checked="compareArrays(price, checkbox)"
+                              @change="selectPrice(checkbox)">
+                            <span>
+                              {{ index === 0 ? 'Все' : `${$options.filters.priceFilter(checkbox[0])} Р - ${$options.filters.priceFilter(checkbox[1])} Р` }}
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="filter-dropdown-info">
+
+                    <span class="icon-ext"></span>
+
+                    <p>Выбрать правильную мощность непросто. Для этого нужно обладать хотя бы базовыми познаниями в электротехнике.<br>В противном случае лучше обратиться к специалистам, иначе можно запутаться в терминах и цифрах.</p>
+
+                  </div>
+
+                </div>
+
+              </template>
+
+            </v-popover>
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -24,13 +181,12 @@
 <script>
 
 import { mapState } from 'vuex'
-import VueSlider from 'vue-slider-component'
-import 'vue-slider-component/theme/default.css'
+import { VPopover } from 'v-tooltip'
 
 export default {
   name: 'Index',
   components: {
-    VueSlider
+    VPopover
   },
   computed: {
     ...mapState({
@@ -41,8 +197,51 @@ export default {
     })
   },
   data: () => ({
-    term: 0
+    type: [1],
+    power: [200, 300],
+    powerRange: [0, 2500],
+    helpPowerArray: [
+      [100, 200],
+      [200, 300],
+      [300, 500],
+      [500, 1000],
+      [1000, 2500]
+    ],
+    price: [300000, 600000],
+    priceRange: [0, 5000000],
+    helpPriceArray: [
+      [0, 5000000],
+      [25000, 50000],
+      [50000, 100000],
+      [100000, 250000],
+      [250000, 500000],
+      [500000, 1000000],
+      [1000000, 2500000],
+      [2500000, 5000000]
+    ]
   }),
+  methods: {
+    resetFilter () {
+      console.log(123321)
+    },
+    selectPower (val) {
+      this.power = val
+    },
+    selectPrice (val) {
+      this.price = val
+    },
+    compareArrays (arr1, arr2) {
+      if (arr1.length !== arr2.length) {
+        return false
+      }
+      for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i] !== arr2[i]) {
+          return false
+        }
+      }
+      return true
+    }
+  },
   mounted () {
     this.$store.dispatch('filters/getFilterAllTypes')
     this.$store.dispatch('filters/getFilterAllClasses')

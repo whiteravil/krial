@@ -1,0 +1,48 @@
+.form-checkbox
+  margin-bottom: 14px
+
+  label
+    display: inline-block
+
+    input
+      position: absolute
+      opacity: 0
+      z-index: -1
+      visibility: hidden
+
+      &:checked
+        & + span
+          &:before
+            opacity: 1
+            transform: scale(1)
+
+    span
+      position: relative
+      display: block
+      padding-left: 35px
+      color: #8496B6
+      font-size: 15px
+
+      &:after
+        content: ''
+        position: absolute
+        width: 20px
+        height: 20px
+        background-color: #ECF1FC
+        top: -1px
+        left: 0
+        cursor: pointer
+
+      &:before
+        content: '\e917'
+        font-size: 11px
+        font-family: icon
+        color: $accent
+        position: absolute
+        left: 5px
+        top: 3px
+        z-index: 1
+        cursor: pointer
+        +tr
+        opacity: 0
+        transform: scale(0)

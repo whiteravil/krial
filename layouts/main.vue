@@ -15,7 +15,7 @@
 <script>
 
 export default {
-  name: 'main',
+  name: 'Main',
   mounted () {
     this.$store.dispatch('globalVars/getGlobalVars')
   }

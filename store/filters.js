@@ -1,11 +1,4 @@
 export const state = () => ({
-  selected: {
-    type: 1,
-    power: [200, 300],
-    price: [300000, 600000],
-    class: 1,
-    applicationArea: 1
-  },
   types: [],
   classes: [],
   applicationAreas: [],

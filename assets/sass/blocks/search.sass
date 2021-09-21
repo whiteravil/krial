@@ -616,34 +616,7 @@
     visibility: visible
     transform: translateY(0)
 
-//.info-hover-dropdown
-//  position: absolute
-//  padding: 25px 32px 24px 27px
-//  z-index: 5
-//  background-color: #fff
-//  box-shadow: 0px 11px 95px rgba(0, 0, 0, 0.2)
-//  min-width: 379px
-//  font-size: 12px
-//  line-height: 1.667
-//  left: 10px
-//  top: calc(100% + 65px)
-//  +tr
-//  opacity: 0
-//  visibility: hidden
-//  transform: translateY(-10px)
-//
-//  &:after
-//    content: ''
-//    position: absolute
-//    bottom: 100%
-//    left: 0
-//    width: 24px
-//    height: 24px
-//    border: 12px solid transparent
-//    border-left-color: #fff
-//    border-bottom-color: #fff
-
-.tooltip
+.tooltip:not(.filter-item-dropdown)
   padding: 25px 32px 24px 27px
   z-index: 15
   background-color: #fff
@@ -772,3 +745,19 @@
 
   p
     margin-bottom: 24px
+
+.filter-item-dropdown
+  position: absolute
+  background-color: #fff
+  z-index: 100
+  box-shadow: 0px 48px 95px rgba(0, 0, 0, 0.2)
+
+.filter-dropdown-row
+  width: 659px
+
+.filter-dropdown-form
+  padding: 17px 28px 28px
+  flex-grow: 1
+  flex-shrink: 0
+  .slider-range-inputs
+    font-size: 30px
