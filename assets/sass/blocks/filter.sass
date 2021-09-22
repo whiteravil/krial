@@ -68,16 +68,32 @@
   padding: 20px 20px 20px 45px
   +tr
 
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    border: 1px solid $accent
+    z-index: 1
+    +tr
+    opacity: 0
+    visibility: hidden
+
   &.selected
     &:after
-      content: ''
-      position: absolute
-      top: 0
-      left: 0
-      width: 100%
-      height: 100%
-      border: 1px solid $accent
-      z-index: 1
+      opacity: 1
+      visibility: visible
+
+  &.opened
+    &:after
+      opacity: 1
+      visibility: visible
+
+    .filter-item-selected-label
+      &:after
+        transform: rotate(180deg)
 
 .filter-item-popup
   position: absolute
@@ -122,3 +138,43 @@
   margin-top: 5px
   font-size: 12px
   color: $accent
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.filter-item-dropdown
+  position: absolute
+  background-color: #fff
+  z-index: 100
+  box-shadow: 0px 48px 95px rgba(0, 0, 0, 0.2)
+  transition: opacity .4s ease
+  opacity: 0
+
+  &.open
+    opacity: 1
+
+.filter-dropdown-row
+  width: 659px
+  display: flex
+
+.filter-dropdown-form
+  padding: 17px 28px 28px
+  flex-grow: 1
+  flex-shrink: 0
+
+  .slider-range-inputs
+    font-size: 30px
+
+.filter-dropdown-info
+  padding: 28px
+  background-color: #ECF1FC
+  width: 46%
+  flex-shrink: 0
+  line-height: 1.7
+  color: #8E99AF
+
+  .icon-exc
+    font-size: 18px
+    margin-bottom: 20px
+    display: block
+    color: #8496B6

@@ -92,7 +92,7 @@
               <div class="filter-item-selected-label">Цена</div>
 
               <div class="filter-item-selected-value">
-                <span>300 000 ₽ - 600 000 ₽</span>
+                <span>{{ $options.filters.priceFilter(price[0]) }} ₽ - {{ $options.filters.priceFilter(price[1]) }} ₽</span>
               </div>
 
             </div>
@@ -100,6 +100,97 @@
             <v-popover
               trigger="click"
               placement="bottom-end"
+              @show="priceOpened = true"
+              @hide="priceOpened = false"
+              class="filter-item-popup"
+              popoverClass="filter-item-dropdown">
+
+              <span class="filter-item-popover-overlay"></span>
+
+              <template slot="popover">
+
+                <div class="filter-dropdown-row">
+
+                  <div class="filter-dropdown-form">
+
+                    <div class="slider-range-inputs">
+                      <span>
+                        {{ $options.filters.priceFilter(price[0]) }} ₽ - {{ $options.filters.priceFilter(price[1]) }} ₽
+                      </span>
+                    </div>
+
+                    <div class="slider-range">
+                      <vue-slider
+                        ref="slider"
+                        :min="priceRange[0]"
+                        :max="priceRange[1]"
+                        tooltip="none"
+                        :dotSize="13"
+                        :interval="5000"
+                        :height="2"
+                        v-model="price"/>
+                    </div>
+
+                    <div class="filter-dropdown-checkboxes">
+
+                      <div
+                        v-for="(checkbox, index) in helpPriceArray"
+                        :key="index"
+                        class="filter-dropdown-checkbox">
+                        <div class="form-checkbox">
+                          <label>
+                            <input
+                              type="radio"
+                              name="price-range"
+                              :value="checkbox"
+                              :checked="compareArrays(price, checkbox)"
+                              @change="selectPrice(checkbox)">
+                            <span>
+                              {{ index === 0 ? 'Все' : `${$options.filters.priceFilter(checkbox[0])} Р - ${$options.filters.priceFilter(checkbox[1])} Р` }}
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="filter-dropdown-info">
+
+                    <span class="icon-exc"></span>
+
+                    <p>Выбрать правильную мощность непросто. Для этого нужно обладать хотя бы базовыми познаниями в электротехнике.<br>В противном случае лучше обратиться к специалистам, иначе можно запутаться в терминах и цифрах.</p>
+
+                  </div>
+
+                </div>
+
+              </template>
+
+            </v-popover>
+
+          </div>
+
+          <div class="filter-item">
+
+            <div class="filter-item-selected">
+
+              <div class="filter-item-selected-label">Тип</div>
+
+              <div class="filter-item-selected-value">
+                <span>
+                  {{ getSelectedTypes() }}
+                </span>
+              </div>
+
+            </div>
+
+            <v-popover
+              trigger="click"
+              placement="bottom-end"
+              @show="priceOpened = true"
+              @hide="priceOpened = false"
               class="filter-item-popup"
               popoverClass="filter-item-dropdown">
 
@@ -154,7 +245,7 @@
 
                   <div class="filter-dropdown-info">
 
-                    <span class="icon-ext"></span>
+                    <span class="icon-exc"></span>
 
                     <p>Выбрать правильную мощность непросто. Для этого нужно обладать хотя бы базовыми познаниями в электротехнике.<br>В противном случае лучше обратиться к специалистам, иначе можно запутаться в терминах и цифрах.</p>
 
@@ -240,6 +331,16 @@ export default {
         }
       }
       return true
+    },
+    getSelectedTypes () {
+      let arr = []
+      this.type.forEach(item => {
+        arr.push(this.types.filter(typeItem => typeItem.id === item)[0].title)
+      })
+      return arr.join(', ')
+    },
+    openFilterParent (e) {
+      console.log(e)
     }
   },
   mounted () {
