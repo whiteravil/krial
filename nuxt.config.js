@@ -28,6 +28,14 @@ export default {
     {
       src: '~plugins/vue-slider-component.js',
       ssr: false
+    },
+    {
+      src: '~plugins/tooltip.js',
+      ssr: false
+    },
+    {
+      src: '~plugins/custom-scripts.js',
+      ssr: false
     }
   ],
 

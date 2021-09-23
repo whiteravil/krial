@@ -2,7 +2,8 @@ export const state = () => ({
   types: [],
   classes: [],
   applicationAreas: [],
-  engines: []
+  engines: [],
+  filterResults: []
 })
 
 export const mutations = {
@@ -17,6 +18,9 @@ export const mutations = {
   },
   setFilterAllEngines (state, array) {
     state.engines = array
+  },
+  setFilterResults (state, array) {
+    state.filterResults = array
   }
 }
 
@@ -36,5 +40,14 @@ export const actions = {
   getFilterAllEngines (ctx) {
     let res = require('~/DATABASE/filters/engines.js').default
     ctx.commit('setFilterAllEngines', res)
+  },
+  getFilterResults (ctx, data) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        let res = require('~/DATABASE/filterResult.js').default
+        ctx.commit('setFilterResults', res)
+        resolve()
+      }, 500)
+    })
   }
 }

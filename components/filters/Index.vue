@@ -55,6 +55,7 @@
               :dotSize="17"
               :interval="50"
               :height="2"
+              @change="getSearchResults"
               v-model="power"/>
           </div>
 
@@ -85,13 +86,13 @@
 
         <div class="filters-selects">
 
-          <div class="filter-item">
+          <div
+            class="filter-item"
+            :class="{'active': !compareArrays(price, priceRange)}">
 
             <v-popover
               trigger="click"
               placement="bottom-start"
-              @show="priceOpened = true"
-              @hide="priceOpened = false"
               class="filter-item-popup"
               popoverClass="filter-item-dropdown">
 
@@ -99,7 +100,9 @@
 
                 <div class="filter-item-selected-label">Цена</div>
 
-                <div class="filter-item-selected-value">
+                <div
+                  v-if="!compareArrays(price, priceRange)"
+                  class="filter-item-selected-value">
                   <span>{{ $options.filters.priceFilter(price[0]) }} ₽ - {{ $options.filters.priceFilter(price[1]) }} ₽</span>
                 </div>
 
@@ -126,6 +129,7 @@
                         :dotSize="13"
                         :interval="5000"
                         :height="2"
+                        @change="getSearchResults"
                         v-model="price"/>
                     </div>
 
@@ -162,24 +166,23 @@
 
           </div>
 
-          <div class="filter-item">
+          <div
+            class="filter-item"
+            :class="{'active': type.length > 0}">
 
             <v-popover
               trigger="click"
               placement="bottom-start"
-              @show="priceOpened = true"
-              @hide="priceOpened = false"
-              :boundariesElement="document.body"
               class="filter-item-popup"
               popoverClass="filter-item-dropdown">
 
               <div class="filter-item-selected">
 
-                <div class="filter-item-selected-label">Тип</div>
+                <div class="filter-item-selected-label">Класс оборудования</div>
 
                 <div class="filter-item-selected-value">
                   <span>
-                    {{ getSelectedTypes() }}
+                    {{ getArraysTitle(productClass, classes) }}
                   </span>
                 </div>
 
@@ -194,18 +197,157 @@
                     <div class="filter-dropdown-checkboxes">
 
                       <div
-                        v-for="typeItem in types"
-                        :key="typeItem.id"
+                        v-for="classesItem in classes"
+                        :key="classesItem.id"
                         class="filter-dropdown-checkbox">
                         <div class="form-checkbox">
                           <label>
                             <input
                               type="checkbox"
                               name="price-range"
-                              :value="typeItem.id"
-                              v-model="type">
+                              :value="classesItem.id"
+                              @change="getSearchResults"
+                              v-model="productClass">
                             <span>
-                              {{ typeItem.title }}
+                              {{ classesItem.title }}
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="filter-dropdown-info">
+
+                    <span class="icon-exc"></span>
+
+                    <p>Выбрать правильную мощность непросто. Для этого нужно обладать хотя бы базовыми познаниями в электротехнике.<br>В противном случае лучше обратиться к специалистам, иначе можно запутаться в терминах и цифрах.</p>
+
+                  </div>
+
+                </div>
+
+              </template>
+
+            </v-popover>
+
+          </div>
+
+          <div
+            class="filter-item"
+            :class="{'active': engine.length > 0}">
+
+            <v-popover
+              trigger="click"
+              placement="bottom-start"
+              class="filter-item-popup"
+              popoverClass="filter-item-dropdown">
+
+              <div class="filter-item-selected">
+
+                <div class="filter-item-selected-label">Двигатель</div>
+
+                <div class="filter-item-selected-value">
+                  <span>
+                    {{ getArraysTitle(engine, engines) }}
+                  </span>
+                </div>
+
+              </div>
+
+              <template slot="popover">
+
+                <div class="filter-dropdown-row">
+
+                  <div class="filter-dropdown-form">
+
+                    <div class="filter-dropdown-checkboxes">
+
+                      <div
+                        v-for="engineItem in engines"
+                        :key="engineItem.id"
+                        class="filter-dropdown-checkbox">
+                        <div class="form-checkbox">
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="price-range"
+                              :value="engineItem.id"
+                              @change="getSearchResults"
+                              v-model="engine">
+                            <span>
+                              {{ engineItem.title }}
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="filter-dropdown-info">
+
+                    <span class="icon-exc"></span>
+
+                    <p>Выбрать правильную мощность непросто. Для этого нужно обладать хотя бы базовыми познаниями в электротехнике.<br>В противном случае лучше обратиться к специалистам, иначе можно запутаться в терминах и цифрах.</p>
+
+                  </div>
+
+                </div>
+
+              </template>
+
+            </v-popover>
+
+          </div>
+
+          <div
+            class="filter-item"
+            :class="{'active': applicationArea.length > 0}">
+
+            <v-popover
+              trigger="click"
+              placement="bottom-start"
+              class="filter-item-popup"
+              popoverClass="filter-item-dropdown">
+
+              <div class="filter-item-selected">
+
+                <div class="filter-item-selected-label">Область применения</div>
+
+                <div class="filter-item-selected-value">
+                  <span>
+                    {{ getArraysTitle(applicationArea, applicationAreas) }}
+                  </span>
+                </div>
+
+              </div>
+
+              <template slot="popover">
+
+                <div class="filter-dropdown-row">
+
+                  <div class="filter-dropdown-form">
+
+                    <div class="filter-dropdown-checkboxes">
+
+                      <div
+                        v-for="appArea in applicationAreas"
+                        :key="appArea.id"
+                        class="filter-dropdown-checkbox">
+                        <div class="form-checkbox">
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="price-range"
+                              :value="appArea.id"
+                              @change="getSearchResults"
+                              v-model="applicationArea">
+                            <span>
+                              {{ appArea.title }}
                             </span>
                           </label>
                         </div>
@@ -237,6 +379,25 @@
 
     </div>
 
+    <div class="filters-footer">
+
+      <div
+        v-if="filterResults.length > 0"
+        class="filters-results">
+        Найдено {{ filterResults.length }} {{ $options.filters.declensionNumbers(filterResults.length, ['позиция', 'позиции', 'позиций']) }}
+      </div>
+
+      <div class="filters-btn">
+        <button class="btn btn-sm btn-white">Помощь с выбором</button>
+        <button
+          class="btn btn-sm"
+          :class="{'loading': load}">
+          Показать {{ filterResults.length }} {{ $options.filters.declensionNumbers(filterResults.length, ['позиция', 'позиции', 'позиций']) }}
+        </button>
+      </div>
+
+    </div>
+
   </div>
 
 </template>
@@ -244,54 +405,62 @@
 <script>
 
 import { mapState } from 'vuex'
-import { VPopover } from 'v-tooltip'
+
+const initialState = () => ({
+  type: [],
+  power: [200, 300],
+  powerRange: [0, 2500],
+  helpPowerArray: [
+    [100, 200],
+    [200, 300],
+    [300, 500],
+    [500, 1000],
+    [1000, 2500]
+  ],
+  price: [0, 5000000],
+  priceRange: [0, 5000000],
+  helpPriceArray: [
+    [0, 5000000],
+    [25000, 50000],
+    [50000, 100000],
+    [100000, 250000],
+    [250000, 500000],
+    [500000, 1000000],
+    [1000000, 2500000],
+    [2500000, 5000000]
+  ],
+  productClass: [],
+  engine: [],
+  applicationArea: [],
+  load: false
+})
 
 export default {
   name: 'Index',
-  components: {
-    VPopover
-  },
   computed: {
     ...mapState({
       types: state => state.filters.types,
       classes: state => state.filters.classes,
       applicationAreas: state => state.filters.applicationAreas,
-      engines: state => state.filters.engines
+      engines: state => state.filters.engines,
+      filterResults: state => state.filters.filterResults
     })
   },
-  data: () => ({
-    type: [1],
-    power: [200, 300],
-    powerRange: [0, 2500],
-    helpPowerArray: [
-      [100, 200],
-      [200, 300],
-      [300, 500],
-      [500, 1000],
-      [1000, 2500]
-    ],
-    price: [300000, 600000],
-    priceRange: [0, 5000000],
-    helpPriceArray: [
-      [0, 5000000],
-      [25000, 50000],
-      [50000, 100000],
-      [100000, 250000],
-      [250000, 500000],
-      [500000, 1000000],
-      [1000000, 2500000],
-      [2500000, 5000000]
-    ]
-  }),
+  data: () => (
+    initialState()
+  ),
   methods: {
     resetFilter () {
-      console.log(123321)
+      Object.assign(this.$data, initialState())
+      this.getSearchResults()
     },
     selectPower (val) {
       this.power = val
+      this.getSearchResults()
     },
     selectPrice (val) {
       this.price = val
+      this.getSearchResults()
     },
     compareArrays (arr1, arr2) {
       if (arr1.length !== arr2.length) {
@@ -304,15 +473,21 @@ export default {
       }
       return true
     },
-    getSelectedTypes () {
+    getArraysTitle (object, array) {
       let arr = []
-      this.type.forEach(item => {
-        // arr.push(this.types.filter(typeItem => typeItem.id === item)[0].title)
+      object.forEach(item => {
+        arr.push(array.filter(typeItem => typeItem.id === item)[0].title)
       })
       return arr.join(', ')
     },
-    openFilterParent (e) {
-      console.log(e)
+    getSearchResults () {
+      console.log(123321)
+      if (!this.load) {
+        this.load = true
+        this.$store.dispatch('filters/getFilterResults').then(() => {
+          this.load = false
+        })
+      }
     }
   },
   mounted () {
@@ -320,6 +495,7 @@ export default {
     this.$store.dispatch('filters/getFilterAllClasses')
     this.$store.dispatch('filters/getFilterAllApplicationAreas')
     this.$store.dispatch('filters/getFilterAllEngines')
+    this.getSearchResults()
   }
 }
 </script>

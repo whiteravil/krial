@@ -33,7 +33,7 @@
         <div class="equipment-selection-content-body">
 
           <div
-            v-if="!hoveredProductComponent"
+            v-if="hoveredProductComponent"
             class="equipment-selection-content-equipments">
 
             <div class="equipment-selection-main">
@@ -77,7 +77,8 @@
 
                   <a
                     @mouseover="selectionProductHover(product.id)"
-                    :href="product.url">
+                    :href="product.url"
+                    @click="openEquipmentSelectionSearch">
                     {{ product.title }}
                   </a>
 
@@ -89,7 +90,9 @@
 
           </div>
 
-          <div class="equipment-selection-group">
+          <div
+            v-if="equipmentSelectionSearch"
+            class="equipment-selection-group">
 
             <div class="equipment-selection-selected">
 
@@ -136,7 +139,8 @@ export default {
   },
   data: () => ({
     hoveredProduct: 0,
-    hoveredProductComponent: true
+    hoveredProductComponent: true,
+    equipmentSelection: false
   }),
   methods: {
     closeSelection () {
