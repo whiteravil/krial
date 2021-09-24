@@ -109,11 +109,17 @@
       @close-menu="closeMenu" />
 
     <Search
+      ref="searchComponent"
       v-if="searchOpened"
-      @close="searchOpened = false" />
+      @close="searchOpened = false"
+      @open-selection="openSelection"/>
 
     <EquipmentSelection
-      v-if="equipmentSelection" />
+      ref="equipmentSelectionComponent"
+      v-if="equipmentSelection"
+      @close="equipmentSelection = false"
+      :selectedEquipment="selectedEquipment"
+      @open-search="openSearch"/>
 
   </header>
 
@@ -143,7 +149,8 @@ export default {
   data: () => ({
     menu: false,
     searchOpened: false,
-    equipmentSelection: true
+    equipmentSelection: false,
+    selectedEquipment: null
   }),
   methods: {
     openMenu () {
@@ -154,6 +161,17 @@ export default {
     },
     openSearch () {
       this.searchOpened = true
+    },
+    closeSearch () {
+      this.$refs.searchComponent.closeSearch()
+    },
+    openSelection (id) {
+      this.closeSearch()
+      this.selectedEquipment = id
+      this.equipmentSelection = true
+    },
+    closeSelection () {
+      this.$refs.equipmentSelectionComponent.closeSelection()
     }
   },
   mounted () {

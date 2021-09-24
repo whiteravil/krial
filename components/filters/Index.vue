@@ -2,7 +2,9 @@
 
   <div class="filters-component">
 
-    <div class="filters-header">
+    <div
+      v-if="!disableType"
+      class="filters-header">
 
       <div class="filter-checkboxes">
 
@@ -168,7 +170,7 @@
 
           <div
             class="filter-item"
-            :class="{'active': type.length > 0}">
+            :class="{'active': productClass.length > 0}">
 
             <v-popover
               trigger="click"
@@ -379,7 +381,9 @@
 
     </div>
 
-    <div class="filters-footer">
+    <div
+      v-if="!withSort"
+      class="filters-footer">
 
       <div
         v-if="filterResults.length > 0"
@@ -391,9 +395,42 @@
         <button class="btn btn-sm btn-white">Помощь с выбором</button>
         <button
           class="btn btn-sm"
-          :class="{'loading': load}">
+          :class="{'loading': load}"
+          @click="$emit('show-results')">
           Показать {{ filterResults.length }} {{ $options.filters.declensionNumbers(filterResults.length, ['позиция', 'позиции', 'позиций']) }}
         </button>
+      </div>
+
+    </div>
+
+    <div
+      v-if="withSort"
+      class="sort-block">
+
+      <div class="sort-extended">
+        <a href="#">Расширенный поиск</a>
+      </div>
+
+      <div class="sort-btns">
+
+        <div class="sort-select-component">
+          <div class="sort-select-component-title">Сортировать</div>
+          <FiltersSortSelect
+            :list="sorts"
+            :selected="selectedSort"
+            @selectItem="selectedSort = $event"
+            @change="getSearchResults" />
+        </div>
+
+        <div class="filter-clear">
+          <a
+            href="#"
+            class="clear-btn"
+            @click="resetFilter">
+            <span class="icon-close-small"></span> Очистить фильтр
+          </a>
+        </div>
+
       </div>
 
     </div>
@@ -406,7 +443,7 @@
 
 import { mapState } from 'vuex'
 
-const initialState = () => ({
+let initialState = {
   type: [],
   power: [200, 300],
   powerRange: [0, 2500],
@@ -432,8 +469,11 @@ const initialState = () => ({
   productClass: [],
   engine: [],
   applicationArea: [],
-  load: false
-})
+  load: false,
+  selectedSort: 0
+}
+
+const getInitialState = () => (initialState)
 
 export default {
   name: 'Index',
@@ -443,15 +483,26 @@ export default {
       classes: state => state.filters.classes,
       applicationAreas: state => state.filters.applicationAreas,
       engines: state => state.filters.engines,
-      filterResults: state => state.filters.filterResults
+      filterResults: state => state.filters.filterResults,
+      sorts: state => state.filters.sorts
     })
   },
+  props: {
+    disableType: {
+      type: Boolean,
+      default: false
+    },
+    withSort: {
+      type: Boolean,
+      default: false
+    }
+  },
   data: () => (
-    initialState()
+    Object.assign({}, getInitialState())
   ),
   methods: {
     resetFilter () {
-      Object.assign(this.$data, initialState())
+      Object.assign(this.$data, getInitialState())
       this.getSearchResults()
     },
     selectPower (val) {
@@ -481,11 +532,12 @@ export default {
       return arr.join(', ')
     },
     getSearchResults () {
-      console.log(123321)
+      this.$emit('loaded', true)
       if (!this.load) {
         this.load = true
         this.$store.dispatch('filters/getFilterResults').then(() => {
           this.load = false
+          this.$emit('loaded', false)
         })
       }
     }
@@ -496,6 +548,10 @@ export default {
     this.$store.dispatch('filters/getFilterAllApplicationAreas')
     this.$store.dispatch('filters/getFilterAllEngines')
     this.getSearchResults()
+    this.$store.dispatch('filters/getSorts').then(() => {
+      initialState.selectedSort = this.sorts[0].id
+      this.selectedSort = this.sorts[0].id
+    })
   }
 }
 </script>

@@ -110,7 +110,8 @@
       <FullResults
         :opened="searchFullContainer"
         :resultsVisible="searchFull"
-        @close-search="closeSearchFullContainer" />
+        @close-search="closeSearchFullContainer"
+        @open-selection-component="openSelectionComponent"/>
 
       <div class="search-main-row">
 
@@ -149,9 +150,7 @@
 
         <div class="search-main-right">
 
-          <div class="small-title">
-            <a href="#">Подбор оборудования</a>
-          </div>
+          <div class="small-title">Подбор оборудования</div>
 
           <div class="search-selection-main">
 
@@ -183,8 +182,9 @@
               class="search-selection-product">
 
               <a
+                :href="product.url"
                 @mouseover="selectionProductHover(product.id)"
-                :href="product.url">
+                @click="$emit('open-selection', product.id)">
                 {{ product.title }}
               </a>
 
@@ -291,6 +291,11 @@ export default {
         this.closeSearchDropdown()
         this.searchFull = true
       })
+    },
+    openSelectionComponent () {
+      this.searchFull = false
+      this.searchFullContainer = false
+      this.$emit('open-selection')
     }
   },
   mounted () {

@@ -1,6 +1,8 @@
 <template>
 
-  <div class="equipment-selection-component">
+  <div
+    class="equipment-selection-component"
+    :class="{'opened': opened}">
 
     <div class="equipment-selection-body">
 
@@ -12,7 +14,9 @@
           <span class="icon-close"></span>
         </div>
 
-        <div class="product-selection-link">
+        <div
+          class="product-selection-link"
+          @click="openSearch">
 
           <div class="product-selection-link-icon">
             <span class="icon-search"></span>
@@ -78,7 +82,7 @@
                   <a
                     @mouseover="selectionProductHover(product.id)"
                     :href="product.url"
-                    @click="openEquipmentSelectionSearch">
+                    @click="openEquipmentSelectionSearch(product.id)">
                     {{ product.title }}
                   </a>
 
@@ -92,7 +96,8 @@
 
           <div
             v-if="equipmentSelectionSearch"
-            class="equipment-selection-group">
+            class="equipment-selection-group"
+            :class="{'loaded': equipmentSearchLoaded}">
 
             <div class="equipment-selection-selected">
 
@@ -111,7 +116,28 @@
 
             </div>
 
-            <Filters />
+            <Filters
+              @show-results="showResult()"/>
+
+          </div>
+
+          <div
+            v-if="equipmentResults"
+            class="equipment-selection-results"
+            :class="{'active': equipmentResultsLoaded}">
+
+            <Filters
+              :disableType="true"
+              :withSort="true"
+              @loaded="updateSearchResults"/>
+
+            <div class="equipment-selection-list">
+
+              <SearchEquipmentResults
+                :loaded="searchLoaded"
+                :list="filterResults"/>
+
+            </div>
 
           </div>
 
@@ -131,28 +157,74 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'Index',
+  props: {
+    selectedEquipment: [Number, Object]
+  },
   computed: {
     ...mapState({
       selectionProducts: state => state.selectionProducts,
-      selectedProduct: state => state.selectionProducts.selected
+      selectedProduct: state => state.selectionProducts.selected,
+      filterResults: state => state.filters.filterResults
     })
   },
   data: () => ({
+    opened: false,
     hoveredProduct: 0,
     hoveredProductComponent: true,
-    equipmentSelection: false
+    equipmentSelectionSearch: false,
+    equipmentSearchLoaded: false,
+    equipmentResults: false,
+    searchLoaded: false,
+    equipmentResultsLoaded: false
   }),
   methods: {
     closeSelection () {
-      console.log(false)
+      this.opened = false
+      setTimeout(() => {
+        this.$emit('close')
+      }, 400)
+    },
+    openSearch () {
+      this.closeSelection()
+      this.$emit('open-search')
     },
     selectionProductHover (id) {
       this.hoveredProduct = id
+    },
+    openEquipmentSelectionSearch (id) {
+      this.$store.commit('selectionProducts/setSelectedProduct', id)
+      this.hoveredProductComponent = false
+      this.equipmentSelectionSearch = true
+      setTimeout(() => {
+        this.equipmentSearchLoaded = true
+      }, 50)
+    },
+    updateSearchResults (bool) {
+      if (bool) {
+        this.searchLoaded = true
+      } else {
+        this.searchLoaded = false
+      }
+    },
+    showResult () {
+      this.equipmentSelectionSearch = false
+      this.equipmentSearchLoaded = false
+      this.equipmentResults = true
+      setTimeout(() => {
+        this.equipmentResultsLoaded = true
+      }, 20)
     }
   },
   mounted () {
     this.$store.dispatch('selectionProducts/getSelectionProducts')
+    this.$store.dispatch('filters/getFilterResults')
     this.$store.commit('selectionProducts/setSelectedProduct', 1)
+    setTimeout(() => {
+      this.opened = true
+    }, 50)
+    if (this.selectedEquipment) {
+      this.openEquipmentSelectionSearch(this.selectedEquipment)
+    }
   }
 }
 </script>

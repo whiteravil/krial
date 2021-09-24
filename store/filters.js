@@ -3,7 +3,8 @@ export const state = () => ({
   classes: [],
   applicationAreas: [],
   engines: [],
-  filterResults: []
+  filterResults: [],
+  sorts: []
 })
 
 export const mutations = {
@@ -21,6 +22,9 @@ export const mutations = {
   },
   setFilterResults (state, array) {
     state.filterResults = array
+  },
+  setSorts (state, array) {
+    state.sorts = array
   }
 }
 
@@ -49,5 +53,9 @@ export const actions = {
         resolve()
       }, 500)
     })
+  },
+  getSorts (ctx) {
+    let res = require('~/DATABASE/filters/sorts.js').default
+    ctx.commit('setSorts', res)
   }
 }
