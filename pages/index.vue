@@ -2,13 +2,14 @@
 
   <div class="home-page-wrapper">
 
-    123
+    <MainWindow />
 
   </div>
 
 </template>
 
 <script>
+
 export default {
   layout: 'main'
 }

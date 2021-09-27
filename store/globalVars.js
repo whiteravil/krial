@@ -1,5 +1,6 @@
 export const state = () => ({
   logoSrc: '',
+  logoLightSrc: '',
   graphVal: '',
   phone: '',
   email: '',
@@ -17,6 +18,7 @@ export const getters = {
 export const mutations = {
   setGlobalVars (state, data) {
     state.logoSrc = data.logoSrc
+    state.logoLightSrc = data.logoLightSrc
     state.graphVal = data.graphVal
     state.phone = data.phone
     state.email = data.email

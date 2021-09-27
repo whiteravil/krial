@@ -1,6 +1,8 @@
 <template>
 
-  <header class="header">
+  <header
+    class="header"
+    :class="classes">
 
     <div class="header-top">
       <div class="container">
@@ -135,7 +137,8 @@ export default {
     visibleLogo: {
       type: Boolean,
       default: true
-    }
+    },
+    classes: [String, Array, Object]
   },
   computed: {
     ...mapState({

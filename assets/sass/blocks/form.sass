@@ -40,9 +40,136 @@
         color: $accent
         position: absolute
         left: 5px
-        top: 3px
+        top: 4px
         z-index: 1
         cursor: pointer
         +tr
         opacity: 0
         transform: scale(0)
+        line-height: 1
+
+.form-group
+  margin-bottom: 19px
+
+.vs__dropdown-toggle
+  border-radius: 0 !important
+  border: none !important
+  border-bottom: 1px solid #8496B6 !important
+  padding: 0 !important
+  margin: 0 !important
+
+.vs__selected-options
+  padding: 0 !important
+
+.vs__search
+  height: 49px !important
+  padding: 0 !important
+  margin: 0 !important
+  color: #8496B6 !important
+  font-size: 12px !important
+
+.vs__selected
+  border: none !important
+  padding: 0 !important
+  margin: 0 !important
+  font-size: 12px !important
+  color: $textcolor !important
+  position: static !important
+  opacity: 1 !important
+
+.vs__actions
+  display: none !important
+
+.vs__selected-options
+  &:after
+    content: '\e916'
+    font-family: icon
+    font-size: 8px
+    margin: auto 0 auto 5px
+    color: #8496B6
+    font-weight: normal
+    +tr
+
+.v-select
+  &.vs--open
+    .vs__selected-options
+      &:after
+        transform: rotate(180deg)
+
+.vs__dropdown-menu
+  -webkit-border-radius: 0
+  -moz-border-radius: 0
+  border-radius: 0
+
+.vs__dropdown-option
+  font-size: 12px
+
+.vs__dropdown-option--highlight
+  background-color: $accent
+
+.vs__dropdown-option--selected
+  background-color: #EDF4FA
+  color: $textcolor !important
+
+.form-control
+  height: 49px
+  border: none
+  -webkit-border-radius: 0
+  -moz-border-radius: 0
+  border-radius: 0
+  border-bottom: 1px solid #8496B6
+  padding: 0
+  width: 100%
+  background-color: transparent
+  color: $textcolor
+  outline: none !important
+  display: block
+  +tr
+
+  &::placeholder
+    color: #8496B6
+    +tr
+
+  &:focus
+    border-bottom-color: $accent
+
+    &::placeholder
+      opacity: 0
+      transform: translateY(-4px)
+
+textarea.form-control
+  padding: 15px 0 5px
+  resize: none
+  min-height: 49px
+  line-height: 1.15
+  +scrollbar
+
+.form-row
+  display: flex
+  flex-wrap: wrap
+  margin: 0 -10px
+
+  .form-group
+    padding: 0 10px
+    flex-shrink: 0
+    width: 50%
+
+.footer-callback
+  flex-shrink: 0
+  width: 540px
+
+  .h6
+    text-transform: uppercase
+    font-size: 15px
+    line-height: 1.1
+    margin-bottom: 11px
+
+.form-footer
+  display: flex
+  flex-wrap: wrap
+  margin: 40px -10px 0
+
+  > div
+    padding: 0 10px
+    width: 50%
+    flex-shrink: 0

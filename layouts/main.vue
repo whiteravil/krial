@@ -2,7 +2,9 @@
 
   <div class="wrapper">
 
-    <LayoutsHeader :visibleLogo="false"/>
+    <LayoutsHeader
+      :visibleLogo="false"
+      :classes="['fixed', 'light']"/>
 
     <Nuxt />
 

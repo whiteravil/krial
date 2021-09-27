@@ -1,0 +1,74 @@
+.s-main-section
+  padding: 36px 0
+  display: flex
+  min-height: calc(var(--vh) * 100)
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(#000, .5)
+    z-index: 0
+
+.main-section-content
+  color: #fff
+  position: relative
+  z-index: 1
+
+.main-section-logo
+  margin-bottom: 25px
+
+  .logo
+    img
+      width: 80px
+
+.main-section-bottom
+  border-top: 1px solid #fff
+  display: flex
+  padding-top: 24px
+
+.main-section-title
+  width: 33.5%
+  flex-shrink: 0
+  padding-right: 75px
+
+.main-section-menu
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+
+  a
+    position: relative
+    padding-right: 25px
+    line-height: 1.2
+    margin-bottom: 18px
+    font-size: 40px
+    color: rgba(#fff, .5)
+    +tr
+    text-transform: uppercase
+
+    &:hover
+      color: #fff
+
+    &:last-child
+      margin-bottom: 0
+
+    &:after
+      content: '\e901'
+      font-family: icon
+      position: absolute
+      top: 8px
+      right: 0
+      font-size: 13px
+      font-weight: normal
+

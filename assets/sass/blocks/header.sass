@@ -1,6 +1,44 @@
 .header
   padding: 26px 0
 
+  &.fixed
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    z-index: 5
+
+  &.light
+    .header-left-menu
+      a
+        color: #fff
+
+    .header-center-menu
+      ul
+        li
+          a
+            color: #fff
+
+    .graph-info
+      color: #fff
+
+    .header-contacts
+      a
+        color: #fff
+
+    .header-location
+      color: #fff
+
+    .acc-btn
+      color: #fff
+
+    .menu-btn
+      color: #fff
+
+    .header-search-btn
+      color: #fff
+
+
 .header-row
   display: flex
   align-items: flex-start
@@ -34,7 +72,7 @@
     +tr
 
     &:hover
-      color: $accent
+      color: $accent !important
 
     &:last-child
       margin-right: 0
@@ -63,7 +101,7 @@
         +tr
 
         &:hover
-          color: $accent
+          color: $accent !important
 
 .graph-info
   display: flex
@@ -92,7 +130,7 @@
   +tr
 
   &:hover
-    color: $accent
+    color: $accent !important
 
 .header-search
   margin-right: 27px
@@ -106,7 +144,7 @@
   +tr
 
   &:hover
-    color: $accent
+    color: $accent !important
 
 .header-contacts
   margin-left: auto
@@ -118,7 +156,7 @@
     +tr
 
     &:hover
-      color: $accent
+      color: $accent !important
 
 .header-phone
   margin-bottom: 14px
@@ -168,7 +206,7 @@
     margin-right: 0
 
   &:hover
-    color: $accent
+    color: $accent !important
 
 .acc-btn-qnt
   position: absolute

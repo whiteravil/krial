@@ -18,10 +18,13 @@
     "moment-timezone": "^0.5.33",
     "nuxt": "^2.15.7",
     "swiper": "5.x",
+    "v-mask": "^2.3.0",
     "v-tooltip": "^2.1.3",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-select": "^3.13.0",
     "vue-slide-toggle": "^1.1.1",
     "vue-slider-component": "^3.2.14",
+    "vue-textarea-autosize": "^1.1.1",
     "vuescroll": "^4.17.3"
   },
   "devDependencies": {

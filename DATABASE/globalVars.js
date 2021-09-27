@@ -1,5 +1,6 @@
 export default {
   logoSrc: require('~/assets/images/dist/logo.svg'),
+  logoLightSrc: require('~/assets/images/dist/logo-light.svg'),
   graphVal: '1040,5',
   phone: '8 800 500-72-26',
   email: 'info@krialenergo.ru',

@@ -36,6 +36,18 @@ export default {
     {
       src: '~plugins/custom-scripts.js',
       ssr: false
+    },
+    {
+      src: '~plugins/select.js',
+      ssr: false
+    },
+    {
+      src: '~plugins/mask.js',
+      ssr: false
+    },
+    {
+      src: '~plugins/autosize.js',
+      ssr: false
     }
   ],
 
