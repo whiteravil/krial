@@ -1,10 +1,12 @@
 import Vue from 'vue'
-import VTooltip from 'v-tooltip'
+import { VTooltip, VPopover } from 'v-tooltip'
 
 Vue.use(VTooltip, {
+  preventOverflow: false,
   defaultBoundariesElement: document.body,
-  popperOptions: {
-    preventOverflow: false,
+  defaultPopperOptions: {
     boundariesElement: document.body
   }
 })
+
+Vue.component('v-popover', VPopover)

@@ -96,7 +96,8 @@
               trigger="click"
               placement="bottom-start"
               class="filter-item-popup"
-              popoverClass="filter-item-dropdown">
+              popoverClass="filter-item-dropdown"
+              :boundariesElement="document.body">
 
               <div class="filter-item-selected">
 

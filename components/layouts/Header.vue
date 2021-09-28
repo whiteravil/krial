@@ -88,15 +88,85 @@
             </div>
 
             <div class="header-account-btns">
-              <a href="#" class="acc-btn">
-                <span class="icon-heart"></span>
-              </a>
-              <a href="#" class="acc-btn">
-                <span class="icon-graph"></span>
-              </a>
-              <a href="#" class="acc-btn">
-                <span class="icon-cart"></span>
-              </a>
+
+              <div class="header-account-btn">
+                <a href="#" class="acc-btn">
+                  <span class="icon-heart"></span>
+                </a>
+              </div>
+
+              <div class="header-account-btn">
+
+                <a
+                  href="#"
+                  class="acc-btn"
+                  @click="openDropdown('basket')">
+                  <span class="icon-graph"></span>
+                  <span
+                    v-if="account.basket.length > 0"
+                    class="acc-btn-qnt"
+                    v-text="account.basket.length"/>
+                </a>
+
+                <div
+                  v-if="account.basket.length > 0"
+                  class="header-acc-dropdown"
+                  :class="{'opened': basketDropdown}">
+
+                  <div
+                    class="header-acc-dropdown-list"
+                    :class="{'loading-animate': deleteLoading}">
+                    <AccountProduct
+                      v-for="item in account.basket"
+                      :key="item.key"
+                      :item="item"
+                      @remove="removeBasketItem(item.id)"/>
+                  </div>
+
+                  <div class="header-acc-dropdown-btn">
+                    <a href="#" class="btn btn-block btn-border">Перейти к сравнению</a>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="header-account-btn">
+
+                <a
+                  href="#"
+                  class="acc-btn"
+                  @click="openDropdown('compare')">
+                  <span class="icon-cart"></span>
+                  <span
+                    v-if="account.compare.length > 0"
+                    class="acc-btn-qnt"
+                    v-text="account.compare.length"/>
+                </a>
+
+                <div
+                  v-if="account.compare.length > 0"
+                  class="header-acc-dropdown"
+                  :class="{'opened': compareDropdown}">
+
+                  <div
+                    class="header-acc-dropdown-list"
+                    :class="{'loading-animate': deleteLoading}">
+                    <AccountProduct
+                      v-for="item in account.compare"
+                      :key="item.key"
+                      :item="item"
+                      @remove="removeCompareItem(item.id)"/>
+                  </div>
+
+                  <div class="header-acc-dropdown-btn">
+                    <a href="#" class="btn btn-block btn-border">Перейти в корзину</a>
+                  </div>
+
+                </div>
+
+              </div>
+
             </div>
 
           </div>
@@ -108,7 +178,7 @@
 
     <HeaderMenu
       :menu="menu"
-      @close-menu="closeMenu" />
+      @close-menu="closeMenu"/>
 
     <Search
       ref="searchComponent"
@@ -143,7 +213,8 @@ export default {
   computed: {
     ...mapState({
       header: state => state.header,
-      global: state => state.globalVars
+      global: state => state.globalVars,
+      account: state => state.account
     }),
     ...mapGetters({
       getLang: 'globalVars/getLang'
@@ -153,7 +224,10 @@ export default {
     menu: false,
     searchOpened: false,
     equipmentSelection: false,
-    selectedEquipment: null
+    selectedEquipment: null,
+    deleteLoading: false,
+    basketDropdown: false,
+    compareDropdown: false
   }),
   methods: {
     openMenu () {
@@ -175,11 +249,44 @@ export default {
     },
     closeSelection () {
       this.$refs.equipmentSelectionComponent.closeSelection()
+    },
+    removeBasketItem (id) {
+      this.deleteLoading = true
+      this.$store.dispatch('account/deleteBasketItem', id).then(() => {
+        this.deleteLoading = false
+      })
+    },
+    removeCompareItem (id) {
+      this.deleteLoading = true
+      this.$store.dispatch('account/deleteCompareItem', id).then(() => {
+        this.deleteLoading = false
+      })
+    },
+    openDropdown (type) {
+      if (type === 'basket') {
+        this.basketDropdown = !this.basketDropdown
+        this.compareDropdown = false
+      }
+      if (type === 'compare') {
+        this.compareDropdown = !this.compareDropdown
+        this.basketDropdown = false
+      }
     }
   },
   mounted () {
     this.$store.dispatch('header/getTopMenu')
     this.$store.dispatch('header/getSecondMenu')
+    this.$store.dispatch('account/getBasketList')
+    this.$store.dispatch('account/getCompareList')
+    const clickOutDropdown = e => {
+      let tg = e.target
+      if (!tg.closest('.header-account-btn') && !tg.closest('.header-acc-dropdown')) {
+        this.basketDropdown = false
+        this.compareDropdown = false
+      }
+    }
+    document.addEventListener('click', clickOutDropdown)
+    this.$once('hook:beforeDestroy', () => document.removeEventListener('click', clickOutDropdown))
   }
 }
 </script>

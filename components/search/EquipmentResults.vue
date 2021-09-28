@@ -131,13 +131,9 @@
 <script>
 
 import moment from 'moment'
-import { VPopover } from 'v-tooltip'
 
 export default {
   name: 'EquipmentResults',
-  components: {
-    VPopover
-  },
   props: {
     loaded: Boolean,
     list: Array

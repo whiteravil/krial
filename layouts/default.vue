@@ -14,7 +14,10 @@
 
 <script>
 export default {
-  name: 'default.vue'
+  name: 'default.vue',
+  mounted () {
+    this.$store.dispatch('globalVars/getGlobalVars')
+  }
 }
 </script>
 

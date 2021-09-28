@@ -9,34 +9,54 @@
 
           <div class="page-title">
             <div class="h6">Каталог</div>
-            <h1 v-html="pageTitle" />
+            <h1 v-html="title"/>
           </div>
 
           <div class="main-window-btns">
             <a href="#" class="btn">Помощь с подбором</a>
-            <a href="#" class="btn btn-border btn-with-icon">Скачать материалы <span class="icon-download"></span></a>
+            <a
+              v-if="downloadButton"
+              href="#"
+              class="btn btn-border btn-with-icon">Скачать материалы <span class="icon-download"></span></a>
           </div>
 
         </div>
 
         <div class="main-window-right">
 
-          <div class="main-slider-title">{{advantages.title}}</div>
+          <div class="main-slider-title">
+            {{ sliderTitle }}
+          </div>
 
           <div class="main-slider swiper-container">
 
             <swiper ref="mySwiper" :options="swiperOptions">
 
               <swiper-slide
-                v-for="advantage in advantages.list"
-                :key="advantage.id">
+                v-for="slide in slideList"
+                :key="slide.id">
                 <div class="main-slider--slide">
-                  <div class="h4">{{advantage.title}}</div>
-                  <img :src="advantage.imgSrc" alt="">
+
+                  <div class="h4">{{slide.title}}</div>
+                  <img :src="slide.imgSrc" alt="">
+
                   <div class="info-link">
-                    <div class="info-link-btn"></div>
+                    <v-popover placement="right-start">
+
+                      <div class="info-link-btn"></div>
+
+                      <template slot="popover">
+                        <div class="info-hover-dropdown wide">
+                          <p>Мы имеем опыт поставки сложных комплексов в отдаленные северные регионы.</p>
+                          <p>Вы можете заказать у нас небольшие стационарные и передвижные генераторы с тепло-,шумоизоляцией, в кожухах, утепленных контейнерах.</p>
+                        </div>
+                      </template>
+
+                    </v-popover>
                   </div>
+
                 </div>
+
               </swiper-slide>
 
               <div class="swiper-pagination" slot="pagination"></div>
@@ -60,7 +80,6 @@
 <script>
 
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-import { mapState } from 'vuex'
 
 export default {
   name: 'MainWindow',
@@ -68,14 +87,17 @@ export default {
     Swiper,
     SwiperSlide
   },
+  props: {
+    title: String,
+    sliderTitle: String,
+    slideList: Array,
+    downloadButton: {
+      type: Boolean,
+      default: true
+    }
+  },
   directives: {
     swiper: directive
-  },
-  computed: {
-    ...mapState({
-      pageTitle: state => state.catalog.pageTitle,
-      advantages: state => state.catalog.catalogAdvantages
-    })
   },
   data: () => ({
     swiperOptions: {
