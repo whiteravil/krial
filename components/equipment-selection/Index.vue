@@ -225,6 +225,8 @@ export default {
     if (this.selectedEquipment) {
       this.openEquipmentSelectionSearch(this.selectedEquipment)
     }
+    document.body.classList.add('overflow-hidden')
+    this.$once('hook:beforeDestroy', () => document.body.classList.remove('overflow-hidden'))
   }
 }
 </script>

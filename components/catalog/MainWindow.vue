@@ -41,7 +41,9 @@
                   <img :src="slide.imgSrc" alt="">
 
                   <div class="info-link">
-                    <v-popover placement="right-start">
+                    <v-popover
+                      placement="right-start"
+                      boundariesElement="document.body">
 
                       <div class="info-link-btn"></div>
 

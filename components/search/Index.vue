@@ -311,6 +311,8 @@ export default {
     this.$store.dispatch('search/getPopularCategories')
     this.$store.dispatch('search/getHistory')
     this.$store.dispatch('search/getHistory')
+    document.body.classList.add('overflow-hidden')
+    this.$once('hook:beforeDestroy', () => document.body.classList.remove('overflow-hidden'))
   }
 }
 </script>

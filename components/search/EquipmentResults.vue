@@ -62,7 +62,10 @@
 
         <div class="equipment-parameters">
 
-          <v-popover trigger="hover" placement="bottom-start">
+          <v-popover
+            trigger="hover"
+            placement="bottom-start"
+            boundariesElement="document.body">
 
             <span class="tooltip-exc icon-exc"></span>
 
