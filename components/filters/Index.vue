@@ -38,346 +38,29 @@
 
     <div class="filters-body">
 
-      <div class="filters-slider-range-big">
-
-        <div class="slider-range-label">Мощность</div>
-
-        <div class="slider-range-big">
-
-          <div class="slider-range-inputs">
-            <span>{{ power[0] }} — {{ power[1] }} кВт</span>
-          </div>
-
-          <div class="slider-range">
-            <vue-slider
-              ref="slider"
-              :min="powerRange[0]"
-              :max="powerRange[1]"
-              tooltip="none"
-              :dotSize="17"
-              :interval="50"
-              :height="2"
-              @change="getSearchResults"
-              v-model="power"/>
-          </div>
-
-          <div class="slider-help-radio">
-            <div
-              v-for="(radio, index) in helpPowerArray"
-              :key="index"
-              class="label-checkbox">
-              <label>
-                <input
-                  type="radio"
-                  name="help-power-radio"
-                  :value="radio"
-                  :checked="compareArrays(power, radio)"
-                  @change="selectPower(radio)">
-                <span>
-                  {{ radio[0] }}-{{ radio[1] }} кВт
-                </span>
-              </label>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
+      <FiltersBlockPowerBig
+        ref="filtersBlockPowerBig"
+        @change="getSearchResults"/>
 
       <div class="filter-right">
 
         <div class="filters-selects">
 
-          <div
-            class="filter-item"
-            :class="{'active': !compareArrays(price, priceRange)}">
-
-            <v-popover
-              trigger="click"
-              placement="bottom-start"
-              class="filter-item-popup"
-              popoverClass="filter-item-dropdown"
-              boundariesElement="document.body">
-
-              <div class="filter-item-selected">
-
-                <div class="filter-item-selected-label">Цена</div>
-
-                <div
-                  v-if="!compareArrays(price, priceRange)"
-                  class="filter-item-selected-value">
-                  <span>{{ $options.filters.priceFilter(price[0]) }} ₽ - {{ $options.filters.priceFilter(price[1]) }} ₽</span>
-                </div>
-
-              </div>
-
-              <template slot="popover">
-
-                <div class="filter-dropdown-row">
-
-                  <div class="filter-dropdown-form">
-
-                    <div class="slider-range-inputs">
-                      <span>
-                        {{ $options.filters.priceFilter(price[0]) }} ₽ - {{ $options.filters.priceFilter(price[1]) }} ₽
-                      </span>
-                    </div>
-
-                    <div class="slider-range">
-                      <vue-slider
-                        ref="slider"
-                        :min="priceRange[0]"
-                        :max="priceRange[1]"
-                        tooltip="none"
-                        :dotSize="13"
-                        :interval="5000"
-                        :height="2"
-                        @change="getSearchResults"
-                        v-model="price"/>
-                    </div>
-
-                    <div class="filter-dropdown-checkboxes">
-
-                      <div
-                        v-for="(checkbox, index) in helpPriceArray"
-                        :key="index"
-                        class="filter-dropdown-checkbox">
-                        <div class="form-checkbox">
-                          <label>
-                            <input
-                              type="radio"
-                              name="price-range"
-                              :value="checkbox"
-                              :checked="compareArrays(price, checkbox)"
-                              @change="selectPrice(checkbox)">
-                            <span>
-                              {{ index === 0 ? 'Все' : `${$options.filters.priceFilter(checkbox[0])} Р - ${$options.filters.priceFilter(checkbox[1])} Р` }}
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </template>
-
-            </v-popover>
-
-          </div>
-
-          <div
-            class="filter-item"
-            :class="{'active': productClass.length > 0}">
-
-            <v-popover
-              trigger="click"
-              placement="bottom-start"
-              class="filter-item-popup"
-              popoverClass="filter-item-dropdown"
-              boundariesElement="document.body">
-
-              <div class="filter-item-selected">
-
-                <div class="filter-item-selected-label">Класс оборудования</div>
-
-                <div class="filter-item-selected-value">
-                  <span>
-                    {{ getArraysTitle(productClass, classes) }}
-                  </span>
-                </div>
-
-              </div>
-
-              <template slot="popover">
-
-                <div class="filter-dropdown-row">
-
-                  <div class="filter-dropdown-form">
-
-                    <div class="filter-dropdown-checkboxes">
-
-                      <div
-                        v-for="classesItem in classes"
-                        :key="classesItem.id"
-                        class="filter-dropdown-checkbox">
-                        <div class="form-checkbox">
-                          <label>
-                            <input
-                              type="checkbox"
-                              name="price-range"
-                              :value="classesItem.id"
-                              @change="getSearchResults"
-                              v-model="productClass">
-                            <span>
-                              {{ classesItem.title }}
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="filter-dropdown-info">
-
-                    <span class="icon-exc"></span>
-
-                    <p>Выбрать правильную мощность непросто. Для этого нужно обладать хотя бы базовыми познаниями в электротехнике.<br>В противном случае лучше обратиться к специалистам, иначе можно запутаться в терминах и цифрах.</p>
-
-                  </div>
-
-                </div>
-
-              </template>
-
-            </v-popover>
-
-          </div>
-
-          <div
-            class="filter-item"
-            :class="{'active': engine.length > 0}">
-
-            <v-popover
-              trigger="click"
-              placement="bottom-start"
-              class="filter-item-popup"
-              popoverClass="filter-item-dropdown"
-              boundariesElement="document.body">
-
-              <div class="filter-item-selected">
-
-                <div class="filter-item-selected-label">Двигатель</div>
-
-                <div class="filter-item-selected-value">
-                  <span>
-                    {{ getArraysTitle(engine, engines) }}
-                  </span>
-                </div>
-
-              </div>
-
-              <template slot="popover">
-
-                <div class="filter-dropdown-row">
-
-                  <div class="filter-dropdown-form">
-
-                    <div class="filter-dropdown-checkboxes">
-
-                      <div
-                        v-for="engineItem in engines"
-                        :key="engineItem.id"
-                        class="filter-dropdown-checkbox">
-                        <div class="form-checkbox">
-                          <label>
-                            <input
-                              type="checkbox"
-                              name="price-range"
-                              :value="engineItem.id"
-                              @change="getSearchResults"
-                              v-model="engine">
-                            <span>
-                              {{ engineItem.title }}
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="filter-dropdown-info">
-
-                    <span class="icon-exc"></span>
-
-                    <p>Выбрать правильную мощность непросто. Для этого нужно обладать хотя бы базовыми познаниями в электротехнике.<br>В противном случае лучше обратиться к специалистам, иначе можно запутаться в терминах и цифрах.</p>
-
-                  </div>
-
-                </div>
-
-              </template>
-
-            </v-popover>
-
-          </div>
-
-          <div
-            class="filter-item"
-            :class="{'active': applicationArea.length > 0}">
-
-            <v-popover
-              trigger="click"
-              placement="bottom-start"
-              class="filter-item-popup"
-              popoverClass="filter-item-dropdown"
-              boundariesElement="document.body">
-
-              <div class="filter-item-selected">
-
-                <div class="filter-item-selected-label">Область применения</div>
-
-                <div class="filter-item-selected-value">
-                  <span>
-                    {{ getArraysTitle(applicationArea, applicationAreas) }}
-                  </span>
-                </div>
-
-              </div>
-
-              <template slot="popover">
-
-                <div class="filter-dropdown-row">
-
-                  <div class="filter-dropdown-form">
-
-                    <div class="filter-dropdown-checkboxes">
-
-                      <div
-                        v-for="appArea in applicationAreas"
-                        :key="appArea.id"
-                        class="filter-dropdown-checkbox">
-                        <div class="form-checkbox">
-                          <label>
-                            <input
-                              type="checkbox"
-                              name="price-range"
-                              :value="appArea.id"
-                              @change="getSearchResults"
-                              v-model="applicationArea">
-                            <span>
-                              {{ appArea.title }}
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="filter-dropdown-info">
-
-                    <span class="icon-exc"></span>
-
-                    <p>Выбрать правильную мощность непросто. Для этого нужно обладать хотя бы базовыми познаниями в электротехнике.<br>В противном случае лучше обратиться к специалистам, иначе можно запутаться в терминах и цифрах.</p>
-
-                  </div>
-
-                </div>
-
-              </template>
-
-            </v-popover>
-
-          </div>
+          <FiltersBlockPrice
+            ref="filtersBlockPrice"
+            @change="getSearchResults"/>
+
+          <FiltersBlockClass
+            ref="filtersBlockClass"
+            @change="getSearchResults"/>
+
+          <FiltersBlockEngine
+            ref="filtersBlockEngine"
+            @change="getSearchResults"/>
+
+          <FiltersBlockArea
+            ref="filtersBlockArea"
+            @change="getSearchResults"/>
 
         </div>
 
@@ -449,30 +132,6 @@ import { mapState } from 'vuex'
 
 let initialState = {
   type: [],
-  power: [200, 300],
-  powerRange: [0, 2500],
-  helpPowerArray: [
-    [100, 200],
-    [200, 300],
-    [300, 500],
-    [500, 1000],
-    [1000, 2500]
-  ],
-  price: [0, 5000000],
-  priceRange: [0, 5000000],
-  helpPriceArray: [
-    [0, 5000000],
-    [25000, 50000],
-    [50000, 100000],
-    [100000, 250000],
-    [250000, 500000],
-    [500000, 1000000],
-    [1000000, 2500000],
-    [2500000, 5000000]
-  ],
-  productClass: [],
-  engine: [],
-  applicationArea: [],
   load: false,
   selectedSort: 0
 }
@@ -484,9 +143,6 @@ export default {
   computed: {
     ...mapState({
       types: state => state.filters.types,
-      classes: state => state.filters.classes,
-      applicationAreas: state => state.filters.applicationAreas,
-      engines: state => state.filters.engines,
       filterResults: state => state.filters.filterResults,
       sorts: state => state.filters.sorts
     })
@@ -506,34 +162,13 @@ export default {
   ),
   methods: {
     resetFilter () {
+      this.$refs.filtersBlockPowerBig.reset()
+      this.$refs.filtersBlockPrice.reset()
+      this.$refs.filtersBlockClass.reset()
+      this.$refs.filtersBlockEngine.reset()
+      this.$refs.filtersBlockArea.reset()
       Object.assign(this.$data, getInitialState())
       this.getSearchResults()
-    },
-    selectPower (val) {
-      this.power = val
-      this.getSearchResults()
-    },
-    selectPrice (val) {
-      this.price = val
-      this.getSearchResults()
-    },
-    compareArrays (arr1, arr2) {
-      if (arr1.length !== arr2.length) {
-        return false
-      }
-      for (let i = 0; i < arr1.length; i++) {
-        if (arr1[i] !== arr2[i]) {
-          return false
-        }
-      }
-      return true
-    },
-    getArraysTitle (object, array) {
-      let arr = []
-      object.forEach(item => {
-        arr.push(array.filter(typeItem => typeItem.id === item)[0].title)
-      })
-      return arr.join(', ')
     },
     getSearchResults () {
       this.$emit('loaded', true)

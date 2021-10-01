@@ -1,10 +1,24 @@
 <template>
 
-  <CatalogMainWindow
-    :title="catalogCategory.title"
-    :sliderTitle="catalogCategory.advantages.title"
-    :slideList="catalogCategory.advantages.list"
-    :downloadButton="false"/>
+  <div class="categories-page">
+
+    <CatalogMainWindow
+      :title="catalogCategory.title"
+      :sliderTitle="catalogCategory.advantages.title"
+      :slideList="catalogCategory.advantages.list"
+      :downloadButton="false"/>
+
+    <section class="s-categories">
+      <div class="container">
+
+        <div class="xs-title">Быстрый подбор оборудования</div>
+
+        <FiltersCategory/>
+
+      </div>
+    </section>
+
+  </div>
 
 </template>
 
@@ -31,6 +45,7 @@ export default {
   }),
   mounted () {
     this.$store.dispatch('catalogCategory/getCatalogCategoryInfo')
+    this.$store.dispatch('catalogCategory/getCatalogCategories')
   }
 }
 </script>

@@ -43,15 +43,15 @@
                   <div class="info-link">
                     <v-popover
                       placement="right-start"
+                      popoverClass="slider-adv-popover"
                       boundariesElement="document.body">
 
                       <div class="info-link-btn"></div>
 
                       <template slot="popover">
-                        <div class="info-hover-dropdown wide">
-                          <p>Мы имеем опыт поставки сложных комплексов в отдаленные северные регионы.</p>
-                          <p>Вы можете заказать у нас небольшие стационарные и передвижные генераторы с тепло-,шумоизоляцией, в кожухах, утепленных контейнерах.</p>
-                        </div>
+                        <div
+                          class="info-hover-dropdown wide"
+                          v-html="slide.descr" />
                       </template>
 
                     </v-popover>

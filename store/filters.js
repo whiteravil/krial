@@ -3,6 +3,8 @@ export const state = () => ({
   classes: [],
   applicationAreas: [],
   engines: [],
+  manufacturers: [],
+  manufacturerCountries: [],
   filterResults: [],
   sorts: []
 })
@@ -19,6 +21,12 @@ export const mutations = {
   },
   setFilterAllEngines (state, array) {
     state.engines = array
+  },
+  setFilterAllManufacturers (state, array) {
+    state.manufacturers = array
+  },
+  setFilterAllManufacturerCountries (state, array) {
+    state.manufacturerCountries = array
   },
   setFilterResults (state, array) {
     state.filterResults = array
@@ -44,6 +52,14 @@ export const actions = {
   getFilterAllEngines (ctx) {
     let res = require('~/DATABASE/filters/engines.js').default
     ctx.commit('setFilterAllEngines', res)
+  },
+  getFilterAllManufacturers (ctx) {
+    let res = require('~/DATABASE/filters/manufacturers.js').default
+    ctx.commit('setFilterAllManufacturers', res)
+  },
+  getFilterAllManufacturerCountries (ctx) {
+    let res = require('~/DATABASE/filters/manufacturerCountries.js').default
+    ctx.commit('setFilterAllManufacturerCountries', res)
   },
   getFilterResults (ctx, data) {
     return new Promise(resolve => {

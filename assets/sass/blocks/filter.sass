@@ -85,10 +85,25 @@
 
   &.active
     .filter-item-popup
+      .filter-item-selected-label
+        transform: translateY(-10px)
       .trigger
         &:after
           opacity: 1
           visibility: visible
+
+  &.accent
+    .filter-item-selected
+      padding-left: 44px
+      padding-right: 34px
+    .filter-item-selected-label
+      font-size: 15px
+      font-weight: bold
+      padding-right: 43px
+      width: 100%
+      &:after
+        font-size: 11px
+
 
 .filter-item-popover-overlay
   position: absolute
@@ -99,6 +114,7 @@
 
 .filter-item-selected
   padding: 20px 20px 20px 45px
+  position: relative
 
 .filter-item-selected-label
   position: relative
@@ -115,7 +131,8 @@
     line-height: 1
     font-weight: normal
     right: 0
-    top: 4px
+    top: 50%
+    margin-top: -4px
     +tr
 
 .filter-item-selected-value
@@ -125,6 +142,9 @@
   white-space: nowrap
   overflow: hidden
   text-overflow: ellipsis
+  position: absolute
+  bottom: 10px
+  max-width: calc(100% - 65px)
 
 .filter-item-dropdown
   position: absolute
@@ -138,16 +158,18 @@
     opacity: 1
 
 .filter-dropdown-row
-  width: 659px
+  //width: 659px
   display: flex
 
 .filter-dropdown-form
   padding: 17px 28px 28px
   flex-shrink: 0
-  width: 54%
+  //width: 54%
+  width: 355px
 
   &:last-child
-    width: 100%
+    //width: 100%
+    width: 440px
 
   .slider-range-inputs
     font-size: 30px
@@ -155,7 +177,8 @@
 .filter-dropdown-info
   padding: 28px
   background-color: #ECF1FC
-  width: 46%
+  //width: 46%
+  width: 304px
   flex-shrink: 0
   line-height: 1.7
   color: #8E99AF
@@ -345,4 +368,27 @@
     margin-right: 58px
 
 .filter-item-dropdown
-  width: 659px
+  //width: 659px
+
+.filter-second-component
+  display: flex
+  align-items: center
+  background-color: #fff
+  .filter-item
+    min-height: 111px
+    margin-right: -1px
+    &:nth-last-child(2)
+      box-shadow: none
+      background-color: transparent
+    &.accent
+      width: 387px
+      flex-grow: 0
+  .filter-item-selected
+    padding-left: 37px
+    padding-right: 37px
+  .filter-item-selected-value
+    max-width: calc(100% - 65px)
+
+.filter-second-btn
+  margin-left: auto
+  padding: 0 25px

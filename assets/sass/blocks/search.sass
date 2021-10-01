@@ -665,6 +665,30 @@
       border-bottom-color: transparent
       border-top-color: #fff
 
+  &[x-placement^='right-start']
+    margin: 0 0 0 35px
+
+    .tooltip-arrow
+      left: auto !important
+      bottom: auto !important
+      top: 0 !important
+      right: 100% !important
+      border-color: transparent
+      border-top-color: #fff
+      border-right-color: #fff
+
+  &[x-placement^='left-start']
+    margin: 0 35px 0 0
+
+    .tooltip-arrow
+      left: 100% !important
+      bottom: auto !important
+      top: 0 !important
+      right: auto !important
+      border-color: transparent
+      border-top-color: #fff
+      border-left-color: #fff
+
   &.open
     opacity: 1
 
