@@ -69,7 +69,7 @@
     </div>
 
     <div
-      v-if="!withSort"
+      v-if="!withSort && withBtns"
       class="filters-footer">
 
       <div
@@ -155,6 +155,10 @@ export default {
     withSort: {
       type: Boolean,
       default: false
+    },
+    withBtns: {
+      type: Boolean,
+      default: true
     }
   },
   data: () => (

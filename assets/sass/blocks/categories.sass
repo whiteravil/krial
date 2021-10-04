@@ -1,3 +1,67 @@
 .s-categories
   padding: 26px 0 50px
   background-color: #EBF0FB
+
+.categories-row
+  margin: 0 -15px
+
+.category-product-sizer
+  width: calc(25% - 30px)
+
+.category-product-gutter
+  width: 30px
+
+.category-product-item
+  width: calc(25% - 30px)
+  margin: 0 0 30px
+  background-color: #fff
+  padding: 40px 44px
+  position: relative
+  min-height: 375px
+  overflow: hidden
+
+  &:nth-child(3)
+    width: calc(50% - 30px)
+
+.category-product-item-content
+  position: relative
+  z-index: 1
+
+  .h3
+    text-transform: uppercase
+    font-weight: normal
+    max-width: 270px
+
+    a
+      color: $textcolor
+      +tr
+
+      &:hover
+        color: $accent
+
+  ul
+    list-style-type: none
+    padding: 0
+    margin: 35px 0 0
+
+    li
+      margin-bottom: 16px
+
+      &:last-child
+        margin-bottom: 0
+
+      a
+        color: #8496B6
+        +tr
+        font-size: 12px
+        text-transform: uppercase
+
+        &:hover
+          color: $accent
+
+.category-product-item-img
+  img
+    position: absolute
+    width: 180%
+    right: -85%
+    bottom: -10%

@@ -15,6 +15,8 @@
 
         <FiltersCategory/>
 
+        <CatalogCategoryItems :list="products" />
+
       </div>
     </section>
 
@@ -28,9 +30,16 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'catalog.vue',
+  asyncData ({ store }) {
+    return Promise.all([
+      store.dispatch('catalogCategory/getCatalogCategoryInfo'),
+      store.dispatch('catalogCategory/getCatalogCategories')
+    ])
+  },
   computed: {
     ...mapState({
-      catalogCategory: state => state.catalogCategory
+      catalogCategory: state => state.catalogCategory,
+      products: state => state.catalogCategory.catalogCategories
     })
   },
   data: () => ({
@@ -42,10 +51,6 @@ export default {
         prevEl: '.main-slider-button-prev'
       }
     }
-  }),
-  mounted () {
-    this.$store.dispatch('catalogCategory/getCatalogCategoryInfo')
-    this.$store.dispatch('catalogCategory/getCatalogCategories')
-  }
+  })
 }
 </script>

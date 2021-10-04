@@ -48,6 +48,10 @@ export default {
     {
       src: '~plugins/autosize.js',
       ssr: false
+    },
+    {
+      src: '~plugins/masonry.js',
+      ssr: false
     }
   ],
 
