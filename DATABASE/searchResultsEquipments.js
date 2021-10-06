@@ -2,6 +2,7 @@ export default [
   {
     id: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
+    symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
     imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
@@ -23,6 +24,7 @@ export default [
   {
     id: 2,
     title: 'Дизельная электростанция KES-GEN344RE',
+    symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
     imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
@@ -44,6 +46,7 @@ export default [
   {
     id: 3,
     title: 'Дизельная электростанция KES-GEN344RE',
+    symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
     imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
@@ -65,6 +68,7 @@ export default [
   {
     id: 4,
     title: 'Дизельная электростанция KES-GEN344RE',
+    symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
     imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
@@ -86,6 +90,7 @@ export default [
   {
     id: 5,
     title: 'Дизельная электростанция KES-GEN344RE',
+    symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
     imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
@@ -107,6 +112,7 @@ export default [
   {
     id: 6,
     title: 'Дизельная электростанция KES-GEN344RE',
+    symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
     imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
@@ -128,6 +134,7 @@ export default [
   {
     id: 7,
     title: 'Дизельная электростанция KES-GEN344RE',
+    symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
     imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
@@ -149,6 +156,7 @@ export default [
   {
     id: 8,
     title: 'Дизельная электростанция KES-GEN344RE',
+    symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
     imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
@@ -170,6 +178,7 @@ export default [
   {
     id: 9,
     title: 'Дизельная электростанция KES-GEN344RE',
+    symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
     imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
     tags: ['Запускается при любой температуре', 'Премиум-класс'],

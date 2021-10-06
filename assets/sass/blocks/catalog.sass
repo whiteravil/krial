@@ -11,3 +11,37 @@
   height: 550px
   background-color: #0c5eff
   filter: grayscale(1)
+
+.catalog-filter
+  display: flex
+  justify-content: flex-end
+  align-items: center
+  margin-bottom: 20px
+
+  .sort-selected
+    span
+      color: #8496B6
+
+.catalog-sort
+  margin-right: 28px
+
+.catalog-view
+  display: flex
+  align-items: center
+
+.catalog-view-btn
+  text-decoration: none !important
+  +tr
+  color: #8496B6
+  font-size: 15px
+  margin-right: 16px
+  display: flex
+
+  &:last-child
+    margin-right: 0
+
+  &:hover,
+  &.active
+    color: $accent
+  .icon-list
+    font-size: 19px

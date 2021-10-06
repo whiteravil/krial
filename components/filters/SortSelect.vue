@@ -28,6 +28,9 @@
 <script>
 export default {
   name: 'SortSelect',
+  asyncData (store) {
+
+  },
   props: {
     list: Array,
     selected: Number
