@@ -16,6 +16,7 @@ export default [
     powerFactor: 0.8,
     voltage: 400,
     currentFrequency: 50,
+    availability: 1,
     price: 1387111,
     updateDate: 'Thu Sep 17 2021 16:54:27 GMT+0300 (Москва, стандартное время)',
     liked: true
@@ -37,6 +38,7 @@ export default [
     powerFactor: 0.8,
     voltage: 400,
     currentFrequency: 50,
+    availability: 1,
     price: 1387111,
     updateDate: 'Thu Sep 16 2021 16:54:27 GMT+0300 (Москва, стандартное время)',
     liked: false
@@ -58,6 +60,7 @@ export default [
     powerFactor: 0.8,
     voltage: 400,
     currentFrequency: 50,
+    availability: 1,
     price: 1387111,
     updateDate: 'Thu Sep 15 2021 16:54:27 GMT+0300 (Москва, стандартное время)',
     liked: false
@@ -79,6 +82,7 @@ export default [
     powerFactor: 0.8,
     voltage: 400,
     currentFrequency: 50,
+    availability: 1,
     price: 1387111,
     updateDate: 'Thu Sep 15 2021 16:54:27 GMT+0300 (Москва, стандартное время)',
     liked: false
@@ -100,6 +104,7 @@ export default [
     powerFactor: 0.8,
     voltage: 400,
     currentFrequency: 50,
+    availability: 1,
     price: 1387111,
     updateDate: 'Thu Sep 15 2021 16:54:27 GMT+0300 (Москва, стандартное время)',
     liked: false
@@ -121,6 +126,7 @@ export default [
     powerFactor: 0.8,
     voltage: 400,
     currentFrequency: 50,
+    availability: 1,
     price: 1387111,
     updateDate: 'Thu Sep 15 2021 16:54:27 GMT+0300 (Москва, стандартное время)',
     liked: false
@@ -142,6 +148,7 @@ export default [
     powerFactor: 0.8,
     voltage: 400,
     currentFrequency: 50,
+    availability: 1,
     price: 1387111,
     updateDate: 'Thu Sep 15 2021 16:54:27 GMT+0300 (Москва, стандартное время)',
     liked: false
@@ -163,6 +170,7 @@ export default [
     powerFactor: 0.8,
     voltage: 400,
     currentFrequency: 50,
+    availability: 1,
     price: 1387111,
     updateDate: 'Thu Sep 15 2021 16:54:27 GMT+0300 (Москва, стандартное время)',
     liked: false
@@ -184,6 +192,7 @@ export default [
     powerFactor: 0.8,
     voltage: 400,
     currentFrequency: 50,
+    availability: 1,
     price: 1387111,
     updateDate: 'Thu Sep 15 2021 16:54:27 GMT+0300 (Москва, стандартное время)',
     liked: false

@@ -7,11 +7,6 @@
   grid-template-columns: repeat(4, 1fr)
   grid-gap: 30px
 
-.catalog-item
-  height: 550px
-  background-color: #0c5eff
-  filter: grayscale(1)
-
 .catalog-filter
   display: flex
   justify-content: flex-end
@@ -43,5 +38,245 @@
   &:hover,
   &.active
     color: $accent
+
   .icon-list
     font-size: 19px
+
+.catalog-item
+  position: relative
+  overflow: hidden
+  background-color: #fff
+  padding: 95px 30px 30px
+
+  &:hover
+    .catalog-item-body
+      opacity: 0
+      visibility: hidden
+      transform: translateY(-10px)
+
+    .catalog-item-hover
+      opacity: 1
+      visibility: visible
+      transform: translateY(0)
+
+  &.big
+    grid-column: span 2
+    .catalog-item-descr
+      ul
+        display: flex
+        flex-wrap: wrap
+        margin: 0 -30px
+        li
+          flex-shrink: 0
+          width: 50%
+          padding: 0 30px
+    .catalog-item-btn .btn:last-child
+      flex-grow: 0
+      min-width: 185px
+
+
+.catalog-item-top
+  position: absolute
+  top: 30px
+  left: 30px
+  right: 30px
+  display: flex
+  z-index: 1
+
+.catalog-item-tags
+  display: flex
+  flex-wrap: wrap
+  margin-right: 10px
+
+.catalog-item-flag
+  img
+    width: 30px
+    display: block
+
+.catalog-item-body
+  +tr
+
+.catalog-item-img
+  margin-bottom: 40px
+
+  img
+    width: 100%
+    display: block
+    filter: grayscale(1)
+    will-change: filter
+    height: auto
+
+.catalog-item-title
+  margin-bottom: 35px
+  font-size: 15px
+  line-height: 1.333
+  font-weight: bold
+
+  a
+    +tr
+    color: $textcolor
+    text-decoration: none !important
+
+    &:hover
+      color: $accent
+
+.catalog-item-price-block
+  display: flex
+  align-items: flex-end
+  margin-bottom: 30px
+
+.catalog-item-price
+  font-size: 20px
+  font-weight: bold
+  margin-right: 13px
+  white-space: nowrap
+
+.catalog-item-availability
+  display: flex
+  align-items: flex-end
+  flex-grow: 1
+  justify-content: space-between
+
+.catalog-item-availability-left
+  font-size: 12px
+  color: #8496B6
+  margin: 0 30px 3px 0
+
+.catalog-item-descr
+  ul
+    list-style-type: none
+    padding: 0
+    margin: 0
+    font-size: 12px
+
+    li
+      display: flex
+      margin-bottom: 5px
+
+      &:last-child
+        margin-bottom: 0
+
+      span
+        &:first-child
+          color: #92A8B9
+          margin-right: 10px
+          flex-grow: 1
+
+        &:last-child
+          font-weight: bold
+          text-align: right
+
+.catalog-item-btn
+  display: flex
+  align-items: center
+  margin-top: 35px
+
+  .btn
+    font-size: 12px
+    padding: 0 22px
+    margin-right: 4px
+    text-transform: none
+
+    &:first-child
+
+    &:last-child
+      margin-right: 0
+      flex-grow: 1
+
+    .btn-with-icon span
+      font-size: 20px
+      margin-left: 19px
+
+.catalog-item-hover
+  position: absolute
+  padding: 30px
+  bottom: 0
+  left: 0
+  width: 100%
+  padding: 30px
+  transform: translateY(10px)
+  opacity: 0
+  visibility: hidden
+  +tr
+
+  .catalog-item-title
+    margin-bottom: 6px
+
+  .catalog-item-availability
+    align-items: center
+    margin-bottom: 30px
+
+.adw-block
+  position: relative
+  overflow: hidden
+  &:hover
+    .adw-block-bg
+      img
+        transform: scale(1.1)
+
+.adw-block-bg
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  overflow: hidden
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+    +tr4
+
+.adw-block-content
+  position: relative
+  z-index: 1
+  height: 100%
+  display: flex
+  flex-direction: column
+  padding: 30px
+  background: linear-gradient(0deg, rgba(80, 105, 126, 0.8), rgba(80, 105, 126, 0.8))
+
+.adw-block-tags
+  margin-bottom: 30px
+  display: flex
+  flex-wrap: wrap
+  .tag
+    background-color: #EDF4FA
+
+.adw-block-title
+  margin-top: auto
+  font-weight: bold
+  line-height: 1.25
+  color: #fff
+  font-size: 20px
+
+.catalog-item-big-body
+  display: flex
+  align-items: flex-end
+  margin-bottom: 34px
+
+.catalog-item-big-body-left
+  padding-right: 10px
+  width: 42.5%
+  .catalog-item-title
+    margin: 0
+
+.catalog-item-big-body-right
+  width: 57.5%
+  .catalog-item-img
+    margin: 0
+
+.catalog-order-block
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-start
+  padding: 30px
+  .h3
+    margin-bottom: 18px
+    line-height: 1.25
+  p
+    margin-bottom: 36px
+    color: #8496B6
+    font-size: 12px

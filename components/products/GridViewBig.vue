@@ -1,54 +1,61 @@
 <template>
-
-  <div class="catalog-item">
-
+  <div class="catalog-item big">
     <div class="catalog-item-top">
-
       <div class="catalog-item-tags">
         <span
-          class="tag"
           v-for="tag in item.tags"
           :key="tag.id"
-          v-text="tag"/>
+          class="tag"
+          v-text="tag"
+        />
       </div>
 
       <div class="catalog-item-flag">
         <img
           :src="item.manufacturer.imgSrc"
-          alt="">
+          alt=""
+        >
       </div>
-
     </div>
 
     <div class="catalog-item-body">
 
-      <div class="catalog-item-img">
-        <img
-          width="378"
-          height="258"
-          :src="item.imgSrc"
-          alt="">
-      </div>
+      <div class="catalog-item-big-body">
 
-      <div class="catalog-item-title">
-        <a :href="item.url">{{ item.title }}</a>
+        <div class="catalog-item-big-body-left">
+          <div class="catalog-item-title">
+            <a :href="item.url">{{ item.title }}</a>
+          </div>
+        </div>
+
+        <div class="catalog-item-big-body-right">
+          <div class="catalog-item-img">
+            <img
+              width="378"
+              height="258"
+              :src="item.imgSrc"
+              alt="">
+          </div>
+        </div>
+
       </div>
 
       <div class="catalog-item-price-block">
-
-        <div class="catalog-item-price">{{ item.price | priceFilter }} ₽</div>
+        <div class="catalog-item-price">
+          {{ item.price | priceFilter }} ₽
+        </div>
 
         <div class="catalog-item-availability">
           <div class="catalog-item-availability-left">
             {{ getAvailability(item.availability) }}
           </div>
           <div class="catalog-item-availability-right">
-          <span
-            class="liked-btn"
-            :class="{'active': item.liked}"/>
+            <span
+              class="liked-btn"
+              :class="{'active': item.liked}"
+            />
           </div>
         </div>
-
       </div>
 
       <div class="catalog-item-descr">
@@ -61,13 +68,19 @@
             <span>Двигатель</span>
             <span>{{ item.engineModel }}</span>
           </li>
+          <li>
+            <span>Частота вращения ,об/мин</span>
+            <span>{{ item.rotationFrequency }}</span>
+          </li>
+          <li>
+            <span>Объём двигателя, л</span>
+            <span>{{ item.engineVolume }}</span>
+          </li>
         </ul>
       </div>
-
     </div>
 
     <div class="catalog-item-hover">
-
       <div class="catalog-item-title">
         <a :href="item.url">{{ item.title }}</a>
       </div>
@@ -79,7 +92,8 @@
         <div class="catalog-item-availability-right">
           <span
             class="liked-btn"
-            :class="{'active': item.liked}"/>
+            :class="{'active': item.liked}"
+          />
         </div>
       </div>
 
@@ -116,22 +130,18 @@
         </ul>
 
         <div class="catalog-item-btn">
-          <a href="#" class="btn btn-with-icon">К сравнению <span class="icon-circle-plus"></span></a>
+          <a href="#" class="btn btn-with-icon">К сравнению <span class="icon-circle-plus"/></a>
           <a :href="item.url" class="btn btn-secondary">Подробнее</a>
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </template>
 
 <script>
 
 export default {
-  name: 'GridView',
+  name: 'GridViewBig',
   props: {
     item: Object
   },

@@ -21,7 +21,7 @@
               <FiltersSortSelect
                 :list="sorts"
                 :selected="selectedSort"
-                @selectItem="selectedSort = $event" />
+                @selectItem="selectedSort = $event"/>
             </div>
           </div>
 
@@ -29,12 +29,12 @@
             <a
               href="#"
               class="catalog-view-btn active">
-              <span class="icon-grid" />
+              <span class="icon-grid"/>
             </a>
             <a
               href="#"
               class="catalog-view-btn">
-              <span class="icon-list" />
+              <span class="icon-list"/>
             </a>
           </div>
 
@@ -43,14 +43,44 @@
         <div class="catalog">
 
           <template
-            v-for="product in products">
+            v-for="product in paginatedData">
+
             <ProductsGridView
               v-if="product.type === 1"
               :key="product.id"
               :item="product"/>
+
+            <Advertising
+              v-if="product.type === 2"
+              :key="product.id"
+              :item="product"/>
+
+            <ProductsGridViewBig
+              v-if="product.type === 3"
+              :key="product.id"
+              :item="product"/>
+
+            <div
+              v-if="product.type === 4"
+              :key="product.id"
+              class="catalog-order-block">
+              <div class="h3">Нужен контрагент для плотного сотрудничества?</div>
+              <p>Подберем оборудование с учетов всех условий эксплуатации</p>
+              <button class="btn">Оставить заявку</button>
+            </div>
+
           </template>
 
         </div>
+
+        {{currentPage}}
+
+        <BlocksPagination
+          :length="products.length"
+          :pages="pages"
+          :visibleLength="products.length"
+          :page="currentPage"
+          @page-to="currentPage = $event"/>
 
       </div>
     </section>
@@ -76,13 +106,23 @@ export default {
       catalogInfo: state => state.catalog,
       sorts: state => state.filters.sorts,
       products: state => state.catalog.products
-    })
+    }),
+    pages () {
+      return Math.ceil(this.products.length / this.visibleLength)
+    },
+    paginatedData () {
+      const start = (this.currentPage - 1) * this.visibleLength
+      const end = start + this.visibleLength
+      return this.products.slice(start, end)
+    }
   },
   data: () => ({
-    selectedSort: 0
+    selectedSort: 0,
+    currentPage: 1,
+    visibleLength: 19
   }),
   mounted () {
-    const catalogItems = document.querySelectorAll('.catalog-item')
+    const catalogItems = document.querySelectorAll('.catalog-item .catalog-item-img img')
     const hoverListener = e => {
       let rd = 800
       let cx = e.clientX

@@ -110,7 +110,7 @@
 
         <div class="equipment-price">
           <div class="price-sum">{{ $options.filters.priceFilter(searchItem.price) }} ₽</div>
-          <p>В наличии  — обновлено {{ parseDate(searchItem.updateDate) }}</p>
+          <p>{{ getAvailability(searchItem.availability) }} — обновлено {{ searchItem.updateDate | parseDate }}</p>
         </div>
 
         <div class="equipment-more">
@@ -133,8 +133,6 @@
 
 <script>
 
-import moment from 'moment'
-
 export default {
   name: 'EquipmentResults',
   props: {
@@ -142,17 +140,19 @@ export default {
     list: Array
   },
   methods: {
-    parseDate (date) {
-      let dateMoment = moment(date).locale('ru')
-      let currDate = moment(new Date())
-      let returnDate = dateMoment.format('DD MMMM')
-      if (currDate.year() > dateMoment.year()) {
-        returnDate = dateMoment.format('DD MMMM YYYY') + ' года'
+    getAvailability (id) {
+      let res = ''
+      switch (id) {
+        case 1:
+          res = 'В наличии'
+          break
+        case 2:
+          res = 'Нет в наличии'
+          break
+        default:
+          break
       }
-      if (currDate.day() === dateMoment.day()) {
-        returnDate = 'сегодня'
-      }
-      return returnDate
+      return res
     }
   }
 }
