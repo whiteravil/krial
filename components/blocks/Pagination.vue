@@ -6,7 +6,7 @@
       <button
         v-for="index in pages"
         :key="index"
-        class="pagination-nav-page"
+        class="pagination-nav-link"
         :class="{'active': index === page}"
         @click="$emit('page-to', index)">
         {{ index }}
@@ -18,11 +18,14 @@
     </nav>
 
     <div class="pagination-load-more">
-      <button class="btn">Показать еще</button>
+      <button
+        class="btn"
+        @click="$emit('load-more')"
+        :disabled="visibleLength === length">Показать еще</button>
     </div>
 
     <div class="pagination-visible">
-      Показано 38 из {{length}}
+      Показано {{ page === pages ? length : page * paginatedLength }} из {{length}}
     </div>
 
   </div>
@@ -39,6 +42,14 @@ export default {
     },
     page: Number,
     length: {
+      type: Number,
+      default: 0
+    },
+    paginatedLength: {
+      type: Number,
+      default: 0
+    },
+    visibleLength: {
       type: Number,
       default: 0
     }

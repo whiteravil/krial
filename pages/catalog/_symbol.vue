@@ -73,14 +73,26 @@
 
         </div>
 
-        {{currentPage}}
-
         <BlocksPagination
           :length="products.length"
           :pages="pages"
-          :visibleLength="products.length"
+          :paginatedLength="paginatedData.length"
+          :visibleLength="visibleLength"
           :page="currentPage"
-          @page-to="currentPage = $event"/>
+          @page-to="currentPage = $event"
+          @load-more="loadMore"/>
+
+      </div>
+    </section>
+
+    <section class="s-useful-articles">
+      <div class="container">
+
+        <div class="section-title">
+          <div class="h2">Полезные статьи о оборудовании</div>
+        </div>
+
+        <BlocksArticlesSlider />
 
       </div>
     </section>
@@ -121,6 +133,15 @@ export default {
     currentPage: 1,
     visibleLength: 19
   }),
+  methods: {
+    loadMore () {
+      if ((this.products.length - this.visibleLength) < 4) {
+        this.visibleLength = this.products.length
+      } else {
+        this.visibleLength = this.visibleLength + 4
+      }
+    }
+  },
   mounted () {
     const catalogItems = document.querySelectorAll('.catalog-item .catalog-item-img img')
     const hoverListener = e => {
