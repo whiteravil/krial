@@ -153,10 +153,10 @@
 
       <div class="footer-sticks">
         <div class="footer-stick">
-          <img src="~/assets/images/dist/sticks/ten-years.svg" alt="">
+          <img src="/images/sticks/ten-years.svg" alt="">
         </div>
         <div class="footer-stick">
-          <img src="~/assets/images/dist/sticks/ecology.svg" alt="">
+          <img src="/images/sticks/ecology.svg" alt="">
         </div>
       </div>
 

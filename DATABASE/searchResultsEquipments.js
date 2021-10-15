@@ -4,11 +4,11 @@ export default [
     title: 'Дизельная электростанция KES-GEN344RE',
     symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
-    imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
+    imgSrc: '/images/products/product-thumb-1.png',
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
     manufacturer: {
       name: 'Perkins',
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     },
     fuelConsumption: 2.7,
     maxPower: 200,
@@ -27,11 +27,11 @@ export default [
     title: 'Дизельная электростанция KES-GEN344RE',
     symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
-    imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
+    imgSrc: '/images/products/product-thumb-1.png',
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
     manufacturer: {
       name: 'Perkins',
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     },
     fuelConsumption: 2.7,
     maxPower: 200,
@@ -50,11 +50,11 @@ export default [
     title: 'Дизельная электростанция KES-GEN344RE',
     symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
-    imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
+    imgSrc: '/images/products/product-thumb-1.png',
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
     manufacturer: {
       name: 'Perkins',
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     },
     fuelConsumption: 2.7,
     maxPower: 200,
@@ -73,11 +73,11 @@ export default [
     title: 'Дизельная электростанция KES-GEN344RE',
     symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
-    imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
+    imgSrc: '/images/products/product-thumb-1.png',
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
     manufacturer: {
       name: 'Perkins',
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     },
     fuelConsumption: 2.7,
     maxPower: 200,
@@ -96,11 +96,11 @@ export default [
     title: 'Дизельная электростанция KES-GEN344RE',
     symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
-    imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
+    imgSrc: '/images/products/product-thumb-1.png',
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
     manufacturer: {
       name: 'Perkins',
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     },
     fuelConsumption: 2.7,
     maxPower: 200,
@@ -119,11 +119,11 @@ export default [
     title: 'Дизельная электростанция KES-GEN344RE',
     symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
-    imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
+    imgSrc: '/images/products/product-thumb-1.png',
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
     manufacturer: {
       name: 'Perkins',
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     },
     fuelConsumption: 2.7,
     maxPower: 200,
@@ -142,11 +142,11 @@ export default [
     title: 'Дизельная электростанция KES-GEN344RE',
     symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
-    imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
+    imgSrc: '/images/products/product-thumb-1.png',
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
     manufacturer: {
       name: 'Perkins',
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     },
     fuelConsumption: 2.7,
     maxPower: 200,
@@ -165,11 +165,11 @@ export default [
     title: 'Дизельная электростанция KES-GEN344RE',
     symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
-    imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
+    imgSrc: '/images/products/product-thumb-1.png',
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
     manufacturer: {
       name: 'Perkins',
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     },
     fuelConsumption: 2.7,
     maxPower: 200,
@@ -188,11 +188,11 @@ export default [
     title: 'Дизельная электростанция KES-GEN344RE',
     symbol: 'dizelnaya-ehlektrostanciya-kes-gen344re',
     url: '#',
-    imgSrc: require('~/assets/images/dist/products/product-thumb-1.png'),
+    imgSrc: '/images/products/product-thumb-1.png',
     tags: ['Запускается при любой температуре', 'Премиум-класс'],
     manufacturer: {
       name: 'Perkins',
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     },
     fuelConsumption: 2.7,
     maxPower: 200,

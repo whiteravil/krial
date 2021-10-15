@@ -20,7 +20,10 @@
   min-height: 375px
   overflow: hidden
 
-  &:nth-child(3)
+  &.type-2
+    min-height: 575px
+
+  &.type-3
     width: calc(50% - 30px)
 
 .category-product-item-content
@@ -62,6 +65,8 @@
 .category-product-item-img
   img
     position: absolute
-    width: 180%
-    right: -85%
-    bottom: -10%
+    right: 0
+    bottom: 0
+    height: 100%
+    object-position: right bottom
+    object-fit: cover

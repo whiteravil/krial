@@ -1,5 +1,5 @@
 export default {
-  background: require('~/assets/images/dist/main-window-bg.jpg'),
+  background: '/images/main-window-bg.jpg',
   title: 'Любые решения <br>в области энергетического оборудования',
   menu: [
     {

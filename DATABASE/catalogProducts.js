@@ -4,7 +4,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -22,7 +22,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     }
   },
   {
@@ -30,7 +30,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -48,7 +48,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -56,7 +56,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -74,7 +74,7 @@ export default [
     currentFrequency: 50,
     availability: 2,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/kr.svg')
+      imgSrc: '/images/flags/kr.svg'
     }
   },
   {
@@ -82,7 +82,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -100,7 +100,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/cn.svg')
+      imgSrc: '/images/flags/cn.svg'
     }
   },
   {
@@ -108,7 +108,7 @@ export default [
     type: 2,
     title: 'Доработка двигателя уменьшит расход топлива на 10%',
     tags: ['Уникальное решение'],
-    imgSrc: require('~/assets/images/dist/catalog/2.jpg'),
+    imgSrc: '/images/catalog/2.jpg',
     url: '#'
   },
   {
@@ -116,7 +116,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -134,7 +134,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/it.svg')
+      imgSrc: '/images/flags/it.svg'
     }
   },
   {
@@ -142,7 +142,7 @@ export default [
     type: 3,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -160,7 +160,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     }
   },
   {
@@ -168,7 +168,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -186,7 +186,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -194,7 +194,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -212,7 +212,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -220,7 +220,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -238,7 +238,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -246,7 +246,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -264,7 +264,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -272,7 +272,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -290,7 +290,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -298,7 +298,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -316,7 +316,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -331,7 +331,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -349,7 +349,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -357,7 +357,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -375,7 +375,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -383,7 +383,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -401,7 +401,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -409,7 +409,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -427,7 +427,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -435,7 +435,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -453,7 +453,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -461,7 +461,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -479,7 +479,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     }
   },
   {
@@ -487,7 +487,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -505,7 +505,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -513,7 +513,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -531,7 +531,7 @@ export default [
     currentFrequency: 50,
     availability: 2,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/kr.svg')
+      imgSrc: '/images/flags/kr.svg'
     }
   },
   {
@@ -539,7 +539,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -557,7 +557,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/cn.svg')
+      imgSrc: '/images/flags/cn.svg'
     }
   },
   {
@@ -565,7 +565,7 @@ export default [
     type: 2,
     title: 'Доработка двигателя уменьшит расход топлива на 10%',
     tags: ['Уникальное решение'],
-    imgSrc: require('~/assets/images/dist/catalog/2.jpg'),
+    imgSrc: '/images/catalog/2.jpg',
     url: '#'
   },
   {
@@ -573,7 +573,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -591,7 +591,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/it.svg')
+      imgSrc: '/images/flags/it.svg'
     }
   },
   {
@@ -599,7 +599,7 @@ export default [
     type: 3,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -617,7 +617,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     }
   },
   {
@@ -625,7 +625,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -643,7 +643,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -651,7 +651,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -669,7 +669,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -677,7 +677,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -695,7 +695,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -703,7 +703,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -721,7 +721,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -729,7 +729,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -747,7 +747,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -755,7 +755,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -773,7 +773,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -788,7 +788,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -806,7 +806,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -814,7 +814,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -832,7 +832,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -840,7 +840,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -858,7 +858,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -866,7 +866,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -884,7 +884,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -892,7 +892,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -910,7 +910,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -918,7 +918,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -936,7 +936,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     }
   },
   {
@@ -944,7 +944,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -962,7 +962,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -970,7 +970,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -988,7 +988,7 @@ export default [
     currentFrequency: 50,
     availability: 2,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/kr.svg')
+      imgSrc: '/images/flags/kr.svg'
     }
   },
   {
@@ -996,7 +996,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -1014,7 +1014,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/cn.svg')
+      imgSrc: '/images/flags/cn.svg'
     }
   },
   {
@@ -1022,7 +1022,7 @@ export default [
     type: 2,
     title: 'Доработка двигателя уменьшит расход топлива на 10%',
     tags: ['Уникальное решение'],
-    imgSrc: require('~/assets/images/dist/catalog/2.jpg'),
+    imgSrc: '/images/catalog/2.jpg',
     url: '#'
   },
   {
@@ -1030,7 +1030,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -1048,7 +1048,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/it.svg')
+      imgSrc: '/images/flags/it.svg'
     }
   },
   {
@@ -1056,7 +1056,7 @@ export default [
     type: 3,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -1074,7 +1074,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/en.svg')
+      imgSrc: '/images/flags/en.svg'
     }
   },
   {
@@ -1082,7 +1082,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -1100,7 +1100,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -1108,7 +1108,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -1126,7 +1126,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -1134,7 +1134,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -1152,7 +1152,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -1160,7 +1160,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -1178,7 +1178,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -1186,7 +1186,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/1.png'),
+    imgSrc: '/images/catalog/1.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -1204,7 +1204,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -1212,7 +1212,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -1230,7 +1230,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   },
   {
@@ -1238,7 +1238,7 @@ export default [
     type: 1,
     title: 'Дизельная электростанция KES-GEN344RE',
     url: '/catalog/dizelnye-generatory-i-ehlektrostancii/dizelnaya-ehlektrostanciya-kes-gen344re',
-    imgSrc: require('~/assets/images/dist/catalog/3.png'),
+    imgSrc: '/images/catalog/3.png',
     tags: [
       'Запускается при любой температуре',
       'Премиум-класс'
@@ -1256,7 +1256,7 @@ export default [
     currentFrequency: 50,
     availability: 1,
     manufacturer: {
-      imgSrc: require('~/assets/images/dist/flags/se.svg')
+      imgSrc: '/images/flags/se.svg'
     }
   }
 ]

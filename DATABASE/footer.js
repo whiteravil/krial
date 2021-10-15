@@ -9,19 +9,19 @@ export default {
       id: 1,
       title: 'Завод КЭС принял участие в «MiningWorld Russia 2019»',
       url: '#',
-      imgSrc: require('~/assets/images/dist/press-center-img.jpg')
+      imgSrc: '/images/press-center-img.jpg'
     },
     {
       id: 2,
       title: 'Чемпионат WorkSkills Kazan 2019: старт соревнований!',
       url: '#',
-      imgSrc: require('~/assets/images/dist/press-center-img.jpg')
+      imgSrc: '/images/press-center-img.jpg'
     },
     {
       id: 3,
       title: 'Технология «АРМАК HYDROENERGY» - экономия на топливе',
       url: '#',
-      imgSrc: require('~/assets/images/dist/press-center-img.jpg')
+      imgSrc: '/images/press-center-img.jpg'
     }
   ],
   copyright: '© 2011-2021 ООО Завод КриалЭнергоСтрой',

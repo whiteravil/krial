@@ -2,7 +2,7 @@ export default [
   {
     id: 1,
     title: 'Каталог',
-    url: '#'
+    url: '/catalog'
   },
   {
     id: 2,

@@ -1,5 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  server: {
+    port: 8080,
+    host: '0.0.0.0'
+  },
   head: {
     title: 'krial-energo',
     htmlAttrs: {
@@ -71,9 +75,23 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: process.env.API_URL,
+    proxyHeaders: false,
+    credentials: false
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  proxy: {
+    '/krial': {
+      target: 'https://api.bikstart.ru',
+      pathRewrite: {
+        '^/krial': '/krial',
+        changeOrigin: true
+      }
+    }
   }
 }

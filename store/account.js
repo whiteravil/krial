@@ -13,30 +13,21 @@ export const mutations = {
 }
 
 export const actions = {
-  getBasketList (ctx) {
-    let res = require('~/DATABASE/basket.js').default
-    ctx.commit('setBasketList', res)
+  async getBasketList (ctx) {
+    const res = await this.$axios.get('basket.json')
+    console.log(res)
+    ctx.commit('setBasketList', res.data)
   },
-  getCompareList (ctx) {
-    let res = require('~/DATABASE/compare.js').default
-    ctx.commit('setCompareList', res)
+  async getCompareList (ctx) {
+    const res = await this.$axios.get('compare.json')
+    ctx.commit('setCompareList', res.data)
   },
-  deleteBasketItem (ctx, id) {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        let res = require('~/DATABASE/basket.js').default
-        ctx.commit('setBasketList', res)
-        resolve()
-      }, 750)
-    })
+  async deleteBasketItem (ctx, id) {
+    const res = await this.$axios.get('basket.json')
+    ctx.commit('setBasketList', res.data)
   },
-  deleteCompareItem (ctx, id) {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        let res = require('~/DATABASE/compare.js').default
-        ctx.commit('setCompareList', res)
-        resolve()
-      }, 750)
-    })
+  async deleteCompareItem (ctx, id) {
+    const res = await this.$axios.get('compare.json')
+    ctx.commit('setCompareList', res.data)
   }
 }

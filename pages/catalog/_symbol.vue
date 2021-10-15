@@ -8,7 +8,9 @@
       :slideList="catalogInfo.catalogAdvantages.list"
       :downloadButton="false"/>
 
-    <section class="s-catalog">
+    <section
+      ref="sCatalog"
+      class="s-catalog">
       <div class="container">
 
         <Filters :withBtns="false"/>
@@ -79,7 +81,7 @@
           :paginatedLength="paginatedData.length"
           :visibleLength="visibleLength"
           :page="currentPage"
-          @page-to="currentPage = $event"
+          @page-to="goToPage"
           @load-more="loadMore"/>
 
       </div>
@@ -92,7 +94,7 @@
           <div class="h2">Полезные статьи о оборудовании</div>
         </div>
 
-        <BlocksArticlesSlider />
+        <SliderArticles />
 
       </div>
     </section>
@@ -140,6 +142,19 @@ export default {
       } else {
         this.visibleLength = this.visibleLength + 4
       }
+    },
+    offsetTop (el) {
+      const rect = el.getBoundingClientRect()
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      return rect.top + scrollTop
+    },
+    goToPage (e) {
+      const block = this.$refs.sCatalog
+      window.scrollTo({
+        top: this.offsetTop(block),
+        behavior: 'smooth'
+      })
+      this.currentPage = e
     }
   },
   mounted () {

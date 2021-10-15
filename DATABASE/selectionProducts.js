@@ -1,12 +1,12 @@
 export default {
   title: 'Более 6000 моделей энергетического оборудования',
-  imgSrc: require('~/assets/images/dist/search/selection-bg.png'),
+  imgSrc: '/images/search/selection-bg.png',
   list: [
     {
       id: 1,
       title: 'Дизельные электростанции',
       url: '#',
-      imgSrc: require('~/assets/images/dist/products/product-1.png'),
+      imgSrc: '/images/products/product-1.png',
       advantages: [
         'нпс наших клиентов — 95%',
         'В среднем с момента оплаты до доставки — 4 дня',
@@ -18,7 +18,7 @@ export default {
       id: 2,
       title: 'Блок-контейнеры',
       url: '#',
-      imgSrc: require('~/assets/images/dist/products/product-1.png'),
+      imgSrc: '/images/products/product-1.png',
       advantages: [
         'нпс наших клиентов — 95%',
         'В среднем с момента оплаты до доставки — 4 дня',
@@ -30,7 +30,7 @@ export default {
       id: 3,
       title: 'Компрессоры',
       url: '#',
-      imgSrc: require('~/assets/images/dist/products/product-1.png'),
+      imgSrc: '/images/products/product-1.png',
       advantages: [
         'нпс наших клиентов — 95%',
         'В среднем с момента оплаты до доставки — 4 дня',
@@ -42,7 +42,7 @@ export default {
       id: 4,
       title: 'Котельные',
       url: '#',
-      imgSrc: require('~/assets/images/dist/products/product-1.png'),
+      imgSrc: '/images/products/product-1.png',
       advantages: [
         'нпс наших клиентов — 95%',
         'В среднем с момента оплаты до доставки — 4 дня',
@@ -54,7 +54,7 @@ export default {
       id: 5,
       title: 'Газопоршневые электростанции',
       url: '#',
-      imgSrc: require('~/assets/images/dist/products/product-1.png'),
+      imgSrc: '/images/products/product-1.png',
       advantages: [
         'нпс наших клиентов — 95%',
         'В среднем с момента оплаты до доставки — 4 дня',
@@ -66,7 +66,7 @@ export default {
       id: 6,
       title: 'Блочно-модульное здание',
       url: '#',
-      imgSrc: require('~/assets/images/dist/products/product-1.png'),
+      imgSrc: '/images/products/product-1.png',
       advantages: [
         'нпс наших клиентов — 95%',
         'В среднем с момента оплаты до доставки — 4 дня',
@@ -78,7 +78,7 @@ export default {
       id: 7,
       title: 'Стабилизаторы напряжения',
       url: '#',
-      imgSrc: require('~/assets/images/dist/products/product-1.png'),
+      imgSrc: '/images/products/product-1.png',
       advantages: [
         'нпс наших клиентов — 95%',
         'В среднем с момента оплаты до доставки — 4 дня',
@@ -90,7 +90,7 @@ export default {
       id: 8,
       title: 'Солнечные электростанции',
       url: '#',
-      imgSrc: require('~/assets/images/dist/products/product-1.png'),
+      imgSrc: '/images/products/product-1.png',
       advantages: [
         'нпс наших клиентов — 95%',
         'В среднем с момента оплаты до доставки — 4 дня',
@@ -102,7 +102,7 @@ export default {
       id: 9,
       title: 'ИБП',
       url: '#',
-      imgSrc: require('~/assets/images/dist/products/product-1.png'),
+      imgSrc: '/images/products/product-1.png',
       advantages: [
         'нпс наших клиентов — 95%',
         'В среднем с момента оплаты до доставки — 4 дня',
@@ -114,7 +114,7 @@ export default {
       id: 10,
       title: 'Холодильное оборудование',
       url: '#',
-      imgSrc: require('~/assets/images/dist/products/product-1.png'),
+      imgSrc: '/images/products/product-1.png',
       advantages: [
         'нпс наших клиентов — 95%',
         'В среднем с момента оплаты до доставки — 4 дня',
@@ -126,7 +126,7 @@ export default {
       id: 11,
       title: 'Системы пожаротушения',
       url: '#',
-      imgSrc: require('~/assets/images/dist/products/product-1.png'),
+      imgSrc: '/images/products/product-1.png',
       advantages: [
         'нпс наших клиентов — 95%',
         'В среднем с момента оплаты до доставки — 4 дня',
@@ -138,7 +138,7 @@ export default {
       id: 12,
       title: 'Насосные станции',
       url: '#',
-      imgSrc: require('~/assets/images/dist/products/product-1.png'),
+      imgSrc: '/images/products/product-1.png',
       advantages: [
         'нпс наших клиентов — 95%',
         'В среднем с момента оплаты до доставки — 4 дня',

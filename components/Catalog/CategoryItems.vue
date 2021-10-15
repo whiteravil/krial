@@ -19,24 +19,25 @@
         <div class="category-product-gutter"></div>
 
         <div
+          v-masonry-tile
           v-for="item in list"
           :key="item.id"
-          v-masonry-tile
-          class="category-product-item">
+          class="category-product-item"
+          :class="`type-${item.type ? item.type : 1}`">
 
           <div class="category-product-item-content">
             <div class="h3">
-              <a :href="item.url">
+              <nuxt-link :to="item.url">
                 {{ item.title }}
-              </a>
+              </nuxt-link>
             </div>
             <ul v-if="item.subcategories.length">
               <li
                 v-for="subItem in item.subcategories"
                 :key="subItem.id">
-                <a :href="subItem.url">
+                <nuxt-link :to="subItem.url">
                   {{ subItem.title }}
-                </a>
+                </nuxt-link>
               </li>
             </ul>
           </div>

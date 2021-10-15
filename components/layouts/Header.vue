@@ -21,10 +21,10 @@
 
           <div class="header-left-menu">
 
-            <a
+            <nuxt-link
               v-for="link in header.topMenu"
               :key="link.id"
-              :href="link.url">{{ link.title }}</a>
+              :to="link.url">{{ link.title }}</nuxt-link>
 
           </div>
 
