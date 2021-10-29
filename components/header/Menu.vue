@@ -126,6 +126,12 @@ import { VueSlideToggle } from 'vue-slide-toggle'
 import { mapState } from 'vuex'
 
 export default {
+  async fetch () {
+    await Promise.all([
+      this.$store.dispatch('header/getMainMenu'),
+      this.$store.dispatch('header/getMainMenuRight')
+    ])
+  },
   name: 'Menu',
   components: {
     VueSlideToggle
@@ -149,10 +155,6 @@ export default {
     closeMenu () {
       this.$emit('close-menu')
     }
-  },
-  mounted () {
-    this.$store.dispatch('header/getMainMenu')
-    this.$store.dispatch('header/getMainMenuRight')
   }
 }
 </script>

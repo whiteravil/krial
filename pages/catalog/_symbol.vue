@@ -3,9 +3,9 @@
   <div class="catalog-page">
 
     <CatalogMainWindow
-      :title="catalogInfo.pageTitle"
-      :sliderTitle="catalogInfo.catalogAdvantages.title"
-      :slideList="catalogInfo.catalogAdvantages.list"
+      :title="catalogInfo.title"
+      :sliderTitle="catalogInfo.advantages.title"
+      :slideList="catalogInfo.advantages.list"
       :downloadButton="false"/>
 
     <section
@@ -108,10 +108,10 @@
 import { mapState } from 'vuex'
 
 export default {
-  async asyncData ({ store }) {
+  async fetch () {
     await Promise.all([
-      store.dispatch('catalog/getCatalogInfo'),
-      store.dispatch('catalog/getCatalogProducts')
+      this.$store.dispatch('catalog/getCatalogInfo'),
+      this.$store.dispatch('catalog/getCatalogProducts')
     ])
   },
   name: 'catalog.vue',
@@ -127,7 +127,7 @@ export default {
     paginatedData () {
       const start = (this.currentPage - 1) * this.visibleLength
       const end = start + this.visibleLength
-      return this.products.slice(start, end)
+      return this.products.length > 0 ? this.products.slice(start, end) : this.products
     }
   },
   data: () => ({

@@ -28,25 +28,25 @@ export const mutations = {
 }
 
 export const actions = {
-  getTopMenu (ctx) {
-    let res = require('~/DATABASE/topMenu.js').default
-    ctx.commit('setTopMenu', res)
+  async getTopMenu (ctx) {
+    const res = await this.$axios.get('top-menu.json')
+    ctx.commit('setTopMenu', res.data)
   },
-  getSecondMenu (ctx) {
-    let res = require('~/DATABASE/secondMenu.js').default
-    ctx.commit('setSecondMenu', res)
+  async getSecondMenu (ctx) {
+    const res = await this.$axios.get('second-menu.json')
+    ctx.commit('setSecondMenu', res.data)
   },
-  getMainMenu (ctx) {
-    let res = require('~/DATABASE/mainMenu.js').default
-    ctx.commit('setMainMenu', res)
+  async getMainMenu (ctx) {
+    const res = await this.$axios.get('main-menu.json')
+    ctx.commit('setMainMenu', res.data)
   },
-  getMainMenuRight (ctx) {
-    let res = require('~/DATABASE/mainMenuRight.js').default
-    res.forEach(item => {
+  async getMainMenuRight (ctx) {
+    const res = await this.$axios.get('main-menu-right.json')
+    res.data.forEach(item => {
       if (item.childrens) {
         item.opened = false
       }
     })
-    ctx.commit('setMainMenuRight', res)
+    ctx.commit('setMainMenuRight', res.data)
   }
 }

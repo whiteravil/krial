@@ -37,41 +37,36 @@ export const mutations = {
 }
 
 export const actions = {
-  getFilterAllTypes (ctx) {
-    let res = require('~/DATABASE/filters/types.js').default
-    ctx.commit('setFilterAllTypes', res)
+  async getFilterAllTypes (ctx) {
+    const res = await this.$axios.get('filters/types.json')
+    ctx.commit('setFilterAllTypes', res.data)
   },
-  getFilterAllClasses (ctx) {
-    let res = require('~/DATABASE/filters/classes.js').default
-    ctx.commit('setFilterAllClasses', res)
+  async getFilterAllClasses (ctx) {
+    const res = await this.$axios.get('filters/classes.json')
+    ctx.commit('setFilterAllClasses', res.data)
   },
-  getFilterAllApplicationAreas (ctx) {
-    let res = require('~/DATABASE/filters/applicationAreas.js').default
-    ctx.commit('setFilterAllApplicationAreas', res)
+  async getFilterAllApplicationAreas (ctx) {
+    const res = await this.$axios.get('filters/application-areas.json')
+    ctx.commit('setFilterAllApplicationAreas', res.data)
   },
-  getFilterAllEngines (ctx) {
-    let res = require('~/DATABASE/filters/engines.js').default
-    ctx.commit('setFilterAllEngines', res)
+  async getFilterAllEngines (ctx) {
+    const res = await this.$axios.get('filters/engines.json')
+    ctx.commit('setFilterAllEngines', res.data)
   },
-  getFilterAllManufacturers (ctx) {
-    let res = require('~/DATABASE/filters/manufacturers.js').default
-    ctx.commit('setFilterAllManufacturers', res)
+  async getFilterAllManufacturers (ctx) {
+    const res = await this.$axios.get('filters/manufacturers.json')
+    ctx.commit('setFilterAllManufacturers', res.data)
   },
-  getFilterAllManufacturerCountries (ctx) {
-    let res = require('~/DATABASE/filters/manufacturerCountries.js').default
-    ctx.commit('setFilterAllManufacturerCountries', res)
+  async getFilterAllManufacturerCountries (ctx) {
+    const res = await this.$axios.get('filters/manufacturer-countries.json')
+    ctx.commit('setFilterAllManufacturerCountries', res.data)
   },
-  getFilterResults (ctx, data) {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        let res = require('~/DATABASE/filterResult.js').default
-        ctx.commit('setFilterResults', res)
-        resolve()
-      }, 500)
-    })
+  async getFilterResults (ctx, data) {
+    const res = await this.$axios.get('filter-result.json')
+    ctx.commit('setFilterResults', res.data)
   },
-  getSorts (ctx) {
-    let res = require('~/DATABASE/filters/sorts.js').default
-    ctx.commit('setSorts', res)
+  async getSorts (ctx) {
+    const res = await this.$axios.get('filters/sorts.json')
+    ctx.commit('setSorts', res.data)
   }
 }

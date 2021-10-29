@@ -60,6 +60,14 @@
 import { mapState } from 'vuex'
 
 export default {
+  async fetch () {
+    if (this.categories.length === 0) {
+      await this.$store.dispatch('catalogCategory/getCatalogCategories').then(() => {
+        this.selected = this.categories[0].id
+      })
+    }
+    this.selected = this.categories[0].id
+  },
   name: 'Category',
   props: {
     position: {
@@ -80,14 +88,6 @@ export default {
       let res = this.categories.filter(item => item.id === this.selected)[0]
       return res ? res.title : ''
     }
-  },
-  mounted () {
-    if (this.categories.length === 0) {
-      this.$store.dispatch('catalogCategory/getCatalogCategories').then(() => {
-        this.selected = this.categories[0].id
-      })
-    }
-    this.selected = this.categories[0].id
   }
 }
 </script>

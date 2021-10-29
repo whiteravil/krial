@@ -17,8 +17,8 @@ export const mutations = {
 }
 
 export const actions = {
-  getFooterInfo (ctx) {
-    let res = require('~/DATABASE/footer.js').default
-    ctx.commit('setFooterInfo', res)
+  async getFooterInfo (ctx) {
+    const res = await this.$axios.get('footer.json')
+    ctx.commit('setFooterInfo', res.data)
   }
 }

@@ -28,15 +28,15 @@
 <script>
 
 export default {
-  name: 'Category',
-  data: () => ({}),
-  methods: {},
-  mounted () {
-    this.$store.dispatch('catalogCategory/getCatalogCategories')
-    this.$store.dispatch('filters/getFilterAllEngines')
-    this.$store.dispatch('filters/getFilterAllManufacturers')
-    this.$store.dispatch('filters/getFilterAllManufacturerCountries')
-  }
+  async fetch () {
+    await Promise.all([
+      this.$store.dispatch('catalogCategory/getCatalogCategories'),
+      this.$store.dispatch('filters/getFilterAllEngines'),
+      this.$store.dispatch('filters/getFilterAllManufacturers'),
+      this.$store.dispatch('filters/getFilterAllManufacturerCountries')
+    ])
+  },
+  name: 'Category'
 }
 </script>
 

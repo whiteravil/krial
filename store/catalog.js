@@ -1,15 +1,15 @@
 export const state = () => ({
-  pageTitle: '',
+  title: '',
   downloadMaterialsLinkUrl: '',
-  catalogAdvantages: {},
+  advantages: {},
   products: []
 })
 
 export const mutations = {
   setCatalogInfo (state, data) {
-    state.pageTitle = data.pageTitle
+    state.title = data.title
     state.downloadMaterialsLinkUrl = data.downloadMaterialsLinkUrl
-    state.catalogAdvantages = data.catalogAdvantages
+    state.advantages = data.advantages
   },
   setCatalogProducts (state, data) {
     state.products = data
@@ -17,17 +17,12 @@ export const mutations = {
 }
 
 export const actions = {
-  getCatalogInfo (ctx) {
-    let res = require('~/DATABASE/catalog.js').default
-    ctx.commit('setCatalogInfo', res)
+  async getCatalogInfo (ctx) {
+    const res = await this.$axios.get('catalog/main.json')
+    ctx.commit('setCatalogInfo', res.data)
   },
-  getCatalogProducts (ctx) {
-    return new Promise(resolve => {
-      let res = require('~/DATABASE/catalogProducts.js').default
-      setTimeout(() => {
-        ctx.commit('setCatalogProducts', res)
-        resolve()
-      }, 1000)
-    })
+  async getCatalogProducts (ctx) {
+    const res = await this.$axios.get('catalog/products.json')
+    ctx.commit('setCatalogProducts', res.data)
   }
 }

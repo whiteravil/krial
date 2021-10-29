@@ -82,7 +82,7 @@
         <button class="btn btn-sm btn-white">Помощь с выбором</button>
         <button
           class="btn btn-sm"
-          :class="{'loading': load}"
+          v-loading="load"
           @click="$emit('show-results')">
           Показать {{ filterResults.length }} {{ $options.filters.declensionNumbers(filterResults.length, ['позиция', 'позиции', 'позиций']) }}
         </button>
@@ -139,6 +139,19 @@ let initialState = {
 const getInitialState = () => (initialState)
 
 export default {
+  async fetch () {
+    await Promise.all([
+      this.$store.dispatch('filters/getFilterAllTypes'),
+      this.$store.dispatch('filters/getFilterAllClasses'),
+      this.$store.dispatch('filters/getFilterAllApplicationAreas'),
+      this.$store.dispatch('filters/getFilterAllEngines'),
+      this.getSearchResults(),
+      this.$store.dispatch('filters/getSorts').then(() => {
+        initialState.selectedSort = this.sorts[0].id
+        this.selectedSort = this.sorts[0].id
+      })
+    ])
+  },
   name: 'Index',
   computed: {
     ...mapState({
@@ -174,27 +187,16 @@ export default {
       Object.assign(this.$data, getInitialState())
       this.getSearchResults()
     },
-    getSearchResults () {
+    async getSearchResults () {
       this.$emit('loaded', true)
       if (!this.load) {
         this.load = true
-        this.$store.dispatch('filters/getFilterResults').then(() => {
+        await this.$store.dispatch('filters/getFilterResults').then(() => {
           this.load = false
           this.$emit('loaded', false)
         })
       }
     }
-  },
-  mounted () {
-    this.$store.dispatch('filters/getFilterAllTypes')
-    this.$store.dispatch('filters/getFilterAllClasses')
-    this.$store.dispatch('filters/getFilterAllApplicationAreas')
-    this.$store.dispatch('filters/getFilterAllEngines')
-    this.getSearchResults()
-    this.$store.dispatch('filters/getSorts').then(() => {
-      initialState.selectedSort = this.sorts[0].id
-      this.selectedSort = this.sorts[0].id
-    })
   }
 }
 </script>

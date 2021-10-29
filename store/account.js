@@ -15,7 +15,6 @@ export const mutations = {
 export const actions = {
   async getBasketList (ctx) {
     const res = await this.$axios.get('basket.json')
-    console.log(res)
     ctx.commit('setBasketList', res.data)
   },
   async getCompareList (ctx) {

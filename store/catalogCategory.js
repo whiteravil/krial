@@ -18,12 +18,12 @@ export const mutations = {
 }
 
 export const actions = {
-  getCatalogCategoryInfo (ctx) {
-    let res = require('~/DATABASE/catalogCategory.js').default
-    ctx.commit('setCatalogCategoryInfo', res)
+  async getCatalogCategoryInfo (ctx) {
+    const res = await this.$axios.get('catalog/categories.json')
+    ctx.commit('setCatalogCategoryInfo', res.data)
   },
-  getCatalogCategories (ctx) {
-    let res = require('~/DATABASE/productCategories.js').default
-    ctx.commit('setCatalogCategories', res)
+  async getCatalogCategories (ctx) {
+    const res = await this.$axios.get('product-categories.json')
+    ctx.commit('setCatalogCategories', res.data)
   }
 }

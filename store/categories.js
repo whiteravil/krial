@@ -15,8 +15,8 @@ export const mutations = {
 }
 
 export const actions = {
-  getCategories (ctx) {
-    let res = require('~/DATABASE/categories.js').default
-    ctx.commit('setCategories', res)
+  async getCategories (ctx) {
+    const res = await this.$axios.get('categories.json')
+    ctx.commit('setCategories', res.data)
   }
 }

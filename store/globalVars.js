@@ -29,8 +29,8 @@ export const mutations = {
 }
 
 export const actions = {
-  getGlobalVars (ctx) {
-    let res = require('~/DATABASE/globalVars.js').default
-    ctx.commit('setGlobalVars', res)
+  async getGlobalVars (ctx) {
+    const res = await this.$axios.get('global-vars.json')
+    ctx.commit('setGlobalVars', res.data)
   }
 }

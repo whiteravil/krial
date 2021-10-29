@@ -30,10 +30,10 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'catalog.vue',
-  asyncData ({ store }) {
-    return Promise.all([
-      store.dispatch('catalogCategory/getCatalogCategoryInfo'),
-      store.dispatch('catalogCategory/getCatalogCategories')
+  async fetch () {
+    await Promise.all([
+      this.$store.dispatch('catalogCategory/getCatalogCategoryInfo'),
+      this.$store.dispatch('catalogCategory/getCatalogCategories')
     ])
   },
   computed: {

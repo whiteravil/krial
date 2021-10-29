@@ -52,15 +52,15 @@
 import { mapState } from 'vuex'
 
 export default {
+  async fetch () {
+    await this.$store.dispatch('homeMainWindow/getMainWindowInfo')
+  },
   name: 'Index.vue',
   computed: {
     ...mapState({
       global: state => state.globalVars,
       mainWindow: state => state.homeMainWindow
     })
-  },
-  mounted () {
-    this.$store.dispatch('homeMainWindow/getMainWindowInfo')
   }
 }
 </script>

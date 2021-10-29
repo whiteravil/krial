@@ -17,8 +17,8 @@ export const mutations = {
 }
 
 export const actions = {
-  getSelectionProducts (ctx) {
-    let res = require('~/DATABASE/selectionProducts.js').default
-    ctx.commit('setSelectionProducts', res)
+  async getSelectionProducts (ctx) {
+    const res = await this.$axios.get('selection-products.json')
+    ctx.commit('setSelectionProducts', res.data)
   }
 }

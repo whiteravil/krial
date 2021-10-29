@@ -156,6 +156,12 @@
 import { mapState } from 'vuex'
 
 export default {
+  async fetch () {
+    await Promise.all([
+      this.$store.dispatch('selectionProducts/getSelectionProducts'),
+      this.$store.dispatch('filters/getFilterResults')
+    ])
+  },
   name: 'Index',
   props: {
     selectedEquipment: [Number, Object]
@@ -216,8 +222,6 @@ export default {
     }
   },
   mounted () {
-    this.$store.dispatch('selectionProducts/getSelectionProducts')
-    this.$store.dispatch('filters/getFilterResults')
     this.$store.commit('selectionProducts/setSelectedProduct', 1)
     setTimeout(() => {
       this.opened = true

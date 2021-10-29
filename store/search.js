@@ -29,36 +29,29 @@ export const actions = {
   getSearchResults (ctx, data) {
     let resultPromises = []
     resultPromises.push(new Promise(resolve => {
-      setTimeout(() => {
-        let res = require('~/DATABASE/searchResultsEquipments.js').default
-        ctx.commit('setSearchResultEquipments', res)
+      this.$axios.get('search-results-equipments.json').then(res => {
+        ctx.commit('setSearchResultEquipments', res.data)
         resolve()
-      }, 300)
+      })
     }))
     resultPromises.push(new Promise(resolve => {
-      setTimeout(() => {
-        let res = require('~/DATABASE/searchResultsPressCenters.js').default
-        ctx.commit('setSearchResultsPressCenters', res)
+      this.$axios.get('search-results-press-centers.json').then(res => {
+        ctx.commit('setSearchResultsPressCenters', res.data)
         resolve()
-      }, 1000)
+      })
     }))
     return Promise.all(resultPromises)
   },
-  getPopularCategories (ctx) {
-    let res = require('~/DATABASE/searchPopularCategories.js').default
-    ctx.commit('setPopularCategories', res)
+  async getPopularCategories (ctx) {
+    const res = await this.$axios.get('search-popular-categories.json')
+    ctx.commit('setPopularCategories', res.data)
   },
-  getHistory (ctx) {
-    let res = require('~/DATABASE/searchHistory.js').default
-    ctx.commit('setHistory', res)
+  async getHistory (ctx) {
+    const res = await this.$axios.get('search-history.json')
+    ctx.commit('setHistory', res.data)
   },
-  getMorphSearchResults (ctx) {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        let res = require('~/DATABASE/morphSearchResults.js').default
-        ctx.commit('setMorphSearchResults', res)
-        resolve()
-      }, 500)
-    })
+  async getMorphSearchResults (ctx) {
+    const res = await this.$axios.get('morph-search-results.json')
+    ctx.commit('setMorphSearchResults', res.data)
   }
 }

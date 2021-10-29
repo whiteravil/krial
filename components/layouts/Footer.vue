@@ -188,6 +188,12 @@
 import { mapState } from 'vuex'
 
 export default {
+  async fetch () {
+    await Promise.all([
+      this.$store.dispatch('homeMainWindow/getMainWindowInfo'),
+      this.$store.dispatch('footer/getFooterInfo')
+    ])
+  },
   name: 'Footer',
   computed: {
     ...mapState({
@@ -209,11 +215,7 @@ export default {
       'Тема 3',
       'Тема 4'
     ]
-  }),
-  mounted () {
-    this.$store.dispatch('homeMainWindow/getMainWindowInfo')
-    this.$store.dispatch('footer/getFooterInfo')
-  }
+  })
 }
 </script>
 

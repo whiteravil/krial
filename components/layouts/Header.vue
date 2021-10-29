@@ -115,7 +115,7 @@
 
                   <div
                     class="header-acc-dropdown-list"
-                    :class="{'loading-animate': deleteLoading}">
+                    v-loading="deleteLoading">
                     <AccountProduct
                       v-for="item in account.basket"
                       :key="item.key"
@@ -151,7 +151,7 @@
 
                   <div
                     class="header-acc-dropdown-list"
-                    :class="{'loading-animate': deleteLoading}">
+                    v-loading="deleteLoading">
                     <AccountProduct
                       v-for="item in account.compare"
                       :key="item.key"
@@ -202,6 +202,14 @@
 import { mapState, mapGetters } from 'vuex'
 
 export default {
+  async fetch () {
+    await Promise.all([
+      this.$store.dispatch('header/getTopMenu'),
+      this.$store.dispatch('header/getSecondMenu'),
+      this.$store.dispatch('account/getBasketList'),
+      this.$store.dispatch('account/getCompareList')
+    ])
+  },
   name: 'Header',
   props: {
     visibleLogo: {
@@ -274,10 +282,6 @@ export default {
     }
   },
   mounted () {
-    this.$store.dispatch('header/getTopMenu')
-    this.$store.dispatch('header/getSecondMenu')
-    this.$store.dispatch('account/getBasketList')
-    this.$store.dispatch('account/getCompareList')
     const clickOutDropdown = e => {
       let tg = e.target
       if (!tg.closest('.header-account-btn') && !tg.closest('.header-acc-dropdown')) {

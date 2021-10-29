@@ -70,7 +70,7 @@
                 <a
                   href="#"
                   class="btn"
-                  :class="{'loading': searchBtnLoading}"
+                  v-loading="searchBtnLoading"
                   @click="checkAllResults">Смотреть все результаты</a>
               </div>
 
@@ -208,6 +208,14 @@ import { mapState, mapGetters } from 'vuex'
 import FullResults from './FullResults'
 
 export default {
+  async fetch () {
+    await Promise.all([
+      this.$store.dispatch('categories/getCategories'),
+      this.$store.dispatch('selectionProducts/getSelectionProducts'),
+      this.$store.dispatch('search/getPopularCategories'),
+      this.$store.dispatch('search/getHistory')
+    ])
+  },
   name: 'Index.vue',
   components: { FullResults },
   computed: {
@@ -306,11 +314,6 @@ export default {
     setTimeout(() => {
       this.loaded = true
     }, 410)
-    this.$store.dispatch('categories/getCategories')
-    this.$store.dispatch('selectionProducts/getSelectionProducts')
-    this.$store.dispatch('search/getPopularCategories')
-    this.$store.dispatch('search/getHistory')
-    this.$store.dispatch('search/getHistory')
     document.body.classList.add('overflow-hidden')
     this.$once('hook:beforeDestroy', () => document.body.classList.remove('overflow-hidden'))
   }
