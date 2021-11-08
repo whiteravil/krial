@@ -1,24 +1,24 @@
 .s-catalog
-  padding: 30px 0 46px
+  padding: rem(30px) 0 rem(86px)
   background-color: #ECF1FC
 
 .catalog
   display: grid
   grid-template-columns: repeat(4, 1fr)
-  grid-gap: 30px
+  grid-gap: rem(30px)
 
 .catalog-filter
   display: flex
   justify-content: flex-end
   align-items: center
-  margin-bottom: 20px
+  margin-bottom: rem(20px)
 
   .sort-selected
     span
       color: #8496B6
 
 .catalog-sort
-  margin-right: 28px
+  margin-right: rem(28px)
 
 .catalog-view
   display: flex
@@ -28,8 +28,8 @@
   text-decoration: none !important
   +tr
   color: #8496B6
-  font-size: 15px
-  margin-right: 16px
+  font-size: rem(15px)
+  margin-right: rem(16px)
   display: flex
 
   &:last-child
@@ -40,13 +40,13 @@
     color: $accent
 
   .icon-list
-    font-size: 19px
+    font-size: rem(19px)
 
 .catalog-item
   position: relative
   overflow: hidden
   background-color: #fff
-  padding: 95px 30px 30px
+  padding: rem(95px) rem(30px) rem(30px)
 
   &:hover
     .catalog-item-body
@@ -66,42 +66,42 @@
       ul
         display: flex
         flex-wrap: wrap
-        margin: 0 -30px
+        margin: 0 rem(-30px)
 
         li
           flex-shrink: 0
           width: 50%
-          padding: 0 30px
+          padding: 0 rem(30px)
 
     .catalog-item-btn .btn:last-child
       flex-grow: 0
-      min-width: 185px
+      min-width: rem(185px)
 
 
 .catalog-item-top
   position: absolute
-  top: 30px
-  left: 30px
-  right: 30px
+  top: rem(30px)
+  left: rem(30px)
+  right: rem(30px)
   display: flex
   z-index: 1
 
 .catalog-item-tags
   display: flex
   flex-wrap: wrap
-  margin-right: 10px
+  margin-right: rem(10px)
   flex-grow: 1
 
 .catalog-item-flag
   img
-    width: 30px
+    width: rem(30px)
     display: block
 
 .catalog-item-body
   +tr
 
 .catalog-item-img
-  margin-bottom: 40px
+  margin-bottom: rem(40px)
 
   img
     width: 100%
@@ -111,8 +111,8 @@
     height: auto
 
 .catalog-item-title
-  margin-bottom: 35px
-  font-size: 15px
+  margin-bottom: rem(35px)
+  font-size: rem(15px)
   line-height: 1.333
   font-weight: bold
 
@@ -127,12 +127,12 @@
 .catalog-item-price-block
   display: flex
   align-items: flex-end
-  margin-bottom: 30px
+  margin-bottom: rem(30px)
 
 .catalog-item-price
-  font-size: 20px
+  font-size: rem(20px)
   font-weight: bold
-  margin-right: 13px
+  margin-right: rem(13px)
   white-space: nowrap
 
 .catalog-item-availability
@@ -142,20 +142,20 @@
   justify-content: space-between
 
 .catalog-item-availability-left
-  font-size: 12px
+  font-size: rem(12px)
   color: #8496B6
-  margin: 0 30px 3px 0
+  margin: 0 rem(30px) rem(3px) 0
 
 .catalog-item-descr
   ul
     list-style-type: none
     padding: 0
     margin: 0
-    font-size: 12px
+    font-size: rem(12px)
 
     li
       display: flex
-      margin-bottom: 5px
+      margin-bottom: rem(5px)
 
       &:last-child
         margin-bottom: 0
@@ -163,7 +163,7 @@
       span
         &:first-child
           color: #92A8B9
-          margin-right: 10px
+          margin-right: rem(10px)
           flex-grow: 1
 
         &:last-child
@@ -173,12 +173,12 @@
 .catalog-item-btn
   display: flex
   align-items: center
-  margin-top: 35px
+  margin-top: rem(35px)
 
   .btn
-    font-size: 12px
-    padding: 0 22px
-    margin-right: 4px
+    font-size: rem(12px)
+    padding: 0 rem(22px)
+    margin-right: rem(4px)
     text-transform: none
 
     &:first-child
@@ -188,32 +188,32 @@
       flex-grow: 1
 
     .btn-with-icon span
-      font-size: 20px
-      margin-left: 19px
+      font-size: rem(20px)
+      margin-left: rem(19px)
 
 .catalog-item-hover
   position: absolute
-  padding: 30px
+  padding: rem(30px)
   bottom: 0
   left: 0
   width: 100%
-  padding: 30px
-  transform: translateY(10px)
+  padding: rem(30px)
+  transform: translateY(#{rem(10px)})
   opacity: 0
   visibility: hidden
   +tr
 
   .catalog-item-title
-    margin-bottom: 6px
+    margin-bottom: rem(6px)
 
   .catalog-item-availability
     align-items: center
-    margin-bottom: 30px
+    margin-bottom: rem(30px)
 
 .adw-block
   position: relative
   overflow: hidden
-  min-height: 500px
+  min-height: rem(500px)
 
   &:hover
     .adw-block-bg
@@ -241,11 +241,11 @@
   height: 100%
   display: flex
   flex-direction: column
-  padding: 30px
+  padding: rem(30px)
   background: linear-gradient(0deg, rgba(80, 105, 126, 0.8), rgba(80, 105, 126, 0.8))
 
 .adw-block-tags
-  margin-bottom: 30px
+  margin-bottom: rem(30px)
   display: flex
   flex-wrap: wrap
 
@@ -257,15 +257,15 @@
   font-weight: bold
   line-height: 1.25
   color: #fff
-  font-size: 20px
+  font-size: rem(20px)
 
 .catalog-item-big-body
   display: flex
   align-items: flex-end
-  margin-bottom: 34px
+  margin-bottom: rem(34px)
 
 .catalog-item-big-body-left
-  padding-right: 10px
+  padding-right: rem(10px)
   width: 42.5%
 
   .catalog-item-title
@@ -282,40 +282,40 @@
   flex-direction: column
   justify-content: center
   align-items: flex-start
-  padding: 30px
+  padding: rem(30px)
 
   .h3
-    margin-bottom: 18px
+    margin-bottom: rem(18px)
     line-height: 1.25
 
   p
-    margin-bottom: 36px
+    margin-bottom: rem(36px)
     color: #8496B6
-    font-size: 12px
+    font-size: rem(12px)
 
 .pagination
   display: flex
   align-items: center
-  margin-top: 58px
+  margin-top: rem(58px)
 
 .pagination-nav
   display: flex
   align-items: center
-  margin-right: 89px
+  margin-right: rem(89px)
 
 .pagination-nav-link
-  width: 58px
-  height: 58px
-  line-height: 58px
+  width: rem(58px)
+  height: rem(58px)
+  line-height: rem(58px)
   text-align: center
   flex-shrink: 0
-  margin-right: 6px
+  margin-right: rem(6px)
   position: relative
   background-color: transparent
   outline: none !important
   border: none
   z-index: 1
-  font-size: 15px
+  font-size: rem(15px)
   color: #92A8B9
   +tr
   padding: 0
@@ -347,11 +347,11 @@
   background-color: transparent
   outline: none !important
   border: none
-  margin-left: 5px
-  font-size: 15px
+  margin-left: rem(5px)
+  font-size: rem(15px)
   color: #92A8B9
   +tr
-  line-height: 58px
+  line-height: rem(58px)
   padding: 0
   &:hover:not(:disabled)
     color: $accent
@@ -359,6 +359,6 @@
     opacity: .5
 
 .pagination-visible
-  padding-left: 30px
+  padding-left: rem(30px)
   margin-left: auto
   color: #50697E

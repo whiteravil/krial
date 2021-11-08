@@ -8,7 +8,7 @@
   background-color: #ECF1FC
   +tr4
   opacity: 0
-  transform: translateY(30px)
+  transform: translateY(#{rem(30px)})
   &.opened
     opacity: 1
     transform: translateY(0)
@@ -21,23 +21,23 @@
 .equipment-selection-sidebar
   background-color: #fff
   flex-shrink: 0
-  width: 120px
+  width: rem(120px)
   display: flex
   flex-direction: column
   align-items: center
-  padding: 52px 0
+  padding: rem(52px) 0
 
 .equipment-selection-content
   overflow: hidden
   display: flex
   flex-direction: column
-  padding: 31px 45px 12px
+  padding: rem(31px) rem(45px) rem(12px)
   flex-grow: 1
   overflow-y: auto
 
 .equipment-selection-content-title
-  font-size: 13px
-  margin-bottom: 62px
+  font-size: rem(13px)
+  margin-bottom: rem(62px)
   color: #92A8B9
   line-height: 1.7
 
@@ -48,18 +48,18 @@
 
 .equipment-selection-main
   position: relative
-  min-height: 400px
+  min-height: rem(400px)
   flex-grow: 1
   .search-selection-main-info
     padding-right: 0
     .h1
-      max-width: 700px
+      max-width: rem(700px)
       position: relative
       z-index: 1
     img
       width: 73%
-      top: -116px
-      right: -45px
+      top: rem(-116px)
+      right: rem(-45px)
       left: auto
       bottom: auto
   .search-selection-hover-info
@@ -91,7 +91,7 @@
     +tr4
     opacity: 0
     visibility: hidden
-    transform: translateY(30px)
+    transform: translateY(#{rem(30px)})
   &.loaded
     .filters-component
       opacity: 1
@@ -124,7 +124,7 @@
 
 .equipment-selection-results
   opacity: 0
-  transform: translateY(30px)
+  transform: translateY(#{rem(30px)})
   +tr4
   &.active
     opacity: 1

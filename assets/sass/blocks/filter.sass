@@ -1,18 +1,18 @@
 .filters-component
   position: relative
   z-index: 1
-  margin-bottom: 34px
+  margin-bottom: rem(34px)
 
 .filters-header
   display: flex
   align-items: center
-  margin-bottom: 15px
+  margin-bottom: rem(15px)
 
 .filter-checkboxes
   display: flex
   flex-grow: 1
   flex-wrap: wrap
-  margin: 0 0 -6px
+  margin: 0 0 rem(-6px)
 
 .filters-body
   display: flex
@@ -22,16 +22,16 @@
 .filters-slider-range-big
   width: 56%
   flex-shrink: 0
-  padding: 26px 30px 11px
+  padding: rem(26px) rem(30px) rem(11px)
 
 .slider-range-label
-  font-size: 12px
+  font-size: rem(12px)
   text-transform: uppercase
-  margin-bottom: 12px
+  margin-bottom: rem(12px)
 
 .slider-range-inputs
-  font-size: 45px
-  margin-bottom: 11px
+  font-size: rem(45px)
+  margin-bottom: rem(11px)
   white-space: nowrap
   overflow: hidden
   -ms-text-overflow: ellipsis
@@ -42,9 +42,9 @@
   .label-checkbox
     label
       span
-        padding: 0 11px
-        height: 32px
-        line-height: 32px
+        padding: 0 rem(11px)
+        height: rem(32px)
+        line-height: rem(32px)
 
         &:after
           background-color: #ECF1FC
@@ -70,11 +70,12 @@
 .filters-selects
   display: grid
   grid-template-columns: 50% 50%
+  min-height: 100%
 
 .filter-item
   position: relative
   background-color: #fff
-  min-height: 98px
+  min-height: rem(98px)
   box-shadow: 0 0 0 1px #E6EAF0
   cursor: pointer
   display: flex
@@ -86,7 +87,7 @@
   &.active
     .filter-item-popup
       .filter-item-selected-label
-        transform: translateY(-10px)
+        transform: translateY(#{rem(-10px)})
       .trigger
         &:after
           opacity: 1
@@ -94,15 +95,15 @@
 
   &.accent
     .filter-item-selected
-      padding-left: 44px
-      padding-right: 34px
+      padding-left: rem(44px)
+      padding-right: rem(34px)
     .filter-item-selected-label
-      font-size: 15px
+      font-size: rem(15px)
       font-weight: bold
-      padding-right: 43px
+      padding-right: rem(43px)
       width: 100%
       &:after
-        font-size: 11px
+        font-size: rem(11px)
 
 
 .filter-item-popover-overlay
@@ -113,44 +114,44 @@
   height: 100%
 
 .filter-item-selected
-  padding: 20px 20px 20px 45px
+  padding: rem(20px) rem(20px) rem(20px) rem(45px)
   position: relative
 
 .filter-item-selected-label
   position: relative
   display: inline-block
   text-transform: uppercase
-  font-size: 12px
-  padding-right: 14px
+  font-size: rem(12px)
+  padding-right: rem(14px)
 
   &:after
     content: '\e916'
     font-family: icon
-    font-size: 6px
+    font-size: rem(6px)
     position: absolute
     line-height: 1
     font-weight: normal
     right: 0
     top: 50%
-    margin-top: -4px
+    margin-top: rem(-4px)
     +tr
 
 .filter-item-selected-value
-  margin-top: 5px
-  font-size: 12px
+  margin-top: rem(5px)
+  font-size: rem(12px)
   color: $accent
   white-space: nowrap
   overflow: hidden
   text-overflow: ellipsis
   position: absolute
-  bottom: 10px
-  max-width: calc(100% - 65px)
+  bottom: rem(10px)
+  max-width: calc(100% - #{rem(65px)})
 
 .filter-item-dropdown
   position: absolute
   background-color: #fff
   z-index: 100
-  box-shadow: 0px 48px 95px rgba(0, 0, 0, 0.2)
+  box-shadow: 0px rem(48px) rem(95px) rgba(0, 0, 0, 0.2)
   transition: opacity .4s ease
   opacity: 0
 
@@ -162,30 +163,30 @@
   display: flex
 
 .filter-dropdown-form
-  padding: 17px 28px 28px
+  padding: rem(17px) rem(28px) rem(28px)
   flex-shrink: 0
   //width: 54%
-  width: 355px
+  width: rem(355px)
 
   &:last-child
     //width: 100%
-    width: 440px
+    width: rem(440px)
 
   .slider-range-inputs
-    font-size: 30px
+    font-size: rem(30px)
 
 .filter-dropdown-info
-  padding: 28px
+  padding: rem(28px)
   background-color: #ECF1FC
   //width: 46%
-  width: 304px
+  width: rem(304px)
   flex-shrink: 0
   line-height: 1.7
   color: #8E99AF
 
   .icon-exc
-    font-size: 18px
-    margin-bottom: 20px
+    font-size: rem(18px)
+    margin-bottom: rem(20px)
     display: block
     color: #8496B6
 
@@ -230,7 +231,7 @@
   display: flex
   align-items: center
   justify-content: space-between
-  margin-top: 37px
+  margin-top: rem(37px)
 
 .filters-results
   color: $muted
@@ -241,7 +242,7 @@
   margin-left: auto
 
   .btn
-    margin-right: 10px
+    margin-right: rem(10px)
 
     &:last-child
       margin-right: 0
@@ -249,13 +250,13 @@
 .sort-block
   display: flex
   align-items: center
-  margin-top: 22px
+  margin-top: rem(22px)
 
 .sort-extended
   flex-grow: 1
 
   a
-    font-size: 12px
+    font-size: rem(12px)
     font-weight: normal
     text-transform: uppercase
     color: $accent !important
@@ -283,10 +284,10 @@
   white-space: nowrap
 
 .sort-select-component-title
-  font-size: 12px
+  font-size: rem(12px)
   text-transform: uppercase
   color: #8496B6
-  margin-right: 9px
+  margin-right: rem(9px)
 
 .sort-select
   position: relative
@@ -304,7 +305,7 @@
       transform: translateY(0)
 
 .sort-selected
-  font-size: 12px
+  font-size: rem(12px)
   white-space: nowrap
   text-transform: uppercase
   color: #1D2027
@@ -312,30 +313,30 @@
   span
     display: block
     position: relative
-    padding-right: 14px
+    padding-right: rem(14px)
     cursor: pointer
     user-select: none
 
     &:after
       content: '\e916'
       font-family: icon
-      font-size: 6px
+      font-size: rem(6px)
       position: absolute
       right: 0
-      top: 4px
+      top: rem(4px)
       +tr
 
 .sort-dropdown
   position: absolute
-  top: calc(100% + 10px)
+  top: calc(100% + #{rem(10px)})
   right: 0
   background-color: #fff
-  padding: 20px
+  padding: rem(20px)
   white-space: nowrap
   z-index: 3
   opacity: 0
   visibility: hidden
-  transform: translateY(-10px)
+  transform: translateY(#{rem(-10px)})
   +tr4
   box-shadow: 0px 0px 15px 0px rgb(#000, .1)
 
@@ -345,13 +346,13 @@
     list-style-type: none
 
     li
-      margin: 0 0 5px
+      margin: 0 0 rem(5px)
 
       &:last-child
         margin-bottom: 0
 
       a
-        font-size: 12px
+        font-size: rem(12px)
         text-transform: uppercase
         color: #1D2027
         +tr
@@ -365,7 +366,7 @@
   align-items: center
 
   .sort-select
-    margin-right: 58px
+    margin-right: rem(58px)
 
 .filter-item-dropdown
   //width: 659px
@@ -374,22 +375,22 @@
   display: flex
   align-items: center
   background-color: #fff
-  margin-bottom: 30px
+  margin-bottom: rem(30px)
   .filter-item
-    min-height: 111px
+    min-height: rem(111px)
     margin-right: -1px
     &:nth-last-child(2)
       box-shadow: none
       background-color: transparent
     &.accent
-      width: 387px
+      width: rem(387px)
       flex-grow: 0
   .filter-item-selected
-    padding-left: 37px
-    padding-right: 37px
+    padding-left: rem(37px)
+    padding-right: rem(37px)
   .filter-item-selected-value
-    max-width: calc(100% - 65px)
+    max-width: calc(100% - #{rem(65px)})
 
 .filter-second-btn
   margin-left: auto
-  padding: 0 25px
+  padding: 0 rem(25px)

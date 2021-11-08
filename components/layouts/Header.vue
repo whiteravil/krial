@@ -13,9 +13,11 @@
             v-if="visibleLogo"
             class="header-logo">
 
-            <a href="/" class="logo">
+            <nuxt-link
+              to="/"
+              class="logo">
               <img :src="global.logoSrc" alt="">
-            </a>
+            </nuxt-link>
 
           </div>
 
@@ -203,7 +205,7 @@ import { mapState, mapGetters } from 'vuex'
 
 export default {
   async fetch () {
-    await Promise.all([
+    return await Promise.all([
       this.$store.dispatch('header/getTopMenu'),
       this.$store.dispatch('header/getSecondMenu'),
       this.$store.dispatch('account/getBasketList'),

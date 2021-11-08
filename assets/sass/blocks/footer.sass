@@ -1,10 +1,15 @@
 .footer
-  padding: 25px 0 35px
+  padding: rem(25px) 0 rem(35px)
   background-color: #DCE2EE
 
+  .main-section-logo
+    border-bottom: 1px solid #1D2027
+    padding-bottom: rem(24px)
+    margin: 0
+
   .main-section-bottom
-    border-top-color: #1D2027
-    margin-bottom: 122px
+    border-top: none
+    margin-bottom: rem(122px)
 
   .main-section-menu
     a
@@ -13,21 +18,39 @@
       &:hover
         color: #1D2027
 
+  &.footer--with-menu
+    background-color: #fff
+    padding-top: rem(61px)
+
+    .main-section-bottom
+      padding-top: 0
+
+    .main-section-title
+      width: 50%
+      padding-right: rem(30px)
+
+    .footer-about
+      width: 50%
+      padding-right: rem(30px)
+
+    .footer-press
+      padding-right: 0
+
 .footer-content
-  margin-bottom: 19px
+  margin-bottom: rem(19px)
   display: flex
 
 .footer-about
   width: 33.5%
   flex-shrink: 0
-  padding-right: 75px
+  padding-right: rem(75px)
   position: relative
 
 .press-images
   position: absolute
   top: 0
   left: 0
-  right: 55px
+  right: rem(55px)
   visibility: hidden
   opacity: 0
   +tr
@@ -48,7 +71,7 @@
     width: 100%
     height: 100%
     object-fit: cover
-    transform: translateY(10px)
+    transform: translateY(#{rem(10px)})
     opacity: 0
     visibility: hidden
     +tr
@@ -59,20 +82,20 @@
       transform: translateY(0)
 
 .footer-blockquote
-  margin-bottom: 31px
+  margin-bottom: rem(31px)
 
   p
-    font-size: 15px
+    font-size: rem(15px)
     color: #8496B6
     text-transform: uppercase
     line-height: 1.1
-    margin-bottom: 5px
+    margin-bottom: rem(5px)
 
   span
-    font-size: 12px
+    font-size: rem(12px)
 
 .footer-about-text
-  font-size: 12px
+  font-size: rem(12px)
   line-height: 1.6666
 
   p
@@ -80,16 +103,16 @@
 
 .footer-press
   flex-grow: 1
-  padding-right: 30px
+  padding-right: rem(30px)
 
 .press-link
   text-transform: uppercase
-  margin-bottom: 28px
+  margin-bottom: rem(28px)
 
   a
     display: inline-block
     position: relative
-    padding-right: 16px
+    padding-right: rem(16px)
     line-height: 1.1
     color: #1D2027
     +tr
@@ -100,9 +123,9 @@
     &:after
       content: '\e901'
       font-family: icon
-      font-size: 6px
+      font-size: rem(6px)
       position: absolute
-      top: 2px
+      top: rem(2px)
       right: 0
 
 .press-center-links
@@ -118,10 +141,10 @@
         color: #1D2027
 
   a
-    max-width: 304px
+    max-width: rem(304px)
     flex-shrink: 0
-    margin-bottom: 27px
-    font-size: 12px
+    margin-bottom: rem(27px)
+    font-size: rem(12px)
     line-height: 1.25
     color: #1D2027
     +tr
@@ -131,8 +154,8 @@
 
 .callback-form
   .form-checkbox label span
-    font-size: 10px
-    line-height: 2
+    font-size: rem(12px)
+    line-height: 1.67
 
 .footer-sticks
   display: flex
@@ -140,23 +163,23 @@
   flex-wrap: wrap
 
 .footer-stick
-  margin-right: 25px
+  margin-right: rem(25px)
 
   &:last-child
     margin-right: 0
 
   img
     display: block
-    width: 60px
+    width: rem(60px)
 
 .footer-bottom
-  margin-top: 35px
+  margin-top: rem(35px)
   display: flex
   justify-content: space-between
 
 .footer-copy
-  margin-right: 30px
-  font-size: 12px
+  margin-right: rem(30px)
+  font-size: rem(12px)
   color: #8496B6
   line-height: 1.54
 
@@ -164,12 +187,12 @@
   display: flex
   white-space: nowrap
   line-height: 1.54
-  width: 540px
+  width: rem(540px)
   flex-shrink: 0
 
   a
-    margin-right: 30px
-    font-size: 12px
+    margin-right: rem(30px)
+    font-size: rem(12px)
     color: #8496B6
     +tr
 
@@ -178,3 +201,34 @@
 
     &:last-child
       margin-right: 0
+
+.footer-content-row
+  display: flex
+
+.footer-content-left
+  flex-grow: 1
+  padding-right: rem(30px)
+
+  &:last-child
+    padding-right: 0
+
+.footer-content-right
+  flex-shrink: 0
+  width: 33.33333%
+
+.footer-right-menu
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  padding-top: rem(12px)
+
+  a
+    font-size: rem(22px)
+    line-height: 1.1818
+    margin-bottom: rem(34px)
+    text-transform: uppercase
+    color: #8496B6
+    +tr
+
+    &:hover
+      color: $accent

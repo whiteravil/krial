@@ -1,5 +1,5 @@
 .header
-  padding: 26px 0
+  padding: rem(26px) 0
 
   &.fixed
     position: absolute
@@ -44,8 +44,8 @@
   align-items: flex-start
 
 .header-logo
-  margin-right: 35px
-  padding-top: 4px
+  margin-right: rem(35px)
+  padding-top: rem(4px)
   display: flex
 
 .logo
@@ -55,17 +55,17 @@
 
   img
     display: block
-    width: 80px
+    width: rem(80px)
     flex-shrink: 0
 
 .header-left-menu
-  margin-right: 107px
+  margin-right: rem(107px)
   display: flex
   align-items: center
   white-space: nowrap
 
   a
-    margin-right: 20px
+    margin-right: rem(20px)
     text-transform: uppercase
     color: #8E99AF
     text-decoration: none !important
@@ -78,7 +78,7 @@
       margin-right: 0
 
 .header-center-menu
-  margin-right: 65px
+  margin-right: rem(65px)
 
   ul
     display: flex
@@ -89,7 +89,7 @@
     margin: 0
 
     li
-      margin-right: 20px
+      margin-right: rem(20px)
 
       &:last-child
         margin-right: 0
@@ -108,23 +108,23 @@
   align-items: center
   text-transform: uppercase
   color: #8E99AF
-  margin-top: 14px
+  margin-top: rem(14px)
 
   span
-    font-size: 18px
-    margin-right: 13px
+    font-size: rem(18px)
+    margin-right: rem(13px)
 
 .header-menu-btn
   display: flex
-  margin-right: 27px
-  margin-top: -4px
+  margin-right: rem(27px)
+  margin-top: rem(-4px)
 
 .menu-btn
   display: inline-flex
   align-items: center
   justify-content: center
   position: relative
-  font-size: 23px
+  font-size: rem(23px)
   text-decoration: none !important
   color: #8E99AF
   +tr
@@ -133,12 +133,12 @@
     color: $accent !important
 
 .header-search
-  margin-right: 27px
+  margin-right: rem(27px)
   display: flex
 
 .header-search-btn
   display: flex
-  font-size: 16px
+  font-size: rem(16px)
   color: #8E99AF
   text-decoration: none !important
   +tr
@@ -148,7 +148,7 @@
 
 .header-contacts
   margin-left: auto
-  margin-right: 62px
+  margin-right: rem(62px)
 
   a
     color: #8E99AF
@@ -159,19 +159,19 @@
       color: $accent !important
 
 .header-phone
-  margin-bottom: 14px
+  margin-bottom: rem(14px)
 
 .header-email
   a
     text-decoration: underline !important
 
 .header-location
-  margin-right: 105px
+  margin-right: rem(105px)
   color: #8E99AF
   text-transform: uppercase
 
 .header-position
-  margin-bottom: 14px
+  margin-bottom: rem(14px)
 
 .header-lang
   a
@@ -186,7 +186,7 @@
   display: flex
   flex-direction: column
   align-items: flex-end
-  margin-top: -3px
+  margin-top: rem(-3px)
 
 
 .header-account-btns
@@ -195,13 +195,13 @@
 
 .header-account-btn
   position: relative
-  margin-right: 26px
+  margin-right: rem(26px)
 
   &:last-child
     margin-right: 0
 
 .acc-btn
-  font-size: 20px
+  font-size: rem(20px)
   position: relative
   color: #8E99AF
   +tr
@@ -213,21 +213,21 @@
 
 .acc-btn-qnt
   position: absolute
-  width: 16px
-  height: 16px
+  width: rem(16px)
+  height: rem(16px)
   -webkit-border-radius: 50%
   -moz-border-radius: 50%
   border-radius: 50%
-  line-height: 16px
+  line-height: rem(16px)
   background-color: #D3193A
   color: #fff
-  font-size: 10px
+  font-size: rem(10px)
   text-align: center
-  top: -7px
-  right: -8px
+  top: rem(-7px)
+  right: rem(-8px)
 
 .header-account-auth
-  margin-bottom: 16px
+  margin-bottom: rem(16px)
 
 .overlay-bg
   position: fixed
@@ -253,7 +253,7 @@
   width: 100%
   max-height: 100%
   background-color: #fff
-  padding: 0 30px 24px
+  padding: 0 rem(30px) rem(24px)
   overflow: hidden
   display: flex
   flex-direction: column
@@ -276,18 +276,18 @@
   display: flex
   align-items: center
   justify-content: space-between
-  height: 70px
+  height: rem(70px)
   border-bottom: 1px solid #1D2027
   flex-shrink: 0
 
 .main-menu-logo
   .logo
     img
-      width: 48px
+      width: rem(48px)
 
 .main-menu-close-btn
   display: flex
-  font-size: 16px
+  font-size: rem(16px)
   color: #1D2027
   cursor: pointer
   +tr
@@ -298,14 +298,14 @@
 
 .main-menu-body
   display: flex
-  padding: 22px 0 0
+  padding: rem(22px) 0 0
   overflow-y: auto
   flex-grow: 1
   +scrollbar
 
   & > div
     opacity: 0
-    transform: translateY(-50px)
+    transform: translateY(#{rem(-50px)})
     transition: all .4s ease
 
     &:nth-child(1)
@@ -321,14 +321,14 @@
       transition-delay: .85s
 
 .main-menu-col
-  padding-right: 43px
-  max-width: 390px
+  padding-right: rem(43px)
+  max-width: rem(390px)
 
 .main-menu-col-title
-  font-size: 40px
+  font-size: rem(40px)
   line-height: 1.25
   text-transform: uppercase
-  margin-bottom: 27px
+  margin-bottom: rem(27px)
 
   a
     color: #1D2027
@@ -345,14 +345,14 @@
 
 .main-menu-nav-link
   letter-spacing: -0.02em
-  font-size: 12px
+  font-size: rem(12px)
   line-height: 1.5
   color: #8496B6
   +tr
   text-transform: uppercase
   text-decoration: none !important
-  margin-bottom: 20px
-  max-width: 225px
+  margin-bottom: rem(20px)
+  max-width: rem(225px)
 
   &:last-child
     margin: 0
@@ -368,9 +368,9 @@
 .main-menu-right-nav
   .plus
     position: absolute
-    width: 14px
-    height: 14px
-    top: 4px
+    width: rem(14px)
+    height: rem(14px)
+    top: rem(4px)
     right: 0
     +tr
 
@@ -383,15 +383,15 @@
 
     &:after
       top: 0
-      left: 6px
-      width: 2px
-      height: 14px
+      left: rem(6px)
+      width: rem(2px)
+      height: rem(14px)
 
     &:before
-      top: 6px
+      top: rem(6px)
       left: 0
-      width: 14px
-      height: 2px
+      width: rem(14px)
+      height: rem(2px)
 
   > ul
     list-style-type: none
@@ -399,14 +399,14 @@
     margin: 0
 
     > li
-      margin-bottom: 37px
+      margin-bottom: rem(37px)
 
       &:last-child
         margin-bottom: 0
 
       &.has-child
         > a
-          padding-right: 32px
+          padding-right: rem(32px)
 
           &.opened
             .plus
@@ -416,7 +416,7 @@
       > a
         display: inline-block
         position: relative
-        font-size: 22px
+        font-size: rem(22px)
         +tr
         line-height: 1.18
         color: #1D2027
@@ -433,14 +433,14 @@
   .submenu
     list-style-type: none
     margin: 0
-    padding: 46px 0 0
+    padding: rem(46px) 0 0
     column-count: 2
 
     li
       page-break-inside: avoid
       break-inside: avoid
-      margin-bottom: 18px
-      font-size: 12px
+      margin-bottom: rem(18px)
+      font-size: rem(12px)
 
       a
         color: #8496B6
@@ -455,24 +455,24 @@
 .main-menu-footer
   display: flex
   line-height: 1.3333
-  font-size: 15px
+  font-size: rem(15px)
   text-transform: uppercase
   flex-shrink: 0
-  padding-top: 22px
-  transform: translateY(30px)
+  padding-top: rem(22px)
+  transform: translateY(#{rem(30px)})
   opacity: 0
   transition: all .4s ease
   transition-delay: .4s
 
 .main-menu-footer-contacts
-  margin-right: 66px
+  margin-right: rem(66px)
   display: flex
   flex-direction: column
   align-items: flex-start
 
   a
     display: block
-    margin-bottom: 10px
+    margin-bottom: rem(10px)
     +tr
     color: #1D2027
     text-decoration: none !important
@@ -488,22 +488,22 @@
 
 .main-menu-footer-office
   .h6
-    margin-bottom: 10px
+    margin-bottom: rem(10px)
     color: #8496B6
 
 .header-acc-dropdown
   position: absolute
-  top: calc(100% + 13px)
+  top: calc(100% + #{rem(13px)})
   right: 0
   z-index: 5
   width: 446px
   background-color: #fff
-  box-shadow: 0px 11px 95px rgba(0, 0, 0, 0.2)
-  padding: 5px 17px 30px 30px
+  box-shadow: 0 rem(11px) rem(95px) rgba(0, 0, 0, 0.2)
+  padding: rem(5px) rem(17px) rem(30px) rem(30px)
   +tr
   opacity: 0
   visibility: hidden
-  transform: translateY(-5px)
+  transform: translateY(#{rem(-5px)})
 
   &.opened
     opacity: 1
@@ -514,27 +514,26 @@
   overflow-y: auto
 
 .basket-sm-item
-  padding: 21px 0 25px
+  padding: rem(21px) rem(37px) rem(25px) 0
   display: flex
   border-bottom: 1px solid rgba(#1D2027, .1)
-  padding-right: 37px
   position: relative
 
   &:last-child
     border-bottom: none
 
 .basket-sm-item-img
-  margin-right: 23px
+  margin-right: rem(23px)
 
   img
-    width: 66px
+    width: rem(66px)
     display: block
 
 .basket-sm-item-title
-  margin: 5px 0 15px
+  margin: rem(5px) 0 rem(15px)
 
   a
-    font-size: 14px
+    font-size: rem(14px)
     color: $accent
     font-weight: bold
     line-height: 1.43
@@ -546,15 +545,15 @@
 
 .basket-sm-item-price
   font-weight: bold
-  font-size: 20px
+  font-size: rem(20px)
   line-height: 1
   white-space: nowrap
 
 .basket-sm-item-remove
-  width: 20px
-  height: 20px
+  width: rem(20px)
+  height: rem(20px)
   position: absolute
-  top: 25px
+  top: rem(25px)
   right: 0
   display: flex
   align-items: center
@@ -570,16 +569,16 @@
   &:after
     content: '\e903'
     font-family: icon
-    font-size: 12px
+    font-size: rem(12px)
     color: #8496B6
     font-weight: normal
     line-height: 1
     +tr
 
 .header-acc-dropdown-btn
-  margin-top: 12px
+  margin-top: rem(12px)
 
   .btn
-    height: 38px
-    line-height: 36px
-    font-size: 12px
+    height: rem(38px)
+    line-height: rem(36px)
+    font-size: rem(12px)

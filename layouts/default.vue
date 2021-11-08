@@ -6,7 +6,7 @@
 
     <Nuxt/>
 
-    <LayoutsFooter/>
+    <LayoutsFooter :withMenu="true"/>
 
   </div>
 
@@ -14,10 +14,7 @@
 
 <script>
 export default {
-  name: 'default.vue',
-  mounted () {
-    this.$store.dispatch('globalVars/getGlobalVars')
-  }
+  name: 'default.vue'
 }
 </script>
 

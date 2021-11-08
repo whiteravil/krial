@@ -17,10 +17,7 @@
 <script>
 
 export default {
-  name: 'Index',
-  mounted () {
-    this.$store.dispatch('globalVars/getGlobalVars')
-  }
+  name: 'Index'
 }
 </script>
 

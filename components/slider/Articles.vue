@@ -9,13 +9,15 @@
       <swiper-slide
         v-for="slide in list"
         :key="slide.id">
-        {{ slide }}
+
+        <Article :item="slide"/>
+
       </swiper-slide>
 
     </swiper>
 
-    <div class="products-slider-button-prev slider-prev"><span class="icon-angle-left" /></div>
-    <div class="products-slider-button-next slider-next"><span class="icon-angle-right" /></div>
+    <div class="articles-slider-button-prev slider-prev"><span class="icon-angle-left" /></div>
+    <div class="articles-slider-button-next slider-next"><span class="icon-angle-right" /></div>
 
   </div>
 

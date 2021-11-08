@@ -1,0 +1,117 @@
+.s-useful-articles
+  padding: rem(41px) 0 rem(92px)
+  background-color: #ECF1FC
+  position: relative
+  overflow: hidden
+
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: rem(30px)
+    right: rem(30px)
+    height: 1px
+    background-color: #92A8B9
+
+.articles-slider
+  position: relative
+  padding-right: rem(25px)
+
+  .swiper-container
+    overflow: visible
+
+.article-item
+  position: relative
+  height: rem(360px)
+  overflow: hidden
+
+  &:hover
+    .article-item-img
+      img
+        transform: scale(1.05)
+
+    .article-item-content
+      background-color: #8496B6
+
+    .article-item-content-text
+      transform: translateY(0) !important
+
+      > *
+        opacity: 1
+
+.article-item-img
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 0
+
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(#000, .5)
+
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+    +tr4
+
+.article-item-content
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 1
+  display: flex
+  flex-direction: column
+  padding: rem(30px)
+  align-items: flex-start
+  color: #fff
+  +tr4
+
+  .tag
+    color: #1D2027
+    margin-bottom: rem(28px)
+
+.article-item-content-text
+  flex-grow: 1
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  +tr4
+
+  > *
+    opacity: 0
+    +tr
+
+  .h3
+    margin-bottom: rem(22px)
+    max-width: rem(395px)
+    display: block
+    text-overflow: ellipsis
+    overflow: hidden
+    display: -webkit-box
+    -webkit-line-clamp: 3
+    -webkit-box-orient: vertical
+    opacity: 1 !important
+
+  p
+    line-height: 1.7
+    margin-bottom: rem(20px)
+    display: block
+    text-overflow: ellipsis
+    overflow: hidden
+    display: -webkit-box
+    -webkit-line-clamp: 3
+    -webkit-box-orient: vertical
+
+  .btn
+    margin-top: auto

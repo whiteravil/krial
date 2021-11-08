@@ -1,3 +1,12 @@
+.layout-enter-active,
+.layout-leave-active
+  transition: opacity .5s ease, transform .5s ease
+
+.layout-enter,
+.layout-leave-active
+  opacity: 0
+  transform: translateY(40px)
+
 body
   min-height: calc(100 * var(--vh))
 
@@ -8,63 +17,63 @@ a
     white-space: nowrap
 
 .container
-  padding: 0 30px
+  padding: 0 rem(30px)
 
 h1, .h1
-  font-size: 50px
+  font-size: rem(50px)
   line-height: 1.2
   font-weight: normal
   text-transform: uppercase
 
 h2, .h2
-  font-size: 40px
+  font-size: rem(40px)
   line-height: 1.25
   font-weight: normal
   text-transform: uppercase
 
 h3, .h3
-  font-size: 20px
+  font-size: rem(20px)
   font-weight: bold
   line-height: 1.5
-  margin-bottom: 25px
+  margin-bottom: rem(25px)
 
 h4, .h4
-  font-size: 15px
+  font-size: rem(15px)
   font-weight: bold
   line-height: 1.6
 
 .page-title
-  margin-bottom: 76px
+  margin-bottom: rem(76px)
 
   .h6
-    font-size: 13px
+    font-size: rem(13px)
     color: #92A8B9
-    margin-bottom: 8px
+    margin-bottom: rem(8px)
 
   h1
-    max-width: 735px
+    max-width: rem(735px)
 
 .btn
   cursor: pointer
-  height: 58px
-  line-height: 58px
+  height: rem(58px)
+  line-height: rem(58px)
   text-align: center
-  padding: 0 36px
+  padding: 0 rem(36px)
   text-decoration: none !important
   outline: none !important
   border: none
   color: #fff
   +tr
   font-weight: bold
-  font-size: 15px
+  font-size: rem(15px)
   color: #fff
   text-transform: uppercase
   +tr
   display: inline-block
   background-color: $accent
-  -webkit-border-radius: 29px
-  -moz-border-radius: 29px
-  border-radius: 29px
+  -webkit-border-radius: rem(29px)
+  -moz-border-radius: rem(29px)
+  border-radius: rem(29px)
   white-space: nowrap
 
   &:hover:not(:disabled)
@@ -81,9 +90,9 @@ h4, .h4
       position: absolute
       top: 50%
       left: 50%
-      width: 40px
-      height: 40px
-      margin: -20px 0 0 -20px
+      width: rem(40px)
+      height: rem(40px)
+      margin: rem(-20px) 0 0 rem(-20px)
       background-image: url(/images/loaders/dots.svg)
       background-repeat: no-repeat
       background-position: center
@@ -97,7 +106,7 @@ h4, .h4
   background-color: transparent
   color: $accent
   border: 1px solid $accent
-  line-height: 56px
+  line-height: rem(56px)
 
   &:hover:not(:disabled)
     background-color: $accent
@@ -107,19 +116,19 @@ h4, .h4
   align-items: center
 
   span
-    font-size: 22px
-    margin-left: 21px
+    font-size: rem(22px)
+    margin-left: rem(21px)
 
 .btn-xs
-  padding: 0 15px
-  font-size: 12px
-  height: 24px
-  line-height: 24px
+  padding: 0 rem(15px)
+  font-size: rem(12px)
+  height: rem(24px)
+  line-height: rem(24px)
   font-weight: normal
 
 .btn-sm
-  height: 50px
-  line-height: 50px
+  height: rem(50px)
+  line-height: rem(50px)
 
 .btn-secondary
   background-color: #ECF1FC
@@ -152,14 +161,14 @@ h4, .h4
   width: 100%
 
 .btn-sm-2
-  height: 40px
-  line-height: 40px
-  font-size: 15px
+  height: rem(40px)
+  line-height: rem(40px)
+  font-size: rem(15px)
   font-weight: normal
 
 .small-title
-  margin-bottom: 45px
-  font-size: 15px
+  margin-bottom: rem(45px)
+  font-size: rem(15px)
   color: #8496B6
   line-height: 1.333
 
@@ -173,9 +182,9 @@ h4, .h4
 
 .liked-btn
   position: relative
-  font-size: 21px
-  width: 21px
-  height: 21px
+  font-size: rem(21px)
+  width: rem(21px)
+  height: rem(21px)
   color: #8496B6
   display: inline-block
   cursor: pointer
@@ -227,7 +236,7 @@ h4, .h4
       transform: scaleX(0)
 
 .label-checkbox
-  margin: 0 6px 6px 0
+  margin: 0 rem(6px) rem(6px) 0
   display: inline-block
   position: relative
   cursor: pointer
@@ -253,13 +262,13 @@ h4, .h4
 
     span
       display: block
-      height: 27px
-      line-height: 27px
-      padding: 0 9px
-      -webkit-border-radius: 14px
-      -moz-border-radius: 14px
-      border-radius: 14px
-      font-size: 15px
+      height: rem(27px)
+      line-height: rem(27px)
+      padding: 0 rem(9px)
+      -webkit-border-radius: rem(14px)
+      -moz-border-radius: rem(14px)
+      border-radius: rem(14px)
+      font-size: rem(15px)
       color: #8496B6
       cursor: pointer
       position: relative
@@ -273,9 +282,9 @@ h4, .h4
         left: 0
         width: 100%
         height: 100%
-        -webkit-border-radius: 14px
-        -moz-border-radius: 14px
-        border-radius: 14px
+        -webkit-border-radius: rem(14px)
+        -moz-border-radius: rem(14px)
+        border-radius: rem(14px)
         background-color: #fff
         z-index: -1
         transform: scale(.75)
@@ -285,9 +294,9 @@ h4, .h4
 .clear-btn
   display: inline-block
   align-items: center
-  padding-left: 23px
+  padding-left: rem(23px)
   color: #8496B6 !important
-  font-size: 15px
+  font-size: rem(15px)
   position: relative
   cursor: pointer
 
@@ -303,16 +312,16 @@ h4, .h4
     position: absolute
     bottom: 0
     right: 0
-    left: 23px
+    left: rem(23px)
     height: 1px
     background-color: #8496B6
     +tr
     transform-origin: top right
 
   .icon-close-small
-    font-size: 11px
+    font-size: rem(11px)
     position: absolute
-    top: 4px
+    top: rem(4px)
     left: 0
     +tr
 
@@ -327,7 +336,7 @@ h4, .h4
   background-color: #DDE3E8 !important
 
 .slider-range
-  margin-bottom: 14px
+  margin-bottom: rem(14px)
 
 .loading
   &:not(.btn)
@@ -349,9 +358,9 @@ h4, .h4
       position: absolute
       top: 50%
       left: 50%
-      width: 40px
-      height: 40px
-      margin: -20px 0 0 -20px
+      width: rem(40px)
+      height: rem(40px)
+      margin: rem(-20px) 0 0 rem(-20px)
       background-image: url(/images/loaders/dots-blue.svg)
       background-repeat: no-repeat
       background-position: center
@@ -359,7 +368,35 @@ h4, .h4
       z-index: 3
 
 .xs-title
-  font-size: 12px
+  font-size: rem(12px)
   text-transform: uppercase
   color: #1D2027
-  margin-bottom: 15px
+  margin-bottom: rem(15px)
+
+.section-title
+  margin-bottom: rem(41px)
+
+  .h2, h2
+    margin: 0
+
+  &.with-nav
+    margin-right: rem(130px)
+
+.slider-prev,
+.slider-next
+  position: absolute
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 50px
+  height: 50px
+  color: #8496B6
+  font-size: rem(19px)
+  bottom: 100%
+  margin-bottom: rem(40px)
+
+.slider-next
+  right: 0
+
+.slider-prev
+  right: rem(60px)

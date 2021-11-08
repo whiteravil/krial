@@ -54,6 +54,9 @@ $red: #D80027
     border-radius: 5px
     background-color: #a7a7a7
 
+@function rem($size)
+  @return $size / $fontsize * 1rem
+
 @include font('HeliosExtC', normal, 400, '/fonts/HeliosExtC/HeliosExtC.woff2')
 @include font('HeliosExtC', italic, 400, '/fonts/HeliosExtC/HeliosExtC-Italic.woff2')
 @include font('HeliosExtC', normal, 700, '/fonts/HeliosExtC/HeliosExtC-Bold.woff2')
@@ -65,9 +68,12 @@ $red: #D80027
   background-color: $accent
   color: #fff
 
+html, body
+  //font-size: .78125vw
+  font-size: 0.89285714285vw
+
 body
   font-family: $userfont
-  font-size: $fontsize
   line-height: $lineheight
   color: $textcolor
   min-width: 320px

@@ -90,14 +90,16 @@
     <section class="s-useful-articles">
       <div class="container">
 
-        <div class="section-title">
+        <div class="section-title with-nav">
           <div class="h2">Полезные статьи о оборудовании</div>
         </div>
 
-        <SliderArticles />
+        <SliderArticles :list="usefulArticles"/>
 
       </div>
     </section>
+
+    <Callback />
 
   </div>
 
@@ -109,17 +111,19 @@ import { mapState } from 'vuex'
 
 export default {
   async fetch () {
-    await Promise.all([
+    return await Promise.all([
       this.$store.dispatch('catalog/getCatalogInfo'),
-      this.$store.dispatch('catalog/getCatalogProducts')
+      this.$store.dispatch('catalog/getCatalogProducts'),
+      this.$store.dispatch('articles/getUsefulArticles')
     ])
   },
-  name: 'catalog.vue',
+  name: 'CategoryPage',
   computed: {
     ...mapState({
       catalogInfo: state => state.catalog,
       sorts: state => state.filters.sorts,
-      products: state => state.catalog.products
+      products: state => state.catalog.products,
+      usefulArticles: state => state.articles.usefulArticles
     }),
     pages () {
       return Math.ceil(this.products.length / this.visibleLength)
@@ -137,6 +141,7 @@ export default {
   }),
   methods: {
     loadMore () {
+      this.currentPage = 1
       if ((this.products.length - this.visibleLength) < 4) {
         this.visibleLength = this.products.length
       } else {
