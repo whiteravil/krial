@@ -1,0 +1,501 @@
+.s-product
+  padding: 17px 0 100px
+
+.product-row
+  display: flex
+  margin-right: rem(-12px)
+
+.product-left
+  width: rem(207px)
+  flex-shrink: 0
+  padding-right: rem(20px)
+  padding-top: rem(89px)
+
+.product-page-nav
+  position: sticky
+  top: rem(30px)
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+
+  a
+    position: relative
+    padding-left: rem(45px)
+    color: #8496B6
+    +tr
+    margin-bottom: rem(25px)
+
+    &:last-child
+      margin-bottom: 0
+
+    &:hover
+      color: $textcolor
+
+    &:after
+      content: ''
+      position: absolute
+      top: rem(9px)
+      left: 0
+      width: rem(35px)
+      height: 1px
+      background-color: $textcolor
+      +tr
+      transform-origin: top right
+      transform: scaleX(0)
+
+    &.active
+      color: $textcolor
+
+      &:after
+        transform: scaleX(1)
+
+.product-right
+  width: calc(100% - #{rem(207px)})
+  flex-shrink: 0
+
+.s-product-content
+  background-color: #fff
+  padding: rem(22px) rem(12px) rem(39px) rem(56px)
+
+.s-product-main
+  padding-bottom: rem(34px)
+
+.product-main-row
+  margin-bottom: rem(55px)
+  display: flex
+
+.product-main-left
+  flex-shrink: 0
+  width: 40%
+  padding-right: rem(11px)
+  padding-top: rem(23px)
+
+  h1, .h1
+    font-size: rem(40px)
+    line-height: 1.25
+    margin-bottom: rem(50px)
+
+.product-main-features
+  margin-bottom: rem(23px)
+  display: flex
+
+.product-main-feature
+  flex-shrink: 0
+  width: 33.33333%
+  padding-right: rem(20px)
+  margin-bottom: rem(20px)
+  line-height: 1.25
+
+  .h6
+    font-size: (12px)
+    color: #8E99AF
+    margin-bottom: rem(2px)
+
+  p
+    margin: 0
+    font-size: rem(20px)
+    display: flex
+    align-items: center
+
+    img
+      width: rem(24px)
+      flex-shrink: 0
+      margin-left: rem(20px)
+
+.product-main-descr
+  margin-bottom: rem(81px)
+
+.product-main-descr-content
+  margin-bottom: rem(7px)
+  line-height: 1.35
+
+  > div
+    min-height: rem(40px)
+
+  *:last-child
+    margin-bottom: 0
+
+.product-main-descr-more
+  span
+    color: #8E99AF
+    +tr
+    font-size: rem(12px)
+    text-decoration: underline
+    cursor: pointer
+
+    &:hover
+      color: $accent
+
+.product-price
+  margin-bottom: rem(15px)
+  line-height: 1.25
+  font-size: rem(40px)
+
+.product-in-stock
+  display: flex
+  flex-wrap: wrap
+  font-size: rem(12px)
+  color: #8E99AF
+
+.product-in-stock-info
+  margin-right: rem(34px)
+
+.product-in-stock-dynamic
+  a
+    color: #8E99AF
+    +tr
+    white-space: nowrap
+    display: flex
+    align-items: center
+
+    &:hover
+      color: $accent
+
+    span:not(.icon-dynamic)
+      position: relative
+
+      &:after
+        content: ''
+        position: absolute
+        height: 1px
+        bottom: 0
+        left: 0
+        width: 100%
+        background-color: #DDE0E7
+
+    .icon-dynamic
+      font-size: rem(17px)
+      margin-left: rem(10px)
+      color: #BFC9DF
+
+.product-main-right
+  width: 60%
+  flex-shrink: 0
+
+.product-types
+  margin-bottom: rem(50px)
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+
+.product-gallery
+  display: flex
+  padding-left: rem(74px)
+
+.product-images-gallery
+  margin: 0 rem(112px) 0 rem(74px)
+  position: relative
+  flex-grow: 1
+
+  &:after
+    content: ''
+    display: block
+    width: 100%
+    padding-bottom: 72%
+
+  img
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: contain
+    +tr4
+    opacity: 0
+    visibility: hidden
+    transform: scale(.98)
+
+    &.active
+      opacity: 1
+      visibility: visible
+      transform: scale(1)
+
+.product-thumbs-gallery
+  max-height: rem(313px)
+  position: relative
+  margin-top: rem(56px)
+
+  .swiper-container
+    height: 100%
+
+  img
+    width: rem(65px)
+    height: auto
+    +tr
+    opacity: .3
+    cursor: pointer
+
+    &.active
+      opacity: 1
+
+.gallery-thumbs-nav
+  > span
+    position: absolute
+    left: 50%
+    width: rem(50px)
+    height: rem(50px)
+    margin-left: rem(-25px)
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: rem(19px)
+    color: #8496B6
+
+  .gallery-thumb-prev
+    top: rem(-97px)
+
+  .gallery-thumb-next
+    bottom: rem(-97px)
+
+.product-delivery
+  margin-top: rem(20px)
+  font-size: 12px
+
+.product-delivery-title
+  color: #000
+  margin-bottom: rem(2px)
+
+.product-delivery-info
+  color: #8E99AF
+
+.product-exact-cost
+  margin-top: rem(20px)
+
+  a
+    display: inline-block
+    position: relative
+    color: #8E99AF
+    +tr
+    font-size: rem(12px)
+
+    &:hover
+      color: $accent
+
+    &:after
+      content: ''
+      position: absolute
+      height: 1px
+      bottom: 0
+      left: 0
+      width: 100%
+      background-color: #DDE0E7
+
+.product-main-btns
+  display: flex
+  align-items: center
+  margin: 0 rem(-5px)
+
+  > div
+    padding: 0 rem(5px)
+    flex-shrink: 0
+
+.product-main-btns-configurator
+  width: 39.7%
+
+.product-main-btns-order
+  width: 26%
+
+.product-main-btns-compare,
+.product-main-btns-leasing
+  width: 17.15%
+
+  .btn
+    padding: 0 rem(29px)
+    font-size: rem(12px)
+    text-transform: none
+
+.s-purchase-steps
+  position: relative
+  padding: rem(95px) 0 rem(50px)
+
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: rem(-40px)
+    right: rem(-13px)
+    height: 1px
+    background-color: #ECF1FC
+
+.purchase-steps
+  display: flex
+  margin: 0 rem(-20px)
+
+.purchase-step
+  width: 20%
+  flex-shrink: 0
+  padding: 0 rem(20px)
+  position: relative
+
+  &:last-child
+    &:after
+      display: none
+
+  &:after
+    content: ''
+    position: absolute
+    right: rem(13px)
+    top: rem(42px)
+    width: rem(125px)
+    height: rem(8px)
+    background-image: url(/images/icons/long-arrow-right.svg)
+    background-repeat: no-repeat
+    background-position: center
+    -webkit-background-size: contain
+    background-size: contain
+
+.purchase-step-icon
+  position: relative
+  margin-bottom: rem(47px)
+  width: rem(50px)
+  height: rem(50px)
+
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: contain
+
+  span
+    position: absolute
+    z-index: 1
+    left: rem(-22px)
+    bottom: rem(-11px)
+    width: rem(31px)
+    height: rem(31px)
+    line-height: rem(31px)
+    text-align: center
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50%
+    background-color: $accent
+    font-size: rem(14px)
+    color: #fff
+
+.purchase-step-content
+  position: relative
+
+.purchase-step-popover
+  width: rem(576px) !important
+
+.purchase-step-dropdown-titles
+  margin-bottom: rem(35px)
+  display: flex
+
+  p
+    margin: 0
+    width: 50%
+    flex-shrink: 0
+    padding-right: rem(20px)
+    line-height: 1.4
+    font-weight: bold
+    font-size: rem(15px)
+
+.purchase-step-dropdown-item
+  margin-bottom: rem(18px)
+  display: flex
+
+  &:last-child
+    margin: 0
+
+  p
+    flex-shrink: 0
+    width: 50%
+    padding-right: rem(20px)
+    position: relative
+    padding-left: rem(26px)
+    line-height: 1.4
+    font-size: rem(15px)
+
+    &:before
+      position: absolute
+      left: 0
+      top: rem(3px)
+      font-size: rem(14px)
+      font-family: icon
+      line-height: 1
+
+    &:first-child
+      &:before
+        content: '\e903'
+        color: #D80027
+
+    &:last-child
+      &:before
+        content: '\e921'
+        color: #149E2B
+
+.purchase-step-content-title
+  line-height: 1.6
+  cursor: pointer
+  +underline
+
+.s-product-characteristics
+  padding: rem(50px) 0
+
+.product-characteristics
+  display: flex
+
+.product-characteristics-left
+  width: 40%
+  flex-shrink: 0
+  padding-right: rem(45px)
+
+.main-characteristics
+  display: flex
+  flex-wrap: wrap
+
+  margin-bottom: rem(15px)
+
+.main-characteristics-item
+  max-width: 100%
+  margin: 0 rem(87px) rem(18px) 0
+  font-size: rem(12px)
+  line-height: 1.25
+  color: #8E99AF
+
+  span
+    display: block
+    font-size: rem(25px)
+    color: $textcolor
+    margin-top: rem(5px)
+
+.characteristics-list
+  ul
+    list-style-type: none
+    padding: 0
+    margin: 0
+
+    li
+      display: flex
+      align-items: center
+      margin-bottom: rem(13px)
+
+      span
+        &:first-child
+          display: flex
+          align-items: center
+          flex-grow: 1
+          margin-right: rem(18px)
+          color: #8E99AF
+          +underline
+          position: relative
+          &:after
+            content: ''
+            display: block
+            flex-grow: 1
+            margin-left: rem(31px)
+            height: 1px
+            background-color: #ECEFF4
+
+.product-characteristics-right
+  width: 60%
+  flex-shrink: 0
+  padding-right: rem(38px)
+  .section-title
+    margin-right: rem(-45px)
+
+.product-characteristics-more
+  margin-top: rem(30px)
+  text-align: right
+  padding-right: rem(38px)

@@ -1,10 +1,27 @@
 <template>
 
-  <div class="catalog-item">
+  <div
+    class="catalog-item"
+    :class="{'with-border': withBorder}">
 
     <div class="catalog-item-top">
 
-      <div class="catalog-item-tags">
+      <div
+        v-if="item.sticks"
+        class="catalog-item-sticks">
+        <div
+          v-for="(stick, i) in item.sticks"
+          :key="i"
+          class="stick"
+          ref="stick"
+          :class="`type-${stick.type}`">
+          <div class="stick-content">{{ stick.title }}</div>
+        </div>
+      </div>
+
+      <div
+        v-if="item.tags"
+        class="catalog-item-tags">
         <span
           class="tag"
           v-for="tag in item.tags"
@@ -27,11 +44,12 @@
           width="378"
           height="258"
           :src="item.imgSrc"
+          :class="{'grayscale': grayscale}"
           alt="">
       </div>
 
       <div class="catalog-item-title">
-        <a :href="item.url">{{ item.title }}</a>
+        <nuxt-link :to="item.url">{{ item.title }}</nuxt-link>
       </div>
 
       <div class="catalog-item-price-block">
@@ -69,7 +87,7 @@
     <div class="catalog-item-hover">
 
       <div class="catalog-item-title">
-        <a :href="item.url">{{ item.title }}</a>
+        <nuxt-link :to="item.url">{{ item.title }}</nuxt-link>
       </div>
 
       <div class="catalog-item-availability">
@@ -117,7 +135,9 @@
 
         <div class="catalog-item-btn">
           <a href="#" class="btn btn-with-icon">К сравнению <span class="icon-circle-plus"></span></a>
-          <a :href="item.url" class="btn btn-secondary">Подробнее</a>
+          <nuxt-link
+            :to="item.url"
+            class="btn btn-secondary">Подробнее</nuxt-link>
         </div>
 
       </div>
@@ -133,7 +153,20 @@
 export default {
   name: 'GridView',
   props: {
-    item: Object
+    item: Object,
+    grayscale: {
+      type: Boolean,
+      default: false
+    },
+    withBorder: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    stick () {
+      return this.$refs.stick
+    }
   },
   methods: {
     getAvailability (id) {
@@ -149,11 +182,19 @@ export default {
           break
       }
       return res
+    },
+    setStickWidth () {
+      if (this.stick) {
+        this.stick.forEach(stick => {
+          stick.style.width = ''
+          const contentW = stick.querySelector('.stick-content').offsetWidth
+          stick.style.width = `${contentW}px`
+        })
+      }
     }
+  },
+  mounted () {
+    this.setStickWidth()
   }
 }
 </script>
-
-<style scoped>
-
-</style>

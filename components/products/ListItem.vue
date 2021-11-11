@@ -3,18 +3,18 @@
   <div class="press-center-result">
 
     <div class="h3">
-      <a :href="product.url">
+      <nuxt-link :to="product.url">
         {{ product.title }}
-      </a>
+      </nuxt-link>
     </div>
 
     <p>
       {{ product.descr }}
     </p>
 
-    <a
-      :href="product.url"
-      class="link">Подробнее</a>
+    <nuxt-link
+      :to="product.url"
+      class="link">Подробнее</nuxt-link>
 
   </div>
 

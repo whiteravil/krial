@@ -20,6 +20,18 @@
 
           <UIBreadcrumbs />
 
+          <section class="s-product-content">
+
+            <ProductMain/>
+
+            <ProductPurchaseSteps/>
+
+            <ProductCharacteristics/>
+
+            <ProductAnalogs />
+
+          </section>
+
         </div>
 
       </div>
@@ -30,7 +42,15 @@
 </template>
 
 <script>
+
 export default {
+  async fetch () {
+    const id = this.$route.params.id
+    return await Promise.all([
+      this.$store.dispatch('product/getProduct', id),
+      this.$store.dispatch('analogs/getAnalogs')
+    ])
+  },
   name: 'ProductPage',
   data: () => ({
     activeNavLink: 1,
@@ -86,7 +106,11 @@ export default {
         url: '#s-10'
       }
     ]
-  })
+  }),
+  mounted () {
+    document.body.classList.add('gray')
+    this.$once('hook:beforeDestroy', () => document.body.classList.remove('gray'))
+  }
 }
 </script>
 

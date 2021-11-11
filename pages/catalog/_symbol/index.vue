@@ -50,6 +50,7 @@
             <ProductsGridView
               v-if="product.type === 1"
               :key="product.id"
+              :grayscale="true"
               :item="product"/>
 
             <Advertising
@@ -60,6 +61,7 @@
             <ProductsGridViewBig
               v-if="product.type === 3"
               :key="product.id"
+              :grayscale="true"
               :item="product"/>
 
             <div
@@ -134,6 +136,9 @@ export default {
       return this.products.length > 0 ? this.products.slice(start, end) : this.products
     }
   },
+  watch: {
+
+  },
   data: () => ({
     selectedSort: 0,
     currentPage: 1,
@@ -160,33 +165,32 @@ export default {
         behavior: 'smooth'
       })
       this.currentPage = e
-    }
-  },
-  mounted () {
-    const catalogItems = document.querySelectorAll('.catalog-item .catalog-item-img img')
-    const hoverListener = e => {
-      let rd = 800
-      let cx = e.clientX
-      let cy = e.clientY
+    },
+    imgHoverFilter (e) {
+      const catalogItems = document.querySelectorAll('.catalog-item .catalog-item-img img')
+      const rd = 800
+      const cx = e.clientX
+      const cy = e.clientY
       catalogItems.forEach(item => {
-        let it = item.getBoundingClientRect()
-        let itx = Math.abs(it.x + it.width / 2)
-        let ity = Math.abs(it.y + it.height / 2)
-        let res = Math.abs(Math.sqrt(Math.pow(cx - itx, 2) + Math.pow(cy - ity, 2)))
+        const it = item.getBoundingClientRect()
+        const itx = Math.abs(it.x + it.width / 2)
+        const ity = Math.abs(it.y + it.height / 2)
+        const res = Math.abs(Math.sqrt(Math.pow(cx - itx, 2) + Math.pow(cy - ity, 2)))
         if (res < rd) {
-          let sc = 1 - (rd - res) / rd
+          const sc = 1 - (rd - res) / rd
           item.style.filter = `grayscale(${sc})`
         } else {
           item.style.filter = 'grayscale(1)'
         }
       })
     }
-    document.addEventListener('mousemove', hoverListener)
-    this.$once('hook:beforeDestroy', () => document.removeEventListener('mousemove', hoverListener))
-
+  },
+  mounted () {
     this.$store.dispatch('filters/getSorts').then(() => {
       this.selectedSort = this.sorts[0].id
     })
+    document.addEventListener('mousemove', this.imgHoverFilter)
+    this.$once('hook:beforeDestroy', () => document.removeEventListener('mousemove', this.imgHoverFilter))
   }
 }
 </script>

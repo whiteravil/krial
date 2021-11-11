@@ -24,7 +24,7 @@
 
         <div class="catalog-item-big-body-left">
           <div class="catalog-item-title">
-            <a :href="item.url">{{ item.title }}</a>
+            <nuxt-link :to="item.url">{{ item.title }}</nuxt-link>
           </div>
         </div>
 
@@ -34,6 +34,7 @@
               width="378"
               height="258"
               :src="item.imgSrc"
+              :class="{'grayscale': grayscale}"
               alt="">
           </div>
         </div>
@@ -82,7 +83,7 @@
 
     <div class="catalog-item-hover">
       <div class="catalog-item-title">
-        <a :href="item.url">{{ item.title }}</a>
+        <nuxt-link :to="item.url">{{ item.title }}</nuxt-link>
       </div>
 
       <div class="catalog-item-availability">
@@ -131,7 +132,9 @@
 
         <div class="catalog-item-btn">
           <a href="#" class="btn btn-with-icon">К сравнению <span class="icon-circle-plus"/></a>
-          <a :href="item.url" class="btn btn-secondary">Подробнее</a>
+          <nuxt-link
+            :to="item.url"
+            class="btn btn-secondary">Подробнее</nuxt-link>
         </div>
       </div>
     </div>
@@ -143,7 +146,11 @@
 export default {
   name: 'GridViewBig',
   props: {
-    item: Object
+    item: Object,
+    grayscale: {
+      type: Boolean,
+      default: false
+    }
   },
   methods: {
     getAvailability (id) {

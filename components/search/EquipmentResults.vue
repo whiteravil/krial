@@ -24,16 +24,16 @@
         <div class="equipment-main">
 
           <div class="equipment-img">
-            <a :href="searchItem.url">
+            <nuxt-link :to="searchItem.url">
               <img :src="searchItem.imgSrc" alt="">
-            </a>
+            </nuxt-link>
           </div>
 
           <div class="equipment-title">
             <div class="h4">
-              <a :href="searchItem.url">
+              <nuxt-link :to="searchItem.url">
                 {{ searchItem.title }}
-              </a>
+              </nuxt-link>
             </div>
             <div class="equipment-tags">
               <div
@@ -114,7 +114,9 @@
         </div>
 
         <div class="equipment-more">
-          <a :href="searchItem.url" class="btn btn-secondary">Подробнее</a>
+          <nuxt-link
+            :to="searchItem.url"
+            class="btn btn-secondary">Подробнее</nuxt-link>
         </div>
 
         <div class="equipment-liked">

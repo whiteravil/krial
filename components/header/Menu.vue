@@ -8,9 +8,9 @@
 
         <div class="main-menu-logo">
 
-          <a href="/" class="logo">
+          <nuxt-link to="/" class="logo">
             <img :src="global.logoSrc" alt="">
-          </a>
+          </nuxt-link>
 
         </div>
 
@@ -30,17 +30,17 @@
           class="main-menu-col">
 
           <div class="main-menu-col-title">
-            <a :href="menu.url">{{ menu.title }}</a>
+            <nuxt-link :to="menu.url">{{ menu.title }}</nuxt-link>
           </div>
 
           <nav class="main-menu-nav">
-            <a
+            <nuxt-link
               v-for="link in menu.menuList"
               :key="link.id"
-              :href="link.url"
+              :to="link.url"
               class="main-menu-nav-link">
               {{ link.title }}
-            </a>
+            </nuxt-link>
           </nav>
 
         </div>
@@ -55,20 +55,20 @@
                 :key="link.id"
                 :class="{'has-child': link.childrens}">
 
-                <a
+                <nuxt-link
                   v-if="link.childrens"
-                  :href="link.url"
+                  :to="link.url"
                   @click="toggleMenuHandler(link)"
                   :class="{'opened': link.opened}">
                   {{ link.title }}
                   <span class="plus"></span>
-                </a>
+                </nuxt-link>
 
-                <a
+                <nuxt-link
                   v-else
-                  :href="link.url">
+                  :to="link.url">
                   {{ link.title }}
-                </a>
+                </nuxt-link>
 
                 <VueSlideToggle
                   v-if="link.childrens"
@@ -78,7 +78,7 @@
                     <li
                       v-for="submenuLink in link.childrens"
                       :key="submenuLink.id">
-                      <a :href="submenuLink.url">{{ submenuLink.title }}</a>
+                      <nuxt-link :to="submenuLink.url">{{ submenuLink.title }}</nuxt-link>
                     </li>
                   </ul>
                 </VueSlideToggle>

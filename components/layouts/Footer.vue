@@ -8,15 +8,15 @@
         v-if="!withMenu"
         class="main-section-logo">
 
-        <a
-          href="/"
+        <nuxt-link
+          to="/"
           class="logo">
 
           <img
             :src="global.logoSrc"
             alt="">
 
-        </a>
+        </nuxt-link>
 
       </div>
 
@@ -33,12 +33,12 @@
             </div>
 
             <nav class="main-section-menu">
-              <a
+              <nuxt-link
                 v-for="link in mainWindow.menu"
                 :key="link.id"
-                :href="link.url">
+                :to="link.url">
                 {{ link.title }}
-              </a>
+              </nuxt-link>
             </nav>
 
           </div>
