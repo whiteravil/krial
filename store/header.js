@@ -29,19 +29,19 @@ export const mutations = {
 
 export const actions = {
   async getTopMenu (ctx) {
-    const res = await this.$axios.get('top-menu.json')
+    const res = await this.$axios.get('/top-menu')
     ctx.commit('setTopMenu', res.data)
   },
   async getSecondMenu (ctx) {
-    const res = await this.$axios.get('second-menu.json')
+    const res = await this.$axios.get('/second-menu')
     ctx.commit('setSecondMenu', res.data)
   },
   async getMainMenu (ctx) {
-    const res = await this.$axios.get('main-menu.json')
+    const res = await this.$axios.get('/main-menu')
     ctx.commit('setMainMenu', res.data)
   },
   async getMainMenuRight (ctx) {
-    const res = await this.$axios.get('main-menu-right.json')
+    const res = await this.$axios.get('/main-menu-right')
     res.data.forEach(item => {
       if (item.childrens) {
         item.opened = false

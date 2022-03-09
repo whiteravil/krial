@@ -38,35 +38,35 @@ export const mutations = {
 
 export const actions = {
   async getFilterAllTypes (ctx) {
-    const res = await this.$axios.get('filters/types.json')
+    const res = await this.$axios.get('/filters-types')
     ctx.commit('setFilterAllTypes', res.data)
   },
   async getFilterAllClasses (ctx) {
-    const res = await this.$axios.get('filters/classes.json')
+    const res = await this.$axios.get('/filters-classes')
     ctx.commit('setFilterAllClasses', res.data)
   },
   async getFilterAllApplicationAreas (ctx) {
-    const res = await this.$axios.get('filters/application-areas.json')
+    const res = await this.$axios.get('/filters-application-areas')
     ctx.commit('setFilterAllApplicationAreas', res.data)
   },
   async getFilterAllEngines (ctx) {
-    const res = await this.$axios.get('filters/engines.json')
+    const res = await this.$axios.get('/filters-engines')
     ctx.commit('setFilterAllEngines', res.data)
   },
   async getFilterAllManufacturers (ctx) {
-    const res = await this.$axios.get('filters/manufacturers.json')
+    const res = await this.$axios.get('/filters-manufacturers')
     ctx.commit('setFilterAllManufacturers', res.data)
   },
   async getFilterAllManufacturerCountries (ctx) {
-    const res = await this.$axios.get('filters/manufacturer-countries.json')
+    const res = await this.$axios.get('/filters-manufacturer-countries')
     ctx.commit('setFilterAllManufacturerCountries', res.data)
   },
   async getFilterResults (ctx, data) {
-    const res = await this.$axios.get('filter-result.json')
+    const res = await this.$axios.get('/filter-result')
     ctx.commit('setFilterResults', res.data)
   },
   async getSorts (ctx) {
-    const res = await this.$axios.get('filters/sorts.json')
+    const res = await this.$axios.get('/filters-sorts')
     ctx.commit('setSorts', res.data)
   }
 }

@@ -29,13 +29,13 @@ export const actions = {
   getSearchResults (ctx, data) {
     let resultPromises = []
     resultPromises.push(new Promise(resolve => {
-      this.$axios.get('search-results-equipments.json').then(res => {
+      this.$axios.get('/search-results-equipments').then(res => {
         ctx.commit('setSearchResultEquipments', res.data)
         resolve()
       })
     }))
     resultPromises.push(new Promise(resolve => {
-      this.$axios.get('search-results-press-centers.json').then(res => {
+      this.$axios.get('/search-results-press-centers').then(res => {
         ctx.commit('setSearchResultsPressCenters', res.data)
         resolve()
       })
@@ -43,15 +43,15 @@ export const actions = {
     return Promise.all(resultPromises)
   },
   async getPopularCategories (ctx) {
-    const res = await this.$axios.get('search-popular-categories.json')
+    const res = await this.$axios.get('/search-popular-categories')
     ctx.commit('setPopularCategories', res.data)
   },
   async getHistory (ctx) {
-    const res = await this.$axios.get('search-history.json')
+    const res = await this.$axios.get('/search-history')
     ctx.commit('setHistory', res.data)
   },
   async getMorphSearchResults (ctx) {
-    const res = await this.$axios.get('morph-search-results.json')
+    const res = await this.$axios.get('/morph-search-results')
     ctx.commit('setMorphSearchResults', res.data)
   }
 }

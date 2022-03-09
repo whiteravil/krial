@@ -20,7 +20,7 @@ export const mutations = {
 
 export const actions = {
   async getFooterInfo (ctx) {
-    const res = await this.$axios.get('footer.json')
+    const res = await this.$axios.get('/footer')
     ctx.commit('setFooterInfo', res.data)
   }
 }

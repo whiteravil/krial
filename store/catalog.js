@@ -18,11 +18,11 @@ export const mutations = {
 
 export const actions = {
   async getCatalogInfo (ctx) {
-    const res = await this.$axios.get('catalog/main.json')
+    const res = await this.$axios.get('/catalog-main')
     ctx.commit('setCatalogInfo', res.data)
   },
   async getCatalogProducts (ctx) {
-    const res = await this.$axios.get('catalog/products.json')
+    const res = await this.$axios.get('/catalog-products')
     ctx.commit('setCatalogProducts', res.data)
   }
 }

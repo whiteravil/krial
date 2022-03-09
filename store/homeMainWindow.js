@@ -14,7 +14,7 @@ export const mutations = {
 
 export const actions = {
   async getMainWindowInfo (ctx) {
-    const res = await this.$axios.get('main-window.json')
+    const res = await this.$axios.get('/main-window')
     ctx.commit('setMainWindowInfo', res.data)
   }
 }

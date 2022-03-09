@@ -30,7 +30,7 @@ export const mutations = {
 
 export const actions = {
   async getGlobalVars (ctx) {
-    const res = await this.$axios.get('global-vars.json')
+    const res = await this.$axios.get('/global-vars')
     ctx.commit('setGlobalVars', res.data)
   }
 }

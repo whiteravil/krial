@@ -18,7 +18,7 @@ export const mutations = {
 
 export const actions = {
   async getSelectionProducts (ctx) {
-    const res = await this.$axios.get('selection-products.json')
+    const res = await this.$axios.get('/selection-products')
     ctx.commit('setSelectionProducts', res.data)
   }
 }

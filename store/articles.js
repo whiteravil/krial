@@ -10,7 +10,7 @@ export const mutations = {
 
 export const actions = {
   async getUsefulArticles ({ commit }) {
-    const res = await this.$axios.get('useful-articles.json')
+    const res = await this.$axios.get('/useful-articles')
     commit('setUsefulArticles', res.data)
   }
 }
